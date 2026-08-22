@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+
+# Node / Bun / build
+node_modules/
+dist/
+coverage/
+*.log
+tmp/
+temp/
+out/
+release/
+releases/
+*.tsbuildinfo
+.eslintcache
+.prettiercache
+
+# Capacitor native projects（本地生成：apps/mobile cap:add:*）
+apps/mobile/ios/
+apps/mobile/android/
+
+# Claude Code local overrides
+.claude/settings.local.json
+
+playwright-report/
+test-results/
+blob-report/
+apps/web/playwright/.cache/

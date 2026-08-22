@@ -1,0 +1,133 @@
+{
+  "title": "Team",
+  "close": "Close",
+  "needAdmin": "Team management requires a system admin",
+  "dept": {
+    "default": "Departments",
+    "empty": "No departments yet",
+    "create": "New department",
+    "createChild": "New child department",
+    "edit": "Edit department",
+    "delete": "Delete department",
+    "deleteConfirm": "Delete this department? Resolve child departments first.",
+    "sync": "Sync child members",
+    "syncOk": "Synced {{count}} member(s)",
+    "name": "Name",
+    "nameHint": "2–20 characters",
+    "parent": "Parent",
+    "parentRoot": "None (root)",
+    "owner": "Owner user ID",
+    "deputy": "Deputies",
+    "deputyAdd": "Add deputy",
+    "deputyUserId": "User ID",
+    "deputyEmpty": "No deputies",
+    "deputyAdded": "Deputy added",
+    "deputyRemoved": "Deputy removed",
+    "deputyRemove": "Remove",
+    "save": "Save",
+    "cancel": "Cancel",
+    "more": "Department actions"
+  },
+  "filter": {
+    "keyPlaceholder": "Keyword: email, nickname, title",
+    "identity": "Role",
+    "identityAll": "All",
+    "identityAdmin": "Admin",
+    "identityMember": "Member",
+    "identityTemporary": "Temporary",
+    "status": "Employment",
+    "statusAll": "All",
+    "statusActive": "Active",
+    "statusDisabled": "Disabled",
+    "search": "Search"
+  },
+  "actions": {
+    "createUser": "Create user",
+    "import": "Import",
+    "refresh": "Refresh"
+  },
+  "cols": {
+    "id": "ID",
+    "email": "Email",
+    "phone": "Phone",
+    "nickname": "Nickname",
+    "profession": "Title",
+    "identity": "Role",
+    "status": "Status",
+    "action": "Actions"
+  },
+  "identity": {
+    "admin": "Admin",
+    "temporary": "Temporary",
+    "disable": "Disabled",
+    "ldap": "LDAP",
+    "member": "Member"
+  },
+  "status": {
+    "active": "Active",
+    "disabled": "Disabled"
+  },
+  "row": {
+    "action": "Actions",
+    "setAdmin": "Make admin",
+    "clearAdmin": "Remove admin",
+    "setTemporary": "Make temporary",
+    "clearTemporary": "Clear temporary",
+    "disable": "Disable",
+    "enable": "Re-enable",
+    "handoverPrompt": "Enter handover user ID",
+    "disableConfirm": "Disable this user? A handover user ID is required.",
+    "handoverTitle": "Select handover user",
+    "handoverHint": "Tasks and permissions will transfer to the selected user (single choice).",
+    "handoverRequired": "Please select a handover user",
+    "handoverCancel": "Cancel",
+    "handoverSubmit": "Confirm disable",
+    "handoverSubmitting": "Submitting…",
+    "disableOk": "User disabled"
+  },
+  "pager": {
+    "total": "{{count}} items",
+    "pageSize": "Page size",
+    "perPage": "{{count}} / page",
+    "jump": "Go to",
+    "pageUnit": "",
+    "prev": "Previous page",
+    "next": "Next page"
+  },
+  "createUser": {
+    "title": "Create user",
+    "email": "Email",
+    "nickname": "Nickname",
+    "password": "Initial password",
+    "profession": "Title",
+    "identity": "Identity (optional)",
+    "identityHint": "admin / temporary / ldap",
+    "submit": "Create",
+    "cancel": "Cancel",
+    "success": "User created"
+  },
+  "import": {
+    "title": "Batch import",
+    "pick": "Choose CSV / Excel file",
+    "template": "Download template",
+    "preview": "Preview",
+    "okCount": "{{count}} / {{total}} rows ready",
+    "submit": "Import",
+    "cancel": "Cancel",
+    "result": "Created {{created}}, failed {{failed}}",
+    "needFile": "Please choose a file first",
+    "needRows": "No valid rows to import",
+    "line": "Line",
+    "status": "Status",
+    "error": "Error",
+    "ok": "OK",
+    "fail": "Fail"
+  },
+  "list": {
+    "empty": "No users",
+    "loading": "Loading…"
+  },
+  "error": {
+    "generic": "Something went wrong"
+  }
+}

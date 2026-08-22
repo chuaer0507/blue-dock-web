@@ -1,0 +1,37 @@
+{
+  "name": "@blue-dock/desktop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc -p tsconfig.node.json --pretty false && tsc -p tsconfig.web.json --pretty false",
+    "test": "vitest run",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "@blue-dock/api": "workspace:*",
+    "@blue-dock/app": "workspace:*",
+    "@blue-dock/desktop-bridge": "workspace:*",
+    "@blue-dock/i18n": "workspace:*",
+    "@tanstack/react-query": "^5.85.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@blue-dock/config-eslint": "workspace:*",
+    "@blue-dock/config-tailwind": "workspace:*",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@types/node": "^24.2.1",
+    "@vitejs/plugin-react": "^6.0.5",
+    "electron": "^43.3.0",
+    "electron-vite": "^5.0.0",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.0",
+    "vitest": "^3.2.4"
+  }
+}

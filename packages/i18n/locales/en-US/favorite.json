@@ -1,0 +1,59 @@
+{
+  "titleFavorite": "My Favorites",
+  "titleRecent": "Recently opened",
+  "close": "Close",
+  "tabs": {
+    "favorite": "Favorites",
+    "recent": "Recent",
+    "taskBrowse": "Task history"
+  },
+  "filter": {
+    "label": "Type",
+    "all": "All types",
+    "search": "Search",
+    "task": "Tasks",
+    "project": "Projects",
+    "file": "Files",
+    "message": "Messages",
+    "task_file": "Task files",
+    "message_file": "Message files"
+  },
+  "cols": {
+    "type": "Type",
+    "name": "Name",
+    "remark": "Remark",
+    "project": "Project",
+    "status": "Status",
+    "time": "Favorited at",
+    "actions": "Actions"
+  },
+  "pager": {
+    "total": "{{count}} items",
+    "pageSize": "Page size",
+    "perPage": "{{count}} / page",
+    "jump": "Go to",
+    "pageUnit": "",
+    "prev": "Previous page",
+    "next": "Next page"
+  },
+  "list": {
+    "empty": "No matching favorites",
+    "emptyRecent": "No recent items",
+    "refresh": "Refresh",
+    "remark": "Remark",
+    "remarkPlaceholder": "Add a remark",
+    "saveRemark": "Save",
+    "remarkSaved": "Remark saved",
+    "unfavorite": "Unfavorite",
+    "open": "Open",
+    "remove": "Remove",
+    "clean": "Clear all",
+    "cleanConfirm": "Clear the current list?",
+    "refId": "ID {{id}}",
+    "deleted": "Deleted or missing"
+  },
+  "error": {
+    "generic": "Action failed"
+  },
+  "loading": "Loading…"
+}

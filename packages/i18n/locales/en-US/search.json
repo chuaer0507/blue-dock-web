@@ -1,0 +1,29 @@
+{
+  "title": "Search",
+  "placeholder": "Search contacts, projects, tasks, files, messages…",
+  "submit": "Search",
+  "hint": "Results update as you type",
+  "empty": "No results",
+  "emptyQuery": "Type a keyword to search",
+  "loading": "Searching…",
+  "error": "Search failed",
+  "retry": "Retry",
+  "section": {
+    "contact": "Contacts",
+    "project": "Projects",
+    "task": "Tasks",
+    "file": "Files",
+    "message": "Messages"
+  },
+  "open": "Open",
+  "opening": "Opening…",
+  "openError": "Could not open this result",
+  "rebuild": {
+    "title": "Rebuild index",
+    "start": "Rebuild all",
+    "startSelected": "Rebuild selected",
+    "status": "Status: {{state}}",
+    "hint": "Admins only",
+    "typesHint": "Leave unchecked to rebuild all; check to rebuild selected types only"
+  }
+}

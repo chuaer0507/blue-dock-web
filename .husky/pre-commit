@@ -1,0 +1,3 @@
+# .claude/{rules,skills,commands} 为指向 .agents 的 symlink；
+# lint-staged 默认 stash 会因「path beyond a symbolic link」失败。
+bunx lint-staged --no-stash

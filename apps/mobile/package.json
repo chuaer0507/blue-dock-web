@@ -1,0 +1,49 @@
+{
+  "name": "@blue-dock/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --pretty false && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --pretty false",
+    "lint": "eslint src/",
+    "cap:sync": "bun run build && cap sync",
+    "cap:add:ios": "cap add ios",
+    "cap:add:android": "cap add android",
+    "cap:open:ios": "cap open ios",
+    "cap:open:android": "cap open android"
+  },
+  "dependencies": {
+    "@blue-dock/api": "workspace:*",
+    "@blue-dock/app": "workspace:*",
+    "@blue-dock/desktop-bridge": "workspace:*",
+    "@blue-dock/i18n": "workspace:*",
+    "@blue-dock/mobile-bridge": "workspace:*",
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/app": "^8.0.0",
+    "@capacitor/browser": "^8.0.0",
+    "@capacitor/core": "^8.5.0",
+    "@capacitor/ios": "^8.5.0",
+    "@capacitor/local-notifications": "^8.0.0",
+    "@capacitor/push-notifications": "^8.0.0",
+    "@capacitor/status-bar": "^8.0.0",
+    "@capawesome/capacitor-badge": "^8",
+    "@tanstack/react-query": "^5.85.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@blue-dock/config-eslint": "workspace:*",
+    "@blue-dock/config-tailwind": "workspace:*",
+    "@capacitor/cli": "^8.5.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^6.0.5",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.0",
+    "vitest": "^3.2.4"
+  }
+}

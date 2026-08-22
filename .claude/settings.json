@@ -1,0 +1,74 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun *)",
+      "Bash(bun run *)",
+      "Bash(bun install*)",
+      "Bash(bunx *)",
+      "Bash(npx playwright *)",
+      "Bash(npx madge *)",
+      "Bash(mkdir -p *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(ln *)",
+      "Bash(rm *)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch*)",
+      "Bash(git checkout *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm -rf /)",
+      "Bash(git push --force)",
+      "Bash(git push --force-with-lease)",
+      "Bash(git reset --hard)",
+      "Bash(git clean -fd)",
+      "Bash(git branch -D *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"continue\":true}'"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"continue\":true}'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"continue\":true}'"
+          }
+        ]
+      }
+    ]
+  },
+  "rules": [
+    ".agents/rules/architecture.md",
+    ".agents/rules/behavior.md",
+    ".agents/rules/state.md",
+    ".agents/rules/components.md",
+    ".agents/rules/naming.md",
+    ".agents/rules/i18n.md"
+  ]
+}

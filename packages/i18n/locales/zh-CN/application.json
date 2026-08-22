@@ -1,0 +1,76 @@
+{
+  "title": "应用",
+  "section": {
+    "base": "常用",
+    "admin": "管理员",
+    "micro": "微应用"
+  },
+  "emptyMicro": "暂无应用",
+  "comingSoon": "该应用入口即将上线",
+  "approve": {
+    "missing": "未安装审批微应用，请先在应用市场安装后再打开"
+  },
+  "openExternal": "在新窗口打开",
+  "refresh": "刷新",
+  "resetSort": "恢复默认排序",
+  "resetOk": "已恢复默认排序",
+  "dragHint": "拖动卡片调整顺序",
+  "sortSaved": "排序已保存",
+  "loading": "加载中…",
+  "error": "加载失败",
+  "retry": "重试",
+  "micro": {
+    "loading": "加载微应用…",
+    "missingId": "缺少应用 ID",
+    "notFound": "未找到该微应用或 URL 无效",
+    "back": "返回",
+    "openExternal": "新窗口打开"
+  },
+  "system": {
+    "aiAssistant": "AI 助手",
+    "approve": "审批中心",
+    "attendance": "签到打卡",
+    "report": "工作报告",
+    "favorite": "我的收藏",
+    "recent": "最近打开",
+    "mybot": "我的机器人",
+    "createGroup": "创建群组",
+    "meeting": "在线会议",
+    "addProject": "创建项目",
+    "addTask": "添加任务",
+    "exportManage": "导出管理",
+    "calendar": "日历",
+    "file": "文件",
+    "setting": "设置",
+    "scan": "扫一扫"
+  },
+  "admin": {
+    "searchCore": "搜索核心",
+    "ldap": "LDAP",
+    "emailNotify": "邮件通知",
+    "appPush": "APP 推送",
+    "reportManage": "举报管理",
+    "userGroups": "个人群检索",
+    "dataExport": "数据导出",
+    "teamManage": "团队管理",
+    "systemSetting": "系统设置",
+    "meetingSetting": "会议设置",
+    "aiBotSetting": "AI Bot 设置",
+    "storageSetting": "文件与存储",
+    "uploadLibrary": "上传库",
+    "appstore": "应用市场"
+  },
+  "scan": {
+    "title": "扫一扫",
+    "hint": "扫描电脑端登录二维码以确认登录",
+    "back": "返回",
+    "cameraUnavailable": "无法使用相机，请手动粘贴二维码内容",
+    "manual": "手动输入",
+    "manualPlaceholder": "粘贴二维码内容或登录码",
+    "confirm": "确认登录",
+    "confirming": "确认中…",
+    "ok": "已确认登录，请在电脑端继续",
+    "failed": "确认失败",
+    "invalid": "无法识别有效的登录码"
+  }
+}

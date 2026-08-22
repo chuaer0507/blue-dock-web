@@ -1,0 +1,73 @@
+{
+  "title": "Export",
+  "close": "Close",
+  "needAdmin": "Export requires a system admin",
+  "hint": "Exports run asynchronously. A system message will deliver the download link (valid 24h).",
+  "cards": {
+    "taskStats": "Export task stats",
+    "taskStatsDesc": "Export tasks by members and date range",
+    "overdue": "Export overdue tasks",
+    "overdueDesc": "Export all incomplete overdue tasks",
+    "attendance": "Export attendance",
+    "attendanceDesc": "Export punches by members, dates, and shift",
+    "approve": "Export approvals",
+    "approveDesc": "Export approval records by process and date"
+  },
+  "members": {
+    "label": "Members",
+    "hint": "Up to 100 members per export",
+    "add": "Add members",
+    "search": "Search email or nickname",
+    "empty": "No members selected",
+    "remove": "Remove"
+  },
+  "time": {
+    "label": "Time range",
+    "placeholder": "Select dates",
+    "lastMonth": "Last month",
+    "thisMonth": "This month",
+    "start": "Start date",
+    "end": "End date"
+  },
+  "timeType": {
+    "label": "Time type",
+    "taskTime": "Task time",
+    "createdTime": "Created time"
+  },
+  "attendance": {
+    "dateLabel": "Attendance dates",
+    "datePlaceholder": "Select attendance dates",
+    "shiftLabel": "Shift hours",
+    "shiftPlaceholder": "Select shift hours",
+    "shiftHint": "Format HH:mm,HH:mm"
+  },
+  "approve": {
+    "processName": "Process name",
+    "processPlaceholder": "Required, e.g. Leave",
+    "status": "Status (optional)",
+    "statusPlaceholder": "Empty = all"
+  },
+  "overdue": {
+    "title": "Export tasks",
+    "confirm": "Export all overdue tasks?"
+  },
+  "actions": {
+    "cancel": "Cancel",
+    "export": "Export",
+    "confirm": "Confirm"
+  },
+  "success": "Export accepted. You will be notified via system message when ready.",
+  "download": {
+    "action": "Download export",
+    "loading": "Downloading…",
+    "done": "Export downloaded",
+    "failed": "Download failed; the link may have expired"
+  },
+  "error": {
+    "needMembers": "Select at least one member",
+    "needRange": "Select a complete date range",
+    "needShift": "Enter shift hours",
+    "needProcess": "Enter a process name",
+    "generic": "Export failed"
+  }
+}

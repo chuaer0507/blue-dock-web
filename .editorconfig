@@ -1,0 +1,38 @@
+# https://editorconfig.org
+# 与本仓风格对齐：TS / TSX / JS / CSS / JSON / YAML / MD / Shell 为 2 空格；Makefile 用 Tab。
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+# Markdown 硬换行依赖行尾两空格，勿裁剪
+trim_trailing_whitespace = false
+
+[*.{js,cjs,mjs,ts,tsx,jsx,css,scss,less,html,vue,svelte}]
+indent_style = space
+indent_size = 2
+
+[*.{json,jsonc,yml,yaml,toml}]
+indent_style = space
+indent_size = 2
+
+[*.{sh,bash,zsh}]
+indent_style = space
+indent_size = 2
+
+[*.{svg,xml}]
+indent_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[*.bat]
+end_of_line = crlf

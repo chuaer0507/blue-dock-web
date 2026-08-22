@@ -1,0 +1,61 @@
+{
+  "title": "Calendar",
+  "titleMonth": "{{year}}-{{month}}",
+  "titleWeek": "{{start}} — {{end}}",
+  "loading": "Loading…",
+  "error": "Failed to load",
+  "retry": "Retry",
+  "refresh": "Refresh",
+  "view": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+  "weekday": {
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun"
+  },
+  "prev": "Previous",
+  "next": "Next",
+  "today": "Today",
+  "allDay": "All day",
+  "empty": "No tasks in this range",
+  "more": "+{{count}}",
+  "reschedule": {
+    "hint": "Drag a task onto another day to reschedule (edit in detail on touch)",
+    "done": "Rescheduled",
+    "denied": "No permission to change dates (TASK_TIME required)",
+    "conflictConfirm": "Owners have {{count}} other open task(s) in this range ({{names}}). Reschedule anyway?"
+  },
+  "filter": {
+    "project": "Filter by project",
+    "all": "All projects"
+  },
+  "create": {
+    "title": "New task",
+    "project": "Project",
+    "name": "Title",
+    "namePlaceholder": "Task title",
+    "submit": "Create",
+    "submitting": "Creating…",
+    "cancel": "Cancel",
+    "required": "Select a project and enter a title",
+    "emptyProjects": "No projects available",
+    "denied": "You cannot create tasks in this project",
+    "ok": "Task created",
+    "allDay": "All-day task",
+    "atHour": "New at {{hour}}:00",
+    "hintAllDay": "All day · {{date}}",
+    "hintTimed": "{{date}} {{hour}}:00–{{hourEnd}}:00"
+  },
+  "tag": {
+    "overdue": "Overdue",
+    "pending": "Pending",
+    "subtask": "Subtask"
+  }
+}

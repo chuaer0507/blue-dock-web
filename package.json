@@ -1,0 +1,59 @@
+{
+  "name": "blue-dock-web",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "dev": "bun run --filter @blue-dock/web dev",
+    "dev:desktop": "bun run --filter @blue-dock/desktop dev",
+    "dev:mobile": "bun run --filter @blue-dock/mobile dev",
+    "build": "bun run --filter @blue-dock/web build",
+    "build:desktop": "bun run --filter @blue-dock/desktop build",
+    "build:mobile": "bun run --filter @blue-dock/mobile build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:circular": "madge --extensions ts,tsx --circular packages apps",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "bun run --filter '*' typecheck",
+    "test": "bun run --filter '*' test",
+    "e2e": "bun run --filter @blue-dock/web e2e",
+    "e2e:ui": "bun run --filter @blue-dock/web e2e:ui"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs,cjs}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,md,yaml,yml,html}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@blue-dock/config-eslint": "workspace:*",
+    "@blue-dock/config-tailwind": "workspace:*",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.33.0",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "madge": "^8.0.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^8.2.0"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "packageManager": "bun@1.3.14"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@blue-dock/config-eslint",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./eslint.base.mjs",
+    "./prettier": "./prettier.base.json"
+  },
+  "files": [
+    "eslint.base.mjs",
+    "prettier.base.json"
+  ]
+}

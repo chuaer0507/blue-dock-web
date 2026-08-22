@@ -1,0 +1,73 @@
+{
+  "title": "导出管理",
+  "close": "关闭",
+  "needAdmin": "导出管理仅系统管理员可用",
+  "hint": "导出为异步任务，完成后系统消息会推送下载链接（24 小时有效）。",
+  "cards": {
+    "taskStats": "导出任务统计",
+    "taskStatsDesc": "按成员与时间范围导出任务",
+    "overdue": "导出超期任务",
+    "overdueDesc": "导出全站未完成且已超期的任务",
+    "attendance": "导出签到数据",
+    "attendanceDesc": "按成员、日期与班次导出签到",
+    "approve": "导出审批数据",
+    "approveDesc": "按流程分类与日期导出审批单"
+  },
+  "members": {
+    "label": "导出成员",
+    "hint": "每次最多选择导出 100 个成员",
+    "add": "添加成员",
+    "search": "搜索邮箱或昵称",
+    "empty": "尚未选择成员",
+    "remove": "移除"
+  },
+  "time": {
+    "label": "时间范围",
+    "placeholder": "请选择时间",
+    "lastMonth": "上个月",
+    "thisMonth": "这个月",
+    "start": "开始日期",
+    "end": "结束日期"
+  },
+  "timeType": {
+    "label": "导出时间类型",
+    "taskTime": "任务时间",
+    "createdTime": "创建时间"
+  },
+  "attendance": {
+    "dateLabel": "签到日期",
+    "datePlaceholder": "请选择签到日期",
+    "shiftLabel": "班次时间",
+    "shiftPlaceholder": "请选择班次时间",
+    "shiftHint": "格式 HH:mm,HH:mm"
+  },
+  "approve": {
+    "processName": "流程分类",
+    "processPlaceholder": "必填，如请假",
+    "status": "状态（可选）",
+    "statusPlaceholder": "留空表示全部"
+  },
+  "overdue": {
+    "title": "导出任务",
+    "confirm": "你确定要导出所有超期任务吗？"
+  },
+  "actions": {
+    "cancel": "取消",
+    "export": "导出",
+    "confirm": "确定"
+  },
+  "success": "已受理导出，完成后将通过系统消息通知",
+  "download": {
+    "action": "下载导出文件",
+    "loading": "下载中…",
+    "done": "导出文件已下载",
+    "failed": "下载失败，链接可能已过期"
+  },
+  "error": {
+    "needMembers": "请至少选择一名成员",
+    "needRange": "请选择完整的时间范围",
+    "needShift": "请填写班次时间",
+    "needProcess": "请填写流程分类",
+    "generic": "导出失败"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "title": "AI Assistant",
+  "welcome": "Welcome to AI Assistant",
+  "placeholder": "Ask a question…",
+  "send": "Send",
+  "stop": "Stop",
+  "sending": "Generating…",
+  "newChat": "New chat",
+  "history": "History",
+  "delete": "Delete session",
+  "deleted": "Session deleted",
+  "clearAll": "Clear all",
+  "clearAllConfirm": "Clear all history sessions?",
+  "cleared": "History cleared",
+  "fullscreen": "Fullscreen",
+  "exitFullscreen": "Exit fullscreen",
+  "close": "Close",
+  "openFab": "Open AI Assistant",
+  "noModels": "No models available. Ask an admin to configure AI.",
+  "model": "Model",
+  "error": "Request failed",
+  "emptyHistory": "No past sessions",
+  "images": {
+    "add": "Add image",
+    "remove": "Remove image",
+    "max": "Up to {{max}} images",
+    "tooLarge": "Each image must be ≤ 5MB",
+    "failed": "Failed to read image"
+  },
+  "feedback": {
+    "like": "Helpful",
+    "dislike": "Not helpful",
+    "liked": "Marked as helpful",
+    "disliked": "Marked as not helpful",
+    "cleared": "Feedback cleared"
+  },
+  "pageMatch": {
+    "title": "Related pages"
+  },
+  "prompts": {
+    "projects": "Show my project list",
+    "createTask": "Help me create a task",
+    "draftMessage": "Draft 3 versions of a collaboration message",
+    "priorities": "Find my top 3 priorities right now",
+    "search": "Smart search (tasks / projects / files)"
+  }
+}

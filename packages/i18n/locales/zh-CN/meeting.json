@@ -1,0 +1,51 @@
+{
+  "title": "在线会议",
+  "lobby": {
+    "createTitle": "发起会议",
+    "joinTitle": "加入会议",
+    "guestTitle": "访客加入",
+    "name": "会议主题",
+    "namePlaceholder": "可选，默认用你的昵称",
+    "meetingId": "会议号",
+    "meetingIdPlaceholder": "11 位会议号",
+    "username": "你的姓名",
+    "usernamePlaceholder": "访客显示名",
+    "inviteIds": "邀请成员",
+    "inviteIdsPlaceholder": "搜索添加，最多 20 人",
+    "mic": "入会开启麦克风",
+    "camera": "入会开启摄像头",
+    "create": "立即开会",
+    "join": "加入会议",
+    "needLogin": "创建或无分享链接加入需先登录。",
+    "login": "去登录",
+    "settings": "会议设置"
+  },
+  "room": {
+    "inMeeting": "会议中",
+    "meetingId": "会议号",
+    "channel": "频道",
+    "nickname": "我的昵称",
+    "copyLink": "复制分享链接",
+    "linkCopied": "链接已复制",
+    "invite": "邀请成员",
+    "inviteSubmit": "发送邀请",
+    "inviteOk": "邀请已发送",
+    "needInvite": "请选择要邀请的成员",
+    "leave": "离开会议",
+    "micOn": "麦克风开",
+    "micOff": "麦克风关",
+    "camOn": "摄像头开",
+    "camOff": "摄像头关",
+    "rtcPending": "音视频通道凭证已就绪；RTC 客户端将在下一步接入。",
+    "rtcConnecting": "正在连接音视频…",
+    "rtcConnected": "音视频已连接",
+    "rtcFailed": "音视频连接失败",
+    "rtcMissingCreds": "缺少会议凭证（App ID / 频道 / Token）",
+    "guestNoInvite": "访客不能邀请系统成员，请转发分享链接。",
+    "remoteFallback": "参会者 #{{id}}"
+  },
+  "error": {
+    "generic": "会议操作失败",
+    "ended": "会议已结束，无法加入"
+  }
+}

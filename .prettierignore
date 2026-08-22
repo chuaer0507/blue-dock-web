@@ -1,0 +1,13 @@
+node_modules
+dist
+out
+release
+releases
+coverage
+bun.lock
+LICENSE
+.claude
+**/.vite
+**/storybook-static
+*.min.js
+*.min.css

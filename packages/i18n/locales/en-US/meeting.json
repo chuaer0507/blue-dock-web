@@ -1,0 +1,51 @@
+{
+  "title": "Meeting",
+  "lobby": {
+    "createTitle": "Start a meeting",
+    "joinTitle": "Join a meeting",
+    "guestTitle": "Join as guest",
+    "name": "Topic",
+    "namePlaceholder": "Optional; defaults to your nickname",
+    "meetingId": "Meeting ID",
+    "meetingIdPlaceholder": "11-character meeting ID",
+    "username": "Your name",
+    "usernamePlaceholder": "Guest display name",
+    "inviteIds": "Invite members",
+    "inviteIdsPlaceholder": "Search to add, max 20",
+    "mic": "Join with microphone on",
+    "camera": "Join with camera on",
+    "create": "Start now",
+    "join": "Join",
+    "needLogin": "Sign in to create or join without a share link.",
+    "login": "Sign in",
+    "settings": "Meeting settings"
+  },
+  "room": {
+    "inMeeting": "In meeting",
+    "meetingId": "Meeting ID",
+    "channel": "Channel",
+    "nickname": "My name",
+    "copyLink": "Copy share link",
+    "linkCopied": "Link copied",
+    "invite": "Invite members",
+    "inviteSubmit": "Send invites",
+    "inviteOk": "Invites sent",
+    "needInvite": "Select at least one person to invite",
+    "leave": "Leave",
+    "micOn": "Mic on",
+    "micOff": "Mic off",
+    "camOn": "Camera on",
+    "camOff": "Camera off",
+    "rtcPending": "RTC credentials are ready; the Agora client will plug in next.",
+    "rtcConnecting": "Connecting media…",
+    "rtcConnected": "Media connected",
+    "rtcFailed": "Media connection failed",
+    "rtcMissingCreds": "Missing meeting credentials (App ID / channel / token)",
+    "guestNoInvite": "Guests cannot invite members — forward the share link instead.",
+    "remoteFallback": "Participant #{{id}}"
+  },
+  "error": {
+    "generic": "Meeting action failed",
+    "ended": "This meeting has ended"
+  }
+}

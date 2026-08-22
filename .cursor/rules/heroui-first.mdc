@@ -1,0 +1,17 @@
+---
+description: UI 优先 HeroUI；先 MCP 查文档，连不上则查 heroui.com；无等价才原生
+globs: packages/app/**/*.tsx,packages/app/**/*.ts,**/*.tsx
+alwaysApply: false
+---
+
+# HeroUI 优先 + 文档查阅
+
+写或改 `packages/app` 内 UI 时：
+
+1. **先 MCP**：`user-heroui-react` → `list_components` / `get_component_docs`（勿凭记忆猜 v3 API）
+2. **MCP 不可用**：改查 [heroui.com](https://heroui.com)（可用 `WebFetch`）
+3. **有则用**：直连 `@heroui/react`（`Form` / `Table` / `Switch` / `Checkbox` / `Modal` / `Select`…）
+4. **无则原生**：仅文档确认无合适组件时，才用原生标签或轻量自定义
+5. 禁止自造通用 UI 封装层；图标用 `@heroicons/react`
+
+完整条文：`.agents/rules/components.md`

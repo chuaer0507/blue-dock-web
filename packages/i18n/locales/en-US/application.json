@@ -1,0 +1,76 @@
+{
+  "title": "Apps",
+  "section": {
+    "base": "Common",
+    "admin": "Admin",
+    "micro": "Extensions"
+  },
+  "emptyMicro": "No apps yet",
+  "comingSoon": "This app is coming soon",
+  "approve": {
+    "missing": "Approval micro-app is not installed. Install it from the App Store first."
+  },
+  "openExternal": "Open in new window",
+  "refresh": "Refresh",
+  "resetSort": "Reset order",
+  "resetOk": "Default order restored",
+  "dragHint": "Drag cards to reorder",
+  "sortSaved": "Order saved",
+  "loading": "Loading…",
+  "error": "Failed to load",
+  "retry": "Retry",
+  "micro": {
+    "loading": "Loading micro-app…",
+    "missingId": "Missing app id",
+    "notFound": "Micro-app not found or URL is invalid",
+    "back": "Back",
+    "openExternal": "Open in new window"
+  },
+  "system": {
+    "aiAssistant": "AI Assistant",
+    "approve": "Approvals",
+    "attendance": "Attendance",
+    "report": "Work reports",
+    "favorite": "Favorites",
+    "recent": "Recently opened",
+    "mybot": "My bots",
+    "createGroup": "Create group",
+    "meeting": "Meetings",
+    "addProject": "New project",
+    "addTask": "New task",
+    "exportManage": "Exports",
+    "calendar": "Calendar",
+    "file": "Files",
+    "setting": "Settings",
+    "scan": "Scan"
+  },
+  "admin": {
+    "searchCore": "Search",
+    "ldap": "LDAP",
+    "emailNotify": "Email notifications",
+    "appPush": "App push",
+    "reportManage": "Reports moderation",
+    "userGroups": "Personal groups",
+    "dataExport": "Data export",
+    "teamManage": "Team",
+    "systemSetting": "System settings",
+    "meetingSetting": "Meeting settings",
+    "aiBotSetting": "AI Bot settings",
+    "storageSetting": "Files & storage",
+    "uploadLibrary": "Upload library",
+    "appstore": "App store"
+  },
+  "scan": {
+    "title": "Scan",
+    "hint": "Scan the desktop login QR code to confirm sign-in",
+    "back": "Back",
+    "cameraUnavailable": "Camera unavailable — paste the code instead",
+    "manual": "Manual entry",
+    "manualPlaceholder": "Paste QR content or login code",
+    "confirm": "Confirm login",
+    "confirming": "Confirming…",
+    "ok": "Login confirmed — continue on desktop",
+    "failed": "Confirmation failed",
+    "invalid": "Not a valid login code"
+  }
+}

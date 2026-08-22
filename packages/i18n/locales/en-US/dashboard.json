@@ -1,0 +1,94 @@
+{
+  "title": "Dashboard",
+  "refresh": "Refresh",
+  "loading": "Loading…",
+  "empty": "No tasks yet",
+  "error": "Failed to load",
+  "retry": "Retry",
+  "greeting": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "overdueHint": "{{count}} overdue — prioritize them",
+    "allClear": "No overdue tasks — keep the pace"
+  },
+  "search": "Search",
+  "layout": {
+    "list": "List",
+    "quadrant": "Quadrants"
+  },
+  "perspective": {
+    "personal": "Personal",
+    "team": "Dept. lead"
+  },
+  "teamTitle": "Department overview",
+  "teamHint": "{{overdue}} overdue on the team",
+  "department": "Department",
+  "counts": {
+    "overdue": "Overdue",
+    "today": "Due today",
+    "todo": "To do",
+    "assist": "Assisting",
+    "pendingHint": "{{count}} not started yet",
+    "uncompleted": "Open",
+    "soon": "Due in 3 days",
+    "weekDone": "Done this week",
+    "project": "Projects",
+    "done": "Done",
+    "longestOverdue": "Longest overdue",
+    "viewTasks": "View tasks"
+  },
+  "groups": {
+    "overdue": "Overdue",
+    "today": "Due today",
+    "todo": "To do",
+    "pending": "Not started",
+    "assist": "Assisting",
+    "weekDone": "Done this week"
+  },
+  "table": {
+    "task": "Task",
+    "project": "Project",
+    "status": "Status",
+    "deadline": "Due",
+    "assignee": "Owner",
+    "priority": "Priority"
+  },
+  "status": {
+    "open": "In progress",
+    "done": "Done"
+  },
+  "deadline": {
+    "overdueDays": "{{days}}d overdue",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "none": "No due date"
+  },
+  "team": {
+    "members": "Members in scope",
+    "membersCount": "{{count}} people",
+    "memberFilter": "Filter tasks by member",
+    "memberAll": "All members",
+    "memberId": "User #{{id}}",
+    "priority": "Priority mix",
+    "priorityHint": "{{count}} open",
+    "focus": "Focus tasks",
+    "focusOverdue": "Overdue",
+    "focusSoon": "Due soon",
+    "focusHi": "High priority",
+    "focusNoowner": "Unassigned",
+    "focusAll": "Open",
+    "priorityUnset": "Unset",
+    "priorityN": "P{{n}}",
+    "memberProjects": "Projects",
+    "memberProjectsEmpty": "No projects yet",
+    "memberTasks": "Member tasks",
+    "readonly": "Read-only"
+  },
+  "tasks": {
+    "title": "My tasks",
+    "overdue": "Overdue",
+    "today": "Due today",
+    "assist": "Assisting"
+  }
+}

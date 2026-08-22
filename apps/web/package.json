@@ -1,0 +1,36 @@
+{
+  "name": "@blue-dock/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --pretty false && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "typecheck": "tsc -p tsconfig.json --pretty false",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "@blue-dock/api": "workspace:*",
+    "@blue-dock/app": "workspace:*",
+    "@blue-dock/desktop-bridge": "workspace:*",
+    "@blue-dock/i18n": "workspace:*",
+    "@tanstack/react-query": "^5.85.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@blue-dock/config-eslint": "workspace:*",
+    "@blue-dock/config-tailwind": "workspace:*",
+    "@playwright/test": "^1.54.2",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^6.0.5",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.0",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "title": "工作报告",
+  "loading": "加载中…",
+  "tabs": {
+    "mine": "我发送的",
+    "receive": "我收到的",
+    "compose": "写汇报",
+    "stats": "统计分析"
+  },
+  "filter": {
+    "all": "全部类型",
+    "daily": "日报",
+    "weekly": "周报",
+    "statusAll": "全部状态",
+    "unread": "未读",
+    "read": "已读"
+  },
+  "list": {
+    "empty": "暂无汇报",
+    "receivers": "接收人",
+    "unreadBadge": "未读",
+    "refresh": "刷新",
+    "markAllRead": "全部标为已读",
+    "markAllReading": "标记中…",
+    "markAllReadDone": "已标记 {{count}} 条已读",
+    "noUnread": "当前列表没有未读"
+  },
+  "detail": {
+    "title": "汇报详情",
+    "close": "关闭",
+    "edit": "编辑",
+    "markRead": "标为已读",
+    "share": "分享到会话",
+    "shareTitle": "选择会话",
+    "shareEmpty": "暂无会话",
+    "shareOk": "已分享到会话",
+    "shareCancel": "取消",
+    "content": "正文",
+    "sign": "周期标识",
+    "time": "时间",
+    "empty": "选择一条汇报查看详情"
+  },
+  "analysis": {
+    "title": "AI 解读",
+    "hint": "解读仅对自己可见；可保存后下次打开自动带出。",
+    "placeholder": "记录要点、风险与建议…",
+    "generate": "AI 生成解读草稿",
+    "generated": "已生成解读草稿，请确认后保存",
+    "save": "保存解读",
+    "saved": "解读已保存",
+    "required": "请填写解读内容",
+    "contentRequired": "报告正文为空，无法生成解读",
+    "model": "模型：{{model}}"
+  },
+  "compose": {
+    "type": "类型",
+    "title": "标题",
+    "content": "正文",
+    "receive": "接收人",
+    "receiveSearch": "搜索成员添加…",
+    "receiveEmpty": "请至少选择一位接收人",
+    "receivePlaceholder": "逗号分隔，必填",
+    "loadTemplate": "填充任务模板",
+    "period": "周期",
+    "periodCurrent": "本周期",
+    "periodPrevious": "上一周期",
+    "aiPolish": "AI 整理",
+    "aiOk": "已整理",
+    "submit": "保存并发送",
+    "ok": "已保存并发送",
+    "useLastReceiver": "填入上次接收人",
+    "noLastReceiver": "暂无上次接收人",
+    "contentRequired": "请先填写正文",
+    "required": "请填写标题、正文与接收人",
+    "hint": "保存后将发给所选接收人；同一周期不可重复提交。"
+  },
+  "unread": {
+    "count": "未读 {{count}} 条"
+  },
+  "stats": {
+    "hint": "基于最近最多 {{limit}} 条「我发送的 / 我收到的」汇总（后端暂无独立统计接口）。",
+    "truncated": "已达抽样上限，数字可能不完整。",
+    "sentTotal": "已发送",
+    "sentDaily": "日报",
+    "sentWeekly": "周报",
+    "sentLast7Days": "近 7 日发送",
+    "receivedTotal": "已收到（抽样）",
+    "unreadApi": "未读（实时）",
+    "unreadApiHint": "来自 unread 接口",
+    "receivedUnread": "抽样未读",
+    "receivedLast7Days": "近 7 日收到",
+    "typeMix": "发送类型占比",
+    "readMix": "收到已读 / 未读"
+  },
+  "error": {
+    "generic": "操作失败"
+  }
+}

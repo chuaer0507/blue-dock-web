@@ -1,0 +1,234 @@
+{
+  "title": "Task",
+  "loading": "Loading…",
+  "error": "Failed to load",
+  "retry": "Retry",
+  "notFound": "Task not found or access denied",
+  "saved": "Saved",
+  "complete": "Mark complete",
+  "reopen": "Reopen",
+  "completed": "Completed",
+  "open": "In progress",
+  "save": "Save",
+  "back": "Back",
+  "close": "Close",
+  "openIndependent": "Open independently",
+  "permission": {
+    "projectReadonly": "This project is read-only (department view or archived). Task edits are disabled.",
+    "noWrite": "You have no write permissions on this project; some actions are hidden."
+  },
+  "conflict": {
+    "loading": "Checking schedule conflicts…",
+    "error": "Conflict check failed",
+    "none": "No other open tasks for owners in this range",
+    "title": "Schedule conflict: {{count}} other open task(s) for owners"
+  },
+  "fields": {
+    "name": "Title",
+    "description": "Description",
+    "noDescription": "No description",
+    "priority": "Priority",
+    "status": "Status",
+    "startAt": "Start",
+    "endAt": "Due",
+    "none": "Not set",
+    "project": "Project",
+    "flow": "Workflow",
+    "tags": "Tags",
+    "color": "Color",
+    "visibility": "Visibility",
+    "owners": "Owners",
+    "assists": "Helpers"
+  },
+  "assignees": {
+    "emptyMembers": "No project members to assign",
+    "ownerRequired": "Keep at least one owner",
+    "limit": "Select up to {{max}} people",
+    "ownerHint": "At least 1, up to {{max}}; mutually exclusive with helpers",
+    "assistHint": "Main tasks only; up to {{max}}; cannot overlap owners"
+  },
+  "visibility": {
+    "1": "Project members",
+    "2": "Assignees only",
+    "3": "Specific members",
+    "userIds": "Visible members",
+    "userIdsHint": "Only selected project members can see this task"
+  },
+  "tags": {
+    "emptyProject": "No project tags yet (admins can create them from the project Tags menu)",
+    "hint": "Select up to {{max}} tags per task",
+    "limit": "At most {{max}} tags per task"
+  },
+  "flow": {
+    "title": "Workflow",
+    "empty": "No workflow steps",
+    "change": "Move here"
+  },
+  "subtasks": {
+    "title": "Subtasks",
+    "empty": "No subtasks",
+    "add": "Add subtask",
+    "placeholder": "Subtask name",
+    "done": "Done"
+  },
+  "files": {
+    "title": "Attachments",
+    "empty": "No attachments",
+    "count": "{{count}} files",
+    "upload": "Upload",
+    "uploading": "Uploading…",
+    "uploaded": "Attachment uploaded",
+    "uploadCancel": "Cancel upload",
+    "uploadCancelled": "Upload cancelled (re-select the same file to resume)",
+    "progress": "Upload {{percent}}%",
+    "download": "Download",
+    "downloadFail": "Download URL unavailable",
+    "delete": "Delete attachment",
+    "deleteConfirm": "Delete attachment “{{name}}”?",
+    "deleted": "Attachment deleted"
+  },
+  "archive": "Archive",
+  "archiveConfirm": "Archive this task?",
+  "remove": {
+    "action": "Delete",
+    "running": "Deleting…",
+    "confirm": "Soft-delete this task? Main tasks cascade to subtasks. Prefer archive when possible.",
+    "ok": "Task deleted"
+  },
+  "favorite": "Favorite",
+  "unfavorite": "Unfavorite",
+  "favorited": "Added to favorites",
+  "unfavorited": "Removed from favorites",
+  "logs": {
+    "title": "Activity",
+    "empty": "No activity yet",
+    "reset": "Restore from this",
+    "resetConfirm": "Restore workflow from this activity snapshot?",
+    "resetOk": "Workflow restored from activity"
+  },
+  "dialog": {
+    "open": "Discuss",
+    "opening": "Opening…",
+    "opened": "Task chat opened"
+  },
+  "createQuick": {
+    "title": "Quick create task",
+    "project": "Project",
+    "name": "Title",
+    "namePlaceholder": "Task title",
+    "template": "Template (optional)",
+    "templateNone": "No template",
+    "submit": "Create",
+    "cancel": "Cancel",
+    "required": "Select a project and enter a title",
+    "emptyProjects": "No projects available",
+    "denied": "You cannot create tasks in this project",
+    "ok": "Task created"
+  },
+  "copy": {
+    "action": "Duplicate",
+    "running": "Copying…",
+    "ok": "Task duplicated"
+  },
+  "sendChat": {
+    "open": "Send to chat",
+    "title": "Send to chat",
+    "hint": "Send task “{{name}}” as a card to the selected chats",
+    "note": "Note (optional)",
+    "notePlaceholder": "Message for recipients",
+    "needTarget": "Select at least one chat",
+    "cancel": "Cancel",
+    "submit": "Send",
+    "sending": "Sending…",
+    "done": "Sent to {{count}} chats",
+    "partial": "{{ok}} sent, {{fail}} failed"
+  },
+  "move": {
+    "title": "Move task",
+    "hint": "Main tasks only. Move column or project; subtasks follow.",
+    "project": "Target project",
+    "column": "Target column",
+    "action": "Move",
+    "running": "Moving…",
+    "ok": "Moved",
+    "needProject": "Select a target project",
+    "needColumn": "Select a target column",
+    "unchanged": "Already in that project and column",
+    "confirmCross": "Move to another project? Tags may be cleared per project rules."
+  },
+  "loop": {
+    "label": "Recurrence",
+    "0": "Off",
+    "1": "Daily",
+    "2": "Weekly",
+    "3": "Monthly",
+    "4": "Yearly",
+    "hint": "Completing creates the next occurrence; due date is required.",
+    "needEndAt": "Set a due date to enable recurrence",
+    "subtaskHint": "Subtasks cannot recur"
+  },
+  "template": {
+    "title": "Templates",
+    "hint": "Apply fills title and description — then save. Save / default / delete need project admin.",
+    "empty": "No templates yet",
+    "save": "Save as template",
+    "saving": "Saving…",
+    "saved": "Template saved",
+    "applied": "Template applied (save to keep)",
+    "needName": "Enter a title first",
+    "delete": "Delete template",
+    "deleteConfirm": "Delete template “{{name}}”?",
+    "deleted": "Template deleted",
+    "setDefault": "Set as default",
+    "unsetDefault": "Clear default",
+    "defaultOn": "Set as default template",
+    "defaultOff": "Default cleared",
+    "sharedTitle": "Shared templates",
+    "sharedHint": "Templates from other projects you can see. Search works here. If the project disables sharing, only local templates apply.",
+    "sharedEmpty": "No other shared templates",
+    "searchPlaceholder": "Search template name",
+    "searchEmpty": "No matching templates",
+    "useCount": "Used {{count}}×",
+    "moveUp": "Move up",
+    "moveDown": "Move down"
+  },
+  "content": {
+    "label": "Details",
+    "placeholder": "Full body (saved as a new content version)",
+    "historyTitle": "Content history",
+    "historyHint": "Open a version into the editor; saving appends a new version.",
+    "historyEmpty": "No content versions yet",
+    "untitledVersion": "No summary",
+    "viewingHistory": "Viewing a past version; save will create a new version.",
+    "backLatest": "Back to latest",
+    "prevPage": "Previous",
+    "nextPage": "Next",
+    "page": "{{page}} / {{total}}"
+  },
+  "ai": {
+    "generate": "AI suggest",
+    "running": "Generating…",
+    "generated": "Generated {{count}} suggestion(s) — check the task chat",
+    "none": "No new suggestions (already done or conditions unmet)"
+  },
+  "related": {
+    "title": "Related tasks",
+    "hint": "Bidirectional links; @# mentions in task chat also write here. Search by title or enter a task ID.",
+    "empty": "No related tasks",
+    "placeholder": "Search or enter task ID",
+    "searchEmpty": "No matching tasks",
+    "add": "Link",
+    "added": "Linked",
+    "remove": "Unlink",
+    "removeConfirm": "Remove the link to this task?",
+    "removed": "Unlinked",
+    "invalidId": "Enter a valid task ID, or pick from search",
+    "self": "Cannot link a task to itself"
+  },
+  "upgrade": {
+    "action": "Promote to main",
+    "running": "Promoting…",
+    "confirm": "Promote this subtask to a main task?",
+    "ok": "Promoted to main task"
+  }
+}

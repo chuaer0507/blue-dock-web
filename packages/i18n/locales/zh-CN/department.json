@@ -1,0 +1,133 @@
+{
+  "title": "团队管理",
+  "close": "关闭",
+  "needAdmin": "团队管理仅系统管理员可用",
+  "dept": {
+    "default": "默认部门",
+    "empty": "暂无部门",
+    "create": "新建部门",
+    "createChild": "新建子部门",
+    "edit": "编辑部门",
+    "delete": "删除部门",
+    "deleteConfirm": "确定删除该部门？请先处理子部门。",
+    "sync": "同步子部门成员",
+    "syncOk": "已同步 {{count}} 人",
+    "name": "部门名称",
+    "nameHint": "2–20 字",
+    "parent": "上级部门",
+    "parentRoot": "无（根部门）",
+    "owner": "负责人用户 ID",
+    "deputy": "副负责人",
+    "deputyAdd": "添加副负责人",
+    "deputyUserId": "用户 ID",
+    "deputyEmpty": "暂无副负责人",
+    "deputyAdded": "已添加副负责人",
+    "deputyRemoved": "已移除副负责人",
+    "deputyRemove": "移除",
+    "save": "保存",
+    "cancel": "取消",
+    "more": "部门操作"
+  },
+  "filter": {
+    "keyPlaceholder": "关键词 邮箱、昵称、职位",
+    "identity": "身份",
+    "identityAll": "全部",
+    "identityAdmin": "管理员",
+    "identityMember": "普通成员",
+    "identityTemporary": "临时帐号",
+    "status": "在职状态",
+    "statusAll": "全部",
+    "statusActive": "在职",
+    "statusDisabled": "离职",
+    "search": "搜索"
+  },
+  "actions": {
+    "createUser": "创建用户",
+    "import": "批量导入",
+    "refresh": "刷新"
+  },
+  "cols": {
+    "id": "ID",
+    "email": "邮箱",
+    "phone": "电话",
+    "nickname": "昵称",
+    "profession": "职位/职称",
+    "identity": "身份",
+    "status": "状态",
+    "action": "操作"
+  },
+  "identity": {
+    "admin": "管理员",
+    "temporary": "临时",
+    "disable": "离职",
+    "ldap": "LDAP",
+    "member": "成员"
+  },
+  "status": {
+    "active": "在职",
+    "disabled": "离职"
+  },
+  "row": {
+    "action": "操作",
+    "setAdmin": "设为管理员",
+    "clearAdmin": "取消管理员",
+    "setTemporary": "设为临时帐号",
+    "clearTemporary": "取消临时帐号",
+    "disable": "办理离职",
+    "enable": "恢复在职",
+    "handoverPrompt": "请输入交接人用户 ID",
+    "disableConfirm": "确定将该用户设为离职？须指定交接人。",
+    "handoverTitle": "选择交接人",
+    "handoverHint": "离职用户的任务与权限将交接给所选人员（单选）。",
+    "handoverRequired": "请选择交接人",
+    "handoverCancel": "取消",
+    "handoverSubmit": "确认离职",
+    "handoverSubmitting": "提交中…",
+    "disableOk": "已办理离职"
+  },
+  "pager": {
+    "total": "共 {{count}} 条",
+    "pageSize": "每页条数",
+    "perPage": "{{count}} 条/页",
+    "jump": "跳至",
+    "pageUnit": "页",
+    "prev": "上一页",
+    "next": "下一页"
+  },
+  "createUser": {
+    "title": "创建用户",
+    "email": "邮箱",
+    "nickname": "昵称",
+    "password": "初始密码",
+    "profession": "职位",
+    "identity": "身份（可选）",
+    "identityHint": "可填 admin / temporary / ldap",
+    "submit": "创建",
+    "cancel": "取消",
+    "success": "用户已创建"
+  },
+  "import": {
+    "title": "批量导入",
+    "pick": "选择 CSV / Excel 文件",
+    "template": "下载模板",
+    "preview": "预览",
+    "okCount": "可导入 {{count}} / {{total}} 行",
+    "submit": "确认导入",
+    "cancel": "取消",
+    "result": "成功 {{created}}，失败 {{failed}}",
+    "needFile": "请先选择文件",
+    "needRows": "没有可导入的有效行",
+    "line": "行",
+    "status": "状态",
+    "error": "错误",
+    "ok": "通过",
+    "fail": "失败"
+  },
+  "list": {
+    "empty": "暂无用户",
+    "loading": "加载中…"
+  },
+  "error": {
+    "generic": "操作失败"
+  }
+}

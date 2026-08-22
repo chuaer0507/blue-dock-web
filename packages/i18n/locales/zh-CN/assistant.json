@@ -1,0 +1,47 @@
+{
+  "title": "AI 助手",
+  "welcome": "欢迎使用 AI 助手",
+  "placeholder": "请输入你的问题…",
+  "send": "发送",
+  "stop": "停止",
+  "sending": "生成中…",
+  "newChat": "新对话",
+  "history": "历史",
+  "delete": "删除会话",
+  "deleted": "会话已删除",
+  "clearAll": "清空全部",
+  "clearAllConfirm": "确定清空全部历史会话？",
+  "cleared": "已清空历史",
+  "fullscreen": "全屏",
+  "exitFullscreen": "退出全屏",
+  "close": "关闭",
+  "openFab": "打开 AI 助手",
+  "noModels": "暂无可用模型，请联系管理员配置 AI",
+  "model": "模型",
+  "error": "请求失败",
+  "emptyHistory": "暂无历史会话",
+  "images": {
+    "add": "添加配图",
+    "remove": "移除配图",
+    "max": "最多 {{max}} 张配图",
+    "tooLarge": "单张图片不能超过 5MB",
+    "failed": "读取图片失败"
+  },
+  "feedback": {
+    "like": "有帮助",
+    "dislike": "没帮助",
+    "liked": "已标记有帮助",
+    "disliked": "已标记没帮助",
+    "cleared": "已取消反馈"
+  },
+  "pageMatch": {
+    "title": "相关页面"
+  },
+  "prompts": {
+    "projects": "查看我的项目列表",
+    "createTask": "帮我创建一个任务",
+    "draftMessage": "帮我写一封协作消息（3 个版本）",
+    "priorities": "找出目前最优先做的 3 件事",
+    "search": "全局智能搜索（任务 / 项目 / 文件）"
+  }
+}

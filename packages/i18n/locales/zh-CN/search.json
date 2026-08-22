@@ -1,0 +1,29 @@
+{
+  "title": "全局搜索",
+  "placeholder": "搜索联系人、项目、任务、文件、消息…",
+  "submit": "搜索",
+  "hint": "输入关键词后自动检索",
+  "empty": "未找到相关结果",
+  "emptyQuery": "输入关键词开始搜索",
+  "loading": "搜索中…",
+  "error": "搜索失败",
+  "retry": "重试",
+  "section": {
+    "contact": "联系人",
+    "project": "项目",
+    "task": "任务",
+    "file": "文件",
+    "message": "消息"
+  },
+  "open": "打开",
+  "opening": "打开中…",
+  "openError": "无法打开该结果",
+  "rebuild": {
+    "title": "重建索引",
+    "start": "开始重建（全部）",
+    "startSelected": "重建所选类型",
+    "status": "状态：{{state}}",
+    "hint": "仅系统管理员可用",
+    "typesHint": "不勾选则全量重建；勾选后仅重建所选类型"
+  }
+}

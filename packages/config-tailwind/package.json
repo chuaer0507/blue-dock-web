@@ -1,0 +1,39 @@
+{
+  "name": "@blue-dock/config-tailwind",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base.css": "./base.css",
+    "./theme.css": "./theme.css",
+    "./vite": "./vite.ts"
+  },
+  "files": [
+    "base.css",
+    "theme.css",
+    "vite.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --pretty false"
+  },
+  "dependencies": {
+    "@heroui/styles": "^3.2.3",
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  },
+  "peerDependencies": {
+    "@heroui/styles": "^3.2.3",
+    "vite": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.0"
+  }
+}

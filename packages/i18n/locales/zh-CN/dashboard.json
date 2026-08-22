@@ -1,0 +1,94 @@
+{
+  "title": "仪表盘",
+  "refresh": "刷新",
+  "loading": "加载中…",
+  "empty": "暂无任务",
+  "error": "加载失败",
+  "retry": "重试",
+  "greeting": {
+    "morning": "早上好",
+    "afternoon": "下午好",
+    "evening": "晚上好",
+    "overdueHint": "有 {{count}} 项已超期，建议优先处理",
+    "allClear": "暂无超期任务，保持节奏"
+  },
+  "search": "搜索",
+  "layout": {
+    "list": "列表",
+    "quadrant": "四象限"
+  },
+  "perspective": {
+    "personal": "个人视角",
+    "team": "部门负责人"
+  },
+  "teamTitle": "部门任务总览",
+  "teamHint": "团队有 {{overdue}} 项已超期",
+  "department": "部门",
+  "counts": {
+    "overdue": "已超期",
+    "today": "今日到期",
+    "todo": "待完成",
+    "assist": "我协助的",
+    "pendingHint": "其中 {{count}} 项待开始",
+    "uncompleted": "未完成",
+    "soon": "3 天内到期",
+    "weekDone": "本周完成",
+    "project": "参与项目",
+    "done": "已完成",
+    "longestOverdue": "最长已逾期",
+    "viewTasks": "查看任务"
+  },
+  "groups": {
+    "overdue": "已超期",
+    "today": "今日到期",
+    "todo": "待完成",
+    "pending": "待开始",
+    "assist": "我协助的",
+    "weekDone": "本周完成"
+  },
+  "table": {
+    "task": "任务",
+    "project": "项目",
+    "status": "状态",
+    "deadline": "截止时间",
+    "assignee": "负责人",
+    "priority": "优先级"
+  },
+  "status": {
+    "open": "进行中",
+    "done": "已完成"
+  },
+  "deadline": {
+    "overdueDays": "逾期 {{days}} 天",
+    "today": "今天",
+    "tomorrow": "明天",
+    "none": "无截止"
+  },
+  "team": {
+    "members": "成员范围",
+    "membersCount": "{{count}} 人",
+    "memberFilter": "按成员筛选任务",
+    "memberAll": "全部成员",
+    "memberId": "用户 #{{id}}",
+    "priority": "优先级分布",
+    "priorityHint": "未完成 {{count}} 项",
+    "focus": "重点关注任务",
+    "focusOverdue": "已超期",
+    "focusSoon": "3天内到期",
+    "focusHi": "最高/高",
+    "focusNoowner": "未分配",
+    "focusAll": "未完成",
+    "priorityUnset": "未设",
+    "priorityN": "优先级 {{n}}",
+    "memberProjects": "参与的项目",
+    "memberProjectsEmpty": "暂无参与项目",
+    "memberTasks": "成员任务",
+    "readonly": "只读"
+  },
+  "tasks": {
+    "title": "我的任务",
+    "overdue": "已超期",
+    "today": "今日到期",
+    "assist": "协助"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "title": "Work reports",
+  "loading": "Loading…",
+  "tabs": {
+    "mine": "Sent",
+    "receive": "Received",
+    "compose": "Compose",
+    "stats": "Analytics"
+  },
+  "filter": {
+    "all": "All types",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "statusAll": "All status",
+    "unread": "Unread",
+    "read": "Read"
+  },
+  "list": {
+    "empty": "No reports yet",
+    "receivers": "Receivers",
+    "unreadBadge": "Unread",
+    "refresh": "Refresh",
+    "markAllRead": "Mark all read",
+    "markAllReading": "Marking…",
+    "markAllReadDone": "Marked {{count}} as read",
+    "noUnread": "No unread in this list"
+  },
+  "detail": {
+    "title": "Report detail",
+    "close": "Close",
+    "edit": "Edit",
+    "markRead": "Mark as read",
+    "share": "Share to chat",
+    "shareTitle": "Choose a conversation",
+    "shareEmpty": "No conversations yet",
+    "shareOk": "Shared to chat",
+    "shareCancel": "Cancel",
+    "content": "Content",
+    "sign": "Period",
+    "time": "Time",
+    "empty": "Select a report to view details"
+  },
+  "analysis": {
+    "title": "AI notes",
+    "hint": "Notes are private to you and reload next time you open this report.",
+    "placeholder": "Key points, risks, and suggestions…",
+    "generate": "Draft notes with AI",
+    "generated": "Draft ready — review and save",
+    "save": "Save notes",
+    "saved": "Notes saved",
+    "required": "Enter some notes first",
+    "contentRequired": "Report body is empty; cannot draft notes",
+    "model": "Model: {{model}}"
+  },
+  "compose": {
+    "type": "Type",
+    "title": "Title",
+    "content": "Content",
+    "receive": "Receivers",
+    "receiveSearch": "Search members to add…",
+    "receiveEmpty": "Pick at least one receiver",
+    "receivePlaceholder": "Comma-separated, required",
+    "loadTemplate": "Fill task template",
+    "period": "Period",
+    "periodCurrent": "Current",
+    "periodPrevious": "Previous",
+    "aiPolish": "AI polish",
+    "aiOk": "Polished",
+    "submit": "Save & send",
+    "ok": "Saved and sent",
+    "useLastReceiver": "Use last receivers",
+    "noLastReceiver": "No previous receivers",
+    "contentRequired": "Write content first",
+    "required": "Title, content and receivers are required",
+    "hint": "Sending notifies selected receivers; the same period cannot be submitted twice."
+  },
+  "unread": {
+    "count": "{{count}} unread"
+  },
+  "stats": {
+    "hint": "Aggregated from up to {{limit}} recent sent/received reports (no dedicated stats API yet).",
+    "truncated": "Sample limit reached; numbers may be incomplete.",
+    "sentTotal": "Sent",
+    "sentDaily": "Daily",
+    "sentWeekly": "Weekly",
+    "sentLast7Days": "Sent in 7 days",
+    "receivedTotal": "Received (sample)",
+    "unreadApi": "Unread (live)",
+    "unreadApiHint": "From unread API",
+    "receivedUnread": "Unread in sample",
+    "receivedLast7Days": "Received in 7 days",
+    "typeMix": "Sent type mix",
+    "readMix": "Received read / unread"
+  },
+  "error": {
+    "generic": "Action failed"
+  }
+}

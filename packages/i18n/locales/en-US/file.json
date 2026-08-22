@@ -1,0 +1,162 @@
+{
+  "title": "Files",
+  "root": "All files",
+  "empty": "This folder is empty",
+  "loading": "Loading…",
+  "error": "Failed to load",
+  "retry": "Retry",
+  "refresh": "Refresh",
+  "folder": "Folder",
+  "file": "File",
+  "shared": "Shared",
+  "size": "Size",
+  "updatedAt": "Updated",
+  "newFolder": "New folder",
+  "folderName": "Folder name",
+  "create": "Create",
+  "creating": "Creating…",
+  "remove": "Delete",
+  "removing": "Deleting…",
+  "confirmRemove": "Delete “{{name}}”?",
+  "open": "Open",
+  "up": "Up",
+  "detail": "Details",
+  "previewSoon": "Preview coming soon",
+  "previewEmpty": "(Empty)",
+  "editor": {
+    "label": "File content",
+    "hint": "Edit text content; saving creates a new version.",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Content saved",
+    "discard": "Discard changes",
+    "clean": "In sync with server",
+    "replace": "Replace from file",
+    "replacing": "Replacing…",
+    "replaced": "Content replaced",
+    "fetchFallback": "Loaded text via fallback API"
+  },
+  "copyLink": "Copy share link",
+  "linkCopied": "Link copied",
+  "favorite": "Favorite",
+  "unfavorite": "Unfavorite",
+  "favorited": "Added to favorites",
+  "unfavorited": "Removed from favorites",
+  "upload": "Upload",
+  "uploading": "Uploading…",
+  "uploadDone": "Upload complete",
+  "uploadCancel": "Cancel upload",
+  "uploadCancelled": "Upload cancelled (re-select the same file to resume)",
+  "uploadProgress": "{{name}} · {{percent}}%",
+  "searchName": "Search by name",
+  "searchEmpty": "No matching files",
+  "rename": {
+    "title": "Rename",
+    "name": "Name",
+    "save": "Save",
+    "saving": "Saving…",
+    "done": "Renamed"
+  },
+  "xfer": {
+    "move": "Move",
+    "copy": "Copy",
+    "moving": "Moving…",
+    "copying": "Copying…",
+    "moved": "Moved",
+    "copied": "Copied",
+    "dest": "Destination",
+    "root": "Root"
+  },
+  "share": {
+    "open": "Share",
+    "title": "Sharing",
+    "hint": "Collaborators can see this file in their shared space.",
+    "search": "Search users…",
+    "searchEmpty": "No matching users",
+    "add": "Add",
+    "already": "Already shared",
+    "members": "Members",
+    "empty": "No shared members yet",
+    "remove": "Remove",
+    "confirmRemove": "Remove this member?",
+    "added": "Added",
+    "removed": "Removed",
+    "writable": "Add with write access",
+    "permRead": "Read",
+    "permWrite": "Write",
+    "out": "Leave share",
+    "confirmOut": "Leave this shared file?",
+    "outDone": "Left share"
+  },
+  "sendChat": {
+    "open": "Send to chat",
+    "title": "Send to chat",
+    "hint": "Send “{{name}}” to the selected chats",
+    "needTarget": "Select at least one chat",
+    "cancel": "Cancel",
+    "submit": "Send",
+    "sending": "Sending…",
+    "done": "Sent to {{count}} chats",
+    "partial": "{{ok}} sent, {{fail}} failed"
+  },
+  "image": {
+    "error": "Could not load image preview"
+  },
+  "pdf": {
+    "title": "PDF preview",
+    "error": "Could not load PDF preview"
+  },
+  "tabs": {
+    "my": "My files",
+    "shared": "Shared",
+    "browse": "Browse",
+    "trash": "Trash"
+  },
+  "trash": {
+    "empty": "Trash is empty",
+    "restore": "Restore",
+    "restoring": "Restoring…",
+    "restored": "Restored"
+  },
+  "history": {
+    "title": "Content history",
+    "hint": "Restore rewrites this version as the latest; older versions are kept.",
+    "empty": "No content versions yet",
+    "latest": "Current version",
+    "version": "Version {{n}}",
+    "restore": "Restore",
+    "restoring": "Restoring…",
+    "restored": "Restored as latest content",
+    "confirmRestore": "Restore this version as the latest content?"
+  },
+  "office": {
+    "error": "Could not load Office preview",
+    "unavailable": "Document Server is not configured. Try opening externally.",
+    "openExternal": "Open in new window",
+    "view": "Preview",
+    "edit": "Edit",
+    "editHint": "Edits are written back via Document Server callback; OnlyOffice must be configured."
+  },
+  "view": {
+    "grid": "Grid",
+    "list": "List"
+  },
+  "download": {
+    "one": "Download",
+    "working": "Downloading…",
+    "done": "Download started"
+  },
+  "pack": {
+    "one": "Download as ZIP",
+    "selected": "Download ZIP ({{count}})",
+    "hint": "Select files or folders to pack",
+    "clearSelection": "Clear selection",
+    "needSelect": "Select items to pack first",
+    "done": "Pack ready, download started",
+    "denied": "You do not have permission to pack files"
+  },
+  "actions": {
+    "more": "New or upload",
+    "close": "Close"
+  }
+}
