@@ -1,4 +1,10 @@
-import { useMutation, useQueries, useQuery, useQueryClient, type QueryClient } from '@tanstack/react-query';
+import {
+  useMutation,
+  useQueries,
+  useQuery,
+  useQueryClient,
+  type QueryClient,
+} from '@tanstack/react-query';
 import { get, post, upload } from '../http-api';
 import { http } from '../client';
 import { ApiError } from '../errors';
@@ -212,11 +218,7 @@ export function useDialogCommonCount(targetUserId: number | undefined, enabled =
   });
 }
 
-export function useDialogMessages(
-  dialogId: number | undefined,
-  take = 50,
-  wsConnected?: boolean,
-) {
+export function useDialogMessages(dialogId: number | undefined, take = 50, wsConnected?: boolean) {
   const queryClient = useQueryClient();
   return useQuery({
     queryKey: dialogKeys.messages(dialogId ?? 0),
@@ -856,9 +858,7 @@ export function usePushDialogOkr() {
         config: {
           params: {
             text: input.text.trim(),
-            ...(input.dialogId != null && input.dialogId > 0
-              ? { dialogId: input.dialogId }
-              : {}),
+            ...(input.dialogId != null && input.dialogId > 0 ? { dialogId: input.dialogId } : {}),
             ...(input.okrId != null && input.okrId > 0 ? { okrId: input.okrId } : {}),
           },
         },
@@ -1150,9 +1150,7 @@ export function useReadDialogMessages() {
     mutationFn: (input: { dialogId: number; messageId?: number }) =>
       get<void>('dialog/message/read', {
         dialogId: input.dialogId,
-        ...(input.messageId != null && input.messageId > 0
-          ? { messageId: input.messageId }
-          : {}),
+        ...(input.messageId != null && input.messageId > 0 ? { messageId: input.messageId } : {}),
       }),
     onMutate: async (vars) => {
       await queryClient.cancelQueries({ queryKey: dialogKeys.list() });
@@ -1274,10 +1272,16 @@ export function useCreateDialogSession() {
         ...(input.title?.trim() ? { title: input.title.trim() } : {}),
       }).then((raw) => asDialogSession(raw as unknown as Record<string, unknown>)),
     onSuccess: (session) => {
-      queryClient.setQueryData<DialogSessionView[]>(dialogKeys.sessions(session.dialogId), (old) => {
-        const next = (old ?? []).map((s) => ({ ...s, isCurrent: 0 }));
-        return [{ ...session, isCurrent: 1 }, ...next.filter((s) => s.sessionId !== session.sessionId)];
-      });
+      queryClient.setQueryData<DialogSessionView[]>(
+        dialogKeys.sessions(session.dialogId),
+        (old) => {
+          const next = (old ?? []).map((s) => ({ ...s, isCurrent: 0 }));
+          return [
+            { ...session, isCurrent: 1 },
+            ...next.filter((s) => s.sessionId !== session.sessionId),
+          ];
+        },
+      );
     },
     onSettled: (_d, _e, vars) => {
       void queryClient.invalidateQueries({ queryKey: dialogKeys.sessions(vars.dialogId) });
@@ -1298,9 +1302,7 @@ export function useOpenDialogSession() {
     onSuccess: (session) => {
       queryClient.setQueryData<DialogSessionView[]>(dialogKeys.sessions(session.dialogId), (old) =>
         (old ?? []).map((s) =>
-          s.sessionId === session.sessionId
-            ? { ...session, isCurrent: 1 }
-            : { ...s, isCurrent: 0 },
+          s.sessionId === session.sessionId ? { ...session, isCurrent: 1 } : { ...s, isCurrent: 0 },
         ),
       );
     },

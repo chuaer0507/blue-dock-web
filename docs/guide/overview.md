@@ -19,9 +19,9 @@ Blue Dock Web：**Bun monorepo + React + Vite + TypeScript + Electron**（均 LT
 | ---------- | ------------------------------------------------------------------------------- |
 | 框架已落地 | 路由树、主题、登录（密码）/ Token 桥、Manage 壳                                 |
 | 进行中     | 多数业务页已接（`wip`）；按规格补缺口并收口至 `done`（对接 **blue-dock-java**） |
-| 仍占位     | （无；`/pro` · `/preload` 已接真页）                                              |
-| Pro 介绍   | `/pro`（`ProPage`：容量 / 管理 / 支持要点 + 登录或进工作台 / 联系销售）           |
-| 预加载壳   | `/preload`（闪屏 + 等桌面桥；冷启动入口；可 `?redirect=`）                         |
+| 仍占位     | （无；`/pro` · `/preload` 已接真页）                                            |
+| Pro 介绍   | `/pro`（`ProPage`：容量 / 管理 / 支持要点 + 登录或进工作台 / 联系销售）         |
+| 预加载壳   | `/preload`（闪屏 + 等桌面桥；冷启动入口；可 `?redirect=`）                      |
 
 验收状态见 [sync-checklist.md](./sync-checklist.md)。
 

@@ -12,12 +12,14 @@ test.describe('冒烟（无需账号）', () => {
 
   test('登录页可切换扫码模式', async ({ page }) => {
     await page.goto('/login');
-    const qr = page.getByRole('radio', { name: /扫码|QR code/i }).or(
-      page.getByText(/^扫码$|^QR code$/i),
-    );
+    const qr = page
+      .getByRole('radio', { name: /扫码|QR code/i })
+      .or(page.getByText(/^扫码$|^QR code$/i));
     await expect(qr.first()).toBeVisible();
     await qr.first().click();
-    await expect(page.getByText(/扫码登录|Scan to sign in|请使用已登录的移动端|mobile app/i).first()).toBeVisible({
+    await expect(
+      page.getByText(/扫码登录|Scan to sign in|请使用已登录的移动端|mobile app/i).first(),
+    ).toBeVisible({
       timeout: 5_000,
     });
   });

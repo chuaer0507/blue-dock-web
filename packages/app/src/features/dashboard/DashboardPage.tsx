@@ -22,6 +22,7 @@ import { useDashboardUiStore, type DashboardGroupKey } from '../../stores/dashbo
 import { bindPersistAfterLogin } from '../../stores/persist';
 import { cn } from '../../utils/cn';
 import { TaskModal } from '../task/TaskModal';
+import { groupDashboardTasks, weekDoneTasks } from './dashboard-utils';
 
 function greetingKey(): 'morning' | 'afternoon' | 'evening' {
   const h = new Date().getHours();
@@ -47,44 +48,6 @@ function formatDeadline(
   if (diffDays === 0) return t('deadline.today');
   if (diffDays === 1) return t('deadline.tomorrow');
   return end.toLocaleDateString();
-}
-
-function groupTasks(tasks: UserTaskView[]) {
-  const overdue: UserTaskView[] = [];
-  const today: UserTaskView[] = [];
-  const todo: UserTaskView[] = [];
-  const pending: UserTaskView[] = [];
-  const now = Date.now();
-  for (const task of tasks) {
-    if (task.completeAt) continue;
-    const startMs = task.startAt ? new Date(task.startAt).getTime() : NaN;
-    if (Number.isFinite(startMs) && startMs > now) {
-      pending.push(task);
-      continue;
-    }
-    if (task.overdue) overdue.push(task);
-    else if (task.today) today.push(task);
-    else todo.push(task);
-  }
-  return { overdue, today, todo, pending };
-}
-
-function startOfWeek(d = new Date()): Date {
-  const day = d.getDay();
-  const diff = day === 0 ? -6 : 1 - day;
-  return new Date(d.getFullYear(), d.getMonth(), d.getDate() + diff);
-}
-
-function weekDoneTasks(tasks: UserTaskView[]): UserTaskView[] {
-  const start = startOfWeek();
-  const end = new Date(start.getFullYear(), start.getMonth(), start.getDate() + 7);
-  const a = start.getTime();
-  const b = end.getTime();
-  return tasks.filter((task) => {
-    if (!task.completeAt) return false;
-    const t = new Date(task.completeAt).getTime();
-    return Number.isFinite(t) && t >= a && t < b;
-  });
 }
 
 function StatCard({
@@ -287,7 +250,7 @@ export function DashboardPage() {
   }, [departmentId]);
 
   const mineGroups = useMemo(
-    () => groupTasks(tasksMine.data?.items ?? []),
+    () => groupDashboardTasks(tasksMine.data?.items ?? []),
     [tasksMine.data?.items],
   );
   const weekDoneItems = useMemo(

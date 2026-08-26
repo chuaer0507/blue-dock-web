@@ -40,10 +40,10 @@
 
 [modules/dashboard](../../../blue-dock-java/docs/modules/dashboard/) · [guide/api.md](../guide/api.md)
 
-| 能力     | 接口                       |
-| -------- | -------------------------- |
-| 团队统计 | `GET dashboard/team/stats` |
-| 团队任务 | `GET dashboard/team/tasks` |
-| 个人计数 | `GET project/user/counts`  |
-| 个人任务 | `GET project/user/tasks`   |
+| 能力     | 接口                        |
+| -------- | --------------------------- |
+| 团队统计 | `GET dashboard/team/stats`  |
+| 团队任务 | `GET dashboard/team/tasks`  |
+| 个人计数 | `GET project/user/counts`   |
+| 个人任务 | `GET project/user/tasks`    |
 | 会员项目 | `GET project/user/projects` |

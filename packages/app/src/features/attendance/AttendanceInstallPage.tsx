@@ -38,12 +38,10 @@ export function AttendanceInstallPage() {
 
         {!query.isLoading && !query.isError ? (
           <div className="mt-4 flex flex-col gap-3">
-            {!open ? (
-              <p className="text-muted text-sm">{t('install.closed')}</p>
-            ) : null}
+            {!open ? <p className="text-muted text-sm">{t('install.closed')}</p> : null}
             {cmd ? (
               <>
-                <pre className="bg-default overflow-x-auto rounded-lg p-3 text-xs break-all whitespace-pre-wrap">
+                <pre className="bg-default overflow-x-auto whitespace-pre-wrap break-all rounded-lg p-3 text-xs">
                   {cmd}
                 </pre>
                 <Button size="sm" className="self-start" onPress={() => void onCopy()}>

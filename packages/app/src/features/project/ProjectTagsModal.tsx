@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react';
 import { toastRequestError } from '../../utils/toast-request-error';
-import {
-  Button,
-  Input,
-  Label,
-  Modal,
-  TextField,
-  toast,
-  useOverlayState,
-} from '@heroui/react';
+import { Button, Input, Label, Modal, TextField, toast, useOverlayState } from '@heroui/react';
 import {
   useDeleteProjectTag,
   useProjectTagList,
@@ -23,13 +15,7 @@ const MAX_TAGS = 50;
 const MAX_NAME = 20;
 
 /** 项目标签 CRUD（管理权限） */
-export function ProjectTagsModal({
-  projectId,
-  canEdit,
-}: {
-  projectId: number;
-  canEdit: boolean;
-}) {
+export function ProjectTagsModal({ projectId, canEdit }: { projectId: number; canEdit: boolean }) {
   const { t } = useTranslation('project');
   const state = useOverlayState();
   const tags = useProjectTagList(projectId, state.isOpen);
@@ -236,11 +222,7 @@ export function ProjectTagsModal({
                       onClick={() => setDraftColor(c)}
                     />
                   ))}
-                  <TextField
-                    className="w-28"
-                    value={draftColor}
-                    onChange={setDraftColor}
-                  >
+                  <TextField className="w-28" value={draftColor} onChange={setDraftColor}>
                     <Label className="sr-only">{t('tags.color')}</Label>
                     <Input />
                   </TextField>

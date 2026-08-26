@@ -15,7 +15,11 @@ export function letterAvatarUrl(name: string, size = 128): string {
 }
 
 /** 有头像 URL 则用之，否则回退字母头像 */
-export function resolveAvatarSrc(image: string | undefined | null, name: string, size = 128): string {
+export function resolveAvatarSrc(
+  image: string | undefined | null,
+  name: string,
+  size = 128,
+): string {
   const trimmed = image?.trim();
   if (trimmed) return trimmed;
   return letterAvatarUrl(name, size);

@@ -54,15 +54,12 @@ export function TaskSuggest({ draft, onChangeDraft, defaultProjectId }: Props) {
   const resolvedProjectId = Number(projectId) || defaultProjectId || 0;
   const selected = list.find((p: ProjectView) => p.id === resolvedProjectId);
   const myOwner = selected?.myOwner ?? 0;
-  const editOpen = Boolean(
-    selected && !selected.departmentReadonly && !selected.archivedAt,
-  );
+  const editOpen = Boolean(selected && !selected.departmentReadonly && !selected.archivedAt);
   const permissionQuery = useProjectPermission(
     resolvedProjectId > 0 ? resolvedProjectId : undefined,
     Boolean(selected) && !selected?.isPersonal && myOwner === 0,
   );
-  const canAdd =
-    editOpen && projectMemberHasPoint(myOwner, permissionQuery.data, 'TASK_ADD');
+  const canAdd = editOpen && projectMemberHasPoint(myOwner, permissionQuery.data, 'TASK_ADD');
 
   if (!trigger) return null;
 

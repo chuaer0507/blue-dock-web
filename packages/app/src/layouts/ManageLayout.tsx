@@ -178,10 +178,7 @@ export function ManageLayout() {
         <main className="relative min-h-0 flex-1 overflow-auto pb-[calc(var(--tabbar-height)+var(--safe-area-bottom))]">
           <Outlet />
           <MicroAppKeepAliveLayer />
-          <CreateProjectModal
-            hideTrigger
-            onCreated={(p) => navigate(`/manage/project/${p.id}`)}
-          />
+          <CreateProjectModal hideTrigger onCreated={(p) => navigate(`/manage/project/${p.id}`)} />
           <CreateGroupModal hideTrigger />
         </main>
         <nav
@@ -245,10 +242,7 @@ export function ManageLayout() {
       <main className="relative min-h-0 min-w-0 flex-1 overflow-auto">
         <Outlet />
         <MicroAppKeepAliveLayer />
-        <CreateProjectModal
-          hideTrigger
-          onCreated={(p) => navigate(`/manage/project/${p.id}`)}
-        />
+        <CreateProjectModal hideTrigger onCreated={(p) => navigate(`/manage/project/${p.id}`)} />
         <CreateGroupModal hideTrigger />
       </main>
       <AssistantPanel />

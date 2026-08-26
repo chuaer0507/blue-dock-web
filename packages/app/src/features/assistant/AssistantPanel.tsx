@@ -196,11 +196,7 @@ export function AssistantPanel() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const persist = (
-    sid: string,
-    msgs: AssistantChatMessage[],
-    images?: Record<string, string>,
-  ) => {
+  const persist = (sid: string, msgs: AssistantChatMessage[], images?: Record<string, string>) => {
     if (!msgs.length) return;
     const title = msgs.find((m) => m.role === 'user')?.content.slice(0, 40) || t('title');
     const payload: SaveAssistantSessionInput = {

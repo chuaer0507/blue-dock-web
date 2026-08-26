@@ -54,9 +54,7 @@ export function BroadcastFilesModal() {
       { dialogIds: picked, files },
       {
         onSuccess: () => {
-          toast.success(
-            t('broadcastFiles.done', { files: files.length, dialogs: picked.length }),
-          );
+          toast.success(t('broadcastFiles.done', { files: files.length, dialogs: picked.length }));
           state.close();
         },
         onError: (err) => toastRequestError(err, t('error')),
@@ -101,7 +99,10 @@ export function BroadcastFilesModal() {
               {files.length > 0 ? (
                 <ul className="border-border divide-border max-h-32 divide-y overflow-auto rounded-lg border text-xs">
                   {files.map((f, i) => (
-                    <li key={`${f.name}-${f.size}-${i}`} className="flex items-center gap-2 px-3 py-1.5">
+                    <li
+                      key={`${f.name}-${f.size}-${i}`}
+                      className="flex items-center gap-2 px-3 py-1.5"
+                    >
                       <span className="min-w-0 flex-1 truncate">{f.name}</span>
                       <Button
                         size="sm"

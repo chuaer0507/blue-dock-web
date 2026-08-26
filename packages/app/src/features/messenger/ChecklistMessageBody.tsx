@@ -25,9 +25,7 @@ export function ChecklistMessageBody({ message, text, mine, interactive, muted }
     <div className="flex flex-col gap-1.5">
       {segments.map((seg, i) => {
         if (seg.kind === 'text') {
-          return (
-            <MentionedBody key={`t-${i}`} text={seg.value} allLabel={t('mention.all')} />
-          );
+          return <MentionedBody key={`t-${i}`} text={seg.value} allLabel={t('mention.all')} />;
         }
         return (
           <Checkbox

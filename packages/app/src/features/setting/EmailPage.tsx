@@ -94,12 +94,7 @@ export function EmailPage() {
       {!verified && user ? (
         <div className="flex flex-col gap-2">
           <p className="text-muted text-sm">{t('email.resendHint')}</p>
-          <Button
-            variant="secondary"
-            className="self-start"
-            isDisabled={busy}
-            onPress={onResend}
-          >
+          <Button variant="secondary" className="self-start" isDisabled={busy} onPress={onResend}>
             {resend.isPending ? t('email.sending') : t('email.resend')}
           </Button>
         </div>

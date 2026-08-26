@@ -187,8 +187,7 @@ export function SingleDialogPage() {
     );
   };
 
-  const title =
-    dialogQuery.data?.name?.trim() || (dialogId ? `#${dialogId}` : t('title'));
+  const title = dialogQuery.data?.name?.trim() || (dialogId ? `#${dialogId}` : t('title'));
 
   const onSend = (e?: FormEvent) => {
     e?.preventDefault();
@@ -361,12 +360,7 @@ export function SingleDialogPage() {
               onPaste={onPasteComposer}
             />
           </TextField>
-          <Button
-            type="submit"
-            size="sm"
-            variant="primary"
-            isDisabled={!draft.trim() || sending}
-          >
+          <Button type="submit" size="sm" variant="primary" isDisabled={!draft.trim() || sending}>
             {sending ? t('composer.sending') : t('composer.send')}
           </Button>
         </div>

@@ -162,11 +162,7 @@ export function TagsPage() {
                       <Label>{t('tags.editLabel')}</Label>
                       <Input maxLength={NAME_MAX} />
                     </TextField>
-                    <Button
-                      size="sm"
-                      isDisabled={busy || !editName.trim()}
-                      onPress={onSaveEdit}
-                    >
+                    <Button size="sm" isDisabled={busy || !editName.trim()} onPress={onSaveEdit}>
                       {t('save')}
                     </Button>
                     <Button

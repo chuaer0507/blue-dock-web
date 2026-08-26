@@ -307,7 +307,12 @@ function MsgAttachmentPanel({
         <p className="text-muted mt-4 text-xs">{tCommon('single.fileMsgDownloadHint')}</p>
       )}
       <div className="mt-4 flex flex-wrap gap-2">
-        <Button size="sm" variant="primary" isDisabled={downloading} onPress={() => void onDownload()}>
+        <Button
+          size="sm"
+          variant="primary"
+          isDisabled={downloading}
+          onPress={() => void onDownload()}
+        >
           {downloading ? tFile('download.working') : tFile('download.one')}
         </Button>
         <Button size="sm" variant="secondary" onPress={openDialog}>

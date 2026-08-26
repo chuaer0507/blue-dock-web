@@ -136,7 +136,10 @@ export function CreateGroupModal({
               <Form className="flex flex-col gap-4" onSubmit={onSubmit}>
                 <div className="flex flex-wrap items-center gap-3">
                   <Avatar size="lg" className="shrink-0">
-                    <Avatar.Image alt="" src={resolveAvatarSrc(avatar, name || t('createGroup.title'))} />
+                    <Avatar.Image
+                      alt=""
+                      src={resolveAvatarSrc(avatar, name || t('createGroup.title'))}
+                    />
                     <Avatar.Fallback>{(name || '?').slice(0, 1)}</Avatar.Fallback>
                   </Avatar>
                   <div className="flex flex-wrap gap-2">

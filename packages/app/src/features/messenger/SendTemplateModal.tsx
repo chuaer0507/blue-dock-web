@@ -106,7 +106,10 @@ export function SendTemplateModal({ dialogId, disabled }: Props) {
                       }
                       className="min-w-0 flex-1"
                     >
-                      <TextArea rows={2} placeholder={t('template.linePlaceholder', { n: i + 1 })} />
+                      <TextArea
+                        rows={2}
+                        placeholder={t('template.linePlaceholder', { n: i + 1 })}
+                      />
                     </TextField>
                     {lines.length > 1 ? (
                       <Button

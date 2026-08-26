@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react';
 import { toastRequestError } from '../../utils/toast-request-error';
-import { Button, Checkbox, Input, Label, ListBox, Select, Tabs, TextField, toast } from '@heroui/react';
+import {
+  Button,
+  Checkbox,
+  Input,
+  Label,
+  ListBox,
+  Select,
+  Tabs,
+  TextField,
+  toast,
+} from '@heroui/react';
 import {
   normalizeMicroMenuLocation,
   useAppCatalog,
@@ -384,11 +394,7 @@ function MenuTab() {
                         ['external', 'types.external'],
                       ] as const
                     ).map(([id, labelKey]) => (
-                      <ListBox.Item
-                        key={id}
-                        id={id}
-                        textValue={t(`appstore.${labelKey}`)}
-                      >
+                      <ListBox.Item key={id} id={id} textValue={t(`appstore.${labelKey}`)}>
                         {t(`appstore.${labelKey}`)}
                         <ListBox.ItemIndicator />
                       </ListBox.Item>

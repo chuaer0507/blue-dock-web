@@ -9,7 +9,14 @@ import {
   KeyIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline';
-import { identityHas, queryClient, resolveAvatarSrc, useCurrentUser, useLogout, useTaskBrowse } from '@blue-dock/api';
+import {
+  identityHas,
+  queryClient,
+  resolveAvatarSrc,
+  useCurrentUser,
+  useLogout,
+  useTaskBrowse,
+} from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 import { useNavigate } from 'react-router';
 import { clearPersistAfterLogout } from '../stores/persist';

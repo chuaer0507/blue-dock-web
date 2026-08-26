@@ -68,9 +68,7 @@ export function ComplaintSubmitModal({ dialogId, compact }: Props) {
         const path = (uploaded.path || '').trim();
         if (!path) continue;
         setImages((prev) =>
-          prev.length >= MAX_IMAGES
-            ? prev
-            : [...prev, { path, previewUrl: uploaded.url || path }],
+          prev.length >= MAX_IMAGES ? prev : [...prev, { path, previewUrl: uploaded.url || path }],
         );
       } catch (err) {
         toastRequestError(err, t('complaint.imageFailed'));
@@ -196,7 +194,9 @@ export function ComplaintSubmitModal({ dialogId, compact }: Props) {
                       onChange={(e) => void onPickFiles(e.target.files)}
                     />
                   </div>
-                  <p className="text-muted text-xs">{t('complaint.imagesHint', { max: MAX_IMAGES })}</p>
+                  <p className="text-muted text-xs">
+                    {t('complaint.imagesHint', { max: MAX_IMAGES })}
+                  </p>
                   {images.length > 0 ? (
                     <ul className="flex flex-wrap gap-2">
                       {images.map((img) => (

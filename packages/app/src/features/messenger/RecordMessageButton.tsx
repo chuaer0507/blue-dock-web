@@ -24,13 +24,7 @@ type Props = {
 };
 
 /** Composer：录音 → 可选发送语音或 `convertRecord` 填入草稿 */
-export function RecordMessageButton({
-  dialogId,
-  replyId,
-  disabled,
-  onSent,
-  onInsertText,
-}: Props) {
+export function RecordMessageButton({ dialogId, replyId, disabled, onSent, onInsertText }: Props) {
   const { t } = useTranslation('messenger');
   const sendRecord = useSendDialogRecord();
   const convertRecord = useConvertDialogRecord();
@@ -243,10 +237,12 @@ export function RecordMessageButton({
                   {t('record.discard')}
                 </Button>
                 {onInsertText ? (
-                  <Button variant="secondary" isDisabled={busy} onPress={() => void onConvertToDraft()}>
-                    {busy && convertRecord.isPending
-                      ? t('record.converting')
-                      : t('record.toDraft')}
+                  <Button
+                    variant="secondary"
+                    isDisabled={busy}
+                    onPress={() => void onConvertToDraft()}
+                  >
+                    {busy && convertRecord.isPending ? t('record.converting') : t('record.toDraft')}
                   </Button>
                 ) : null}
                 <Button variant="primary" isDisabled={busy} onPress={() => void onSendVoice()}>

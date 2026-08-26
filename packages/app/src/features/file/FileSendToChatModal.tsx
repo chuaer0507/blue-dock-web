@@ -84,7 +84,11 @@ export function FileSendToChatModal({ fileId, fileName, size = 'sm' }: Props) {
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" isDisabled={submitting} onPress={() => onOpenChange(false)}>
+              <Button
+                variant="secondary"
+                isDisabled={submitting}
+                onPress={() => onOpenChange(false)}
+              >
                 {t('sendChat.cancel')}
               </Button>
               <Button

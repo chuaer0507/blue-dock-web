@@ -6,7 +6,11 @@ import { useTranslation } from '@blue-dock/i18n';
 
 function formatDurationMinutes(
   mins: number | undefined,
-  labels: { minutes: (n: number) => string; hours: (n: number) => string; hoursMinutes: (h: number, m: number) => string },
+  labels: {
+    minutes: (n: number) => string;
+    hours: (n: number) => string;
+    hoursMinutes: (h: number, m: number) => string;
+  },
 ) {
   const n = Math.max(0, Math.floor(mins ?? 0));
   if (n < 60) return labels.minutes(n);

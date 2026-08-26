@@ -307,10 +307,14 @@ export function useChangeTaskFlow() {
 }
 
 /** 动态 `record.flow` 是否可按日志恢复工作流 */
-export function isProjectLogFlowResettable(record: Record<string, unknown> | null | undefined): boolean {
+export function isProjectLogFlowResettable(
+  record: Record<string, unknown> | null | undefined,
+): boolean {
   if (!record || typeof record !== 'object') return false;
   const flow = record.flow;
-  return Boolean(flow && typeof flow === 'object' && !Array.isArray(flow) && Object.keys(flow).length > 0);
+  return Boolean(
+    flow && typeof flow === 'object' && !Array.isArray(flow) && Object.keys(flow).length > 0,
+  );
 }
 
 /** `GET project/task/resetFromLog`：按状态变更日志快照恢复工作流 */
@@ -814,9 +818,7 @@ export function useTaskTemplateVisible(currentProjectId: number | undefined, ena
     queryKey: taskTemplateKeys.visible(currentProjectId ?? 0),
     queryFn: () =>
       get<TaskTemplateView[]>('project/task/templateVisible', {
-        ...(currentProjectId && currentProjectId > 0
-          ? { currentProjectId }
-          : {}),
+        ...(currentProjectId && currentProjectId > 0 ? { currentProjectId } : {}),
       }),
     enabled: enabled && typeof currentProjectId === 'number' && currentProjectId > 0,
     staleTime: 60_000,

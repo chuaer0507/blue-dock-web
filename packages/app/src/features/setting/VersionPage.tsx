@@ -131,7 +131,7 @@ export function VersionPage() {
           </div>
         ) : null}
         {!logQuery.isLoading && !logQuery.isError ? (
-          <pre className="border-border bg-default/30 max-h-80 overflow-auto rounded-lg border p-3 text-xs whitespace-pre-wrap">
+          <pre className="border-border bg-default/30 max-h-80 overflow-auto whitespace-pre-wrap rounded-lg border p-3 text-xs">
             {logQuery.data?.updateLog?.trim() || t('version.changelogEmpty')}
           </pre>
         ) : null}

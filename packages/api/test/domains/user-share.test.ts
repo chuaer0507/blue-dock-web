@@ -22,7 +22,13 @@ describe('user-share helpers', () => {
       }),
     ).toBe(12);
     expect(
-      dialogIdFromShareItem({ type: 'children', name: 'f', icon: '', url: '', extend: { uploadFileId: 1 } }),
+      dialogIdFromShareItem({
+        type: 'children',
+        name: 'f',
+        icon: '',
+        url: '',
+        extend: { uploadFileId: 1 },
+      }),
     ).toBeNull();
   });
 

@@ -19,7 +19,9 @@ let customHandler: AssistantOperationCustomHandler | null = null;
  * 注册应用侧自定义操作（如 `navigate`）。
  * 内置已处理 `get_page_context`；未注册且未知 action 时回包失败。
  */
-export function setAssistantOperationHandler(handler: AssistantOperationCustomHandler | null): void {
+export function setAssistantOperationHandler(
+  handler: AssistantOperationCustomHandler | null,
+): void {
   customHandler = handler;
 }
 

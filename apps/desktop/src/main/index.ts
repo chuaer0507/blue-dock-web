@@ -27,10 +27,7 @@ function isFiniteNumber(n: unknown): n is number {
   return typeof n === 'number' && Number.isFinite(n);
 }
 
-function windowOpts(size?: {
-  width?: number;
-  height?: number;
-}): BrowserWindowConstructorOptions {
+function windowOpts(size?: { width?: number; height?: number }): BrowserWindowConstructorOptions {
   return {
     width: size?.width ?? 960,
     height: size?.height ?? 720,
@@ -146,22 +143,25 @@ function openChildWindow(path: string, size?: { width?: number; height?: number 
 }
 
 function registerIpc() {
-  ipcMain.handle('desktop:notify', (_e, options: { title: string; body?: string; deepLink?: string }) => {
-    if (!Notification.isSupported()) return;
-    const n = new Notification({
-      title: options.title,
-      body: options.body ?? '',
-    });
-    n.on('click', () => {
-      if (options.deepLink) {
-        showMainWindow();
-        mainWindow?.webContents.send('desktop:navigate', options.deepLink);
-      } else {
-        showMainWindow();
-      }
-    });
-    n.show();
-  });
+  ipcMain.handle(
+    'desktop:notify',
+    (_e, options: { title: string; body?: string; deepLink?: string }) => {
+      if (!Notification.isSupported()) return;
+      const n = new Notification({
+        title: options.title,
+        body: options.body ?? '',
+      });
+      n.on('click', () => {
+        if (options.deepLink) {
+          showMainWindow();
+          mainWindow?.webContents.send('desktop:navigate', options.deepLink);
+        } else {
+          showMainWindow();
+        }
+      });
+      n.show();
+    },
+  );
 
   ipcMain.handle('desktop:setBadge', (_e, count: number) => {
     const n = Math.max(0, Math.floor(Number(count) || 0));

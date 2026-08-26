@@ -1,10 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { toastRequestError } from '../../utils/toast-request-error';
 import { Button, Modal, toast, useOverlayState } from '@heroui/react';
-import {
-  useMergeForwardDialogMessages,
-  type DialogMessageView,
-} from '@blue-dock/api';
+import { useMergeForwardDialogMessages, type DialogMessageView } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 import { ShareTargetPicker } from '../common/ShareTargetPicker';
 

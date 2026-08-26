@@ -6,9 +6,7 @@ import { e2eCredentials, loginWithEnv } from './helpers/login';
  * E2E_EMAIL / E2E_PASSWORD（可选 E2E_CAPTCHA 若需验证码）
  */
 test.describe('登录进壳层', () => {
-  test.beforeEach(({ page: _page }, testInfo) => {
-    testInfo.skip(!e2eCredentials(), '未设置 E2E_EMAIL / E2E_PASSWORD，跳过');
-  });
+  test.skip(!e2eCredentials(), '未设置 E2E_EMAIL / E2E_PASSWORD，跳过');
 
   test('使用环境变量账号登录', async ({ page }) => {
     await loginWithEnv(page);

@@ -45,7 +45,9 @@ export function EmailAdminPage() {
     setForm((prev) => {
       if (!prev) return prev;
       const next = (prev.messageUnreadTimeRanges ?? []).map((row, i) =>
-        i === index ? ([side === 0 ? value : row[0], side === 1 ? value : row[1]] as string[]) : row,
+        i === index
+          ? ([side === 0 ? value : row[0], side === 1 ? value : row[1]] as string[])
+          : row,
       );
       return { ...prev, messageUnreadTimeRanges: next };
     });
@@ -67,7 +69,9 @@ export function EmailAdminPage() {
       prev
         ? {
             ...prev,
-            messageUnreadTimeRanges: (prev.messageUnreadTimeRanges ?? []).filter((_, i) => i !== index),
+            messageUnreadTimeRanges: (prev.messageUnreadTimeRanges ?? []).filter(
+              (_, i) => i !== index,
+            ),
           }
         : prev,
     );
@@ -231,12 +235,7 @@ export function EmailAdminPage() {
                   <Label>{t('email.rangeEnd')}</Label>
                   <Input placeholder="09:00" />
                 </TextField>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="mb-0.5"
-                  onPress={() => removeRange(i)}
-                >
+                <Button size="sm" variant="ghost" className="mb-0.5" onPress={() => removeRange(i)}>
                   {t('email.rangeRemove')}
                 </Button>
               </div>

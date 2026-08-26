@@ -240,12 +240,7 @@ export function FilePage() {
   }, [textPreview.data, textDirty]);
 
   useEffect(() => {
-    if (
-      !fileId ||
-      !textPreview.isError ||
-      !detailQuery.data ||
-      !isTextLikeFile(detailQuery.data)
-    ) {
+    if (!fileId || !textPreview.isError || !detailQuery.data || !isTextLikeFile(detailQuery.data)) {
       return;
     }
     let cancelled = false;
@@ -399,8 +394,7 @@ export function FilePage() {
     setUploadProgress(0);
     setContentReplacing(true);
 
-    const parentId =
-      detailQuery.data.parentId > 0 ? detailQuery.data.parentId : folderId;
+    const parentId = detailQuery.data.parentId > 0 ? detailQuery.data.parentId : folderId;
 
     void (async () => {
       try {
@@ -1167,120 +1161,125 @@ export function FilePage() {
                 ) : null}
               </div>
               <Table variant="secondary" className="w-full">
-              <Table.ScrollContainer>
-                <Table.Content
-                  aria-label={t('title')}
-                  className="min-w-140"
-                  selectionMode="multiple"
-                  selectedKeys={selectedIds}
-                  onSelectionChange={(keys) => {
-                    if (keys === 'all') {
-                      setSelectedIds(new Set(browseEntries.map((e) => String(e.id))));
-                      return;
-                    }
-                    setSelectedIds(new Set([...keys].map(String)));
-                  }}
-                >
-                  <Table.Header>
-                    <Table.Column isRowHeader id="name">
-                      {t('file')}
-                    </Table.Column>
-                    <Table.Column id="size">{t('size')}</Table.Column>
-                    <Table.Column id="updated">{t('updatedAt')}</Table.Column>
-                    <Table.Column id="actions">{t('actions.more')}</Table.Column>
-                  </Table.Header>
-                  <Table.Body items={browseEntries}>
-                    {(item: FileView) => {
-                      const folder = isFolderEntry(item);
-                      return (
-                        <Table.Row id={item.id} textValue={item.name}>
-                          <Table.Cell>
-                            <button
-                              type="button"
-                              className="flex max-w-full items-center gap-2 text-left"
-                              onClick={() => onOpen(item)}
-                            >
-                              {folder ? (
-                                <FolderIcon className="text-accent size-4 shrink-0" aria-hidden />
-                              ) : (
-                                <DocumentIcon className="text-muted size-4 shrink-0" aria-hidden />
-                              )}
-                              <span className={cn('truncate', folder && 'font-medium')}>
-                                {item.name}
-                              </span>
-                              {item.isShared ? (
-                                <span className="text-muted text-[10px]">{t('shared')}</span>
-                              ) : null}
-                            </button>
-                          </Table.Cell>
-                          <Table.Cell>
-                            <span className="text-muted">
-                              {folder ? t('folder') : formatFileSize(item.size)}
-                            </span>
-                          </Table.Cell>
-                          <Table.Cell>
-                            <span className="text-muted">
-                              {item.updatedAt ? new Date(item.updatedAt).toLocaleDateString() : '—'}
-                            </span>
-                          </Table.Cell>
-                          <Table.Cell>
-                            <div className="flex flex-wrap gap-1">
-                              <Button
-                                size="sm"
-                                variant="secondary"
-                                isDisabled={
-                                  packDownload.isPending ||
-                                  singleDownloading ||
-                                  (folder && !canPack)
-                                }
-                                onPress={() => {
-                                  if (folder) onPackDownload([item.id]);
-                                  else void onDownloadFile(item);
-                                }}
-                              >
-                                {folder ? t('pack.one') : t('download.one')}
-                              </Button>
-                              <Button
-                                size="sm"
-                                variant="secondary"
-                                onPress={() => openRename(item)}
-                              >
-                                {t('rename.title')}
-                              </Button>
-                              <Button
-                                size="sm"
-                                variant="secondary"
-                                onPress={() => openXfer(item, 'move')}
-                              >
-                                {t('xfer.move')}
-                              </Button>
-                              <Button
-                                size="sm"
-                                variant="secondary"
-                                onPress={() => openXfer(item, 'copy')}
-                              >
-                                {t('xfer.copy')}
-                              </Button>
-                              {!folder ? (
-                                <FileSendToChatModal fileId={item.id} fileName={item.name} />
-                              ) : null}
-                              <Button
-                                size="sm"
-                                variant="danger"
-                                isDisabled={removeFile.isPending}
-                                onPress={() => onRemove(item)}
-                              >
-                                {t('remove')}
-                              </Button>
-                            </div>
-                          </Table.Cell>
-                        </Table.Row>
-                      );
+                <Table.ScrollContainer>
+                  <Table.Content
+                    aria-label={t('title')}
+                    className="min-w-140"
+                    selectionMode="multiple"
+                    selectedKeys={selectedIds}
+                    onSelectionChange={(keys) => {
+                      if (keys === 'all') {
+                        setSelectedIds(new Set(browseEntries.map((e) => String(e.id))));
+                        return;
+                      }
+                      setSelectedIds(new Set([...keys].map(String)));
                     }}
-                  </Table.Body>
-                </Table.Content>
-              </Table.ScrollContainer>
-            </Table>
+                  >
+                    <Table.Header>
+                      <Table.Column isRowHeader id="name">
+                        {t('file')}
+                      </Table.Column>
+                      <Table.Column id="size">{t('size')}</Table.Column>
+                      <Table.Column id="updated">{t('updatedAt')}</Table.Column>
+                      <Table.Column id="actions">{t('actions.more')}</Table.Column>
+                    </Table.Header>
+                    <Table.Body items={browseEntries}>
+                      {(item: FileView) => {
+                        const folder = isFolderEntry(item);
+                        return (
+                          <Table.Row id={item.id} textValue={item.name}>
+                            <Table.Cell>
+                              <button
+                                type="button"
+                                className="flex max-w-full items-center gap-2 text-left"
+                                onClick={() => onOpen(item)}
+                              >
+                                {folder ? (
+                                  <FolderIcon className="text-accent size-4 shrink-0" aria-hidden />
+                                ) : (
+                                  <DocumentIcon
+                                    className="text-muted size-4 shrink-0"
+                                    aria-hidden
+                                  />
+                                )}
+                                <span className={cn('truncate', folder && 'font-medium')}>
+                                  {item.name}
+                                </span>
+                                {item.isShared ? (
+                                  <span className="text-muted text-[10px]">{t('shared')}</span>
+                                ) : null}
+                              </button>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <span className="text-muted">
+                                {folder ? t('folder') : formatFileSize(item.size)}
+                              </span>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <span className="text-muted">
+                                {item.updatedAt
+                                  ? new Date(item.updatedAt).toLocaleDateString()
+                                  : '—'}
+                              </span>
+                            </Table.Cell>
+                            <Table.Cell>
+                              <div className="flex flex-wrap gap-1">
+                                <Button
+                                  size="sm"
+                                  variant="secondary"
+                                  isDisabled={
+                                    packDownload.isPending ||
+                                    singleDownloading ||
+                                    (folder && !canPack)
+                                  }
+                                  onPress={() => {
+                                    if (folder) onPackDownload([item.id]);
+                                    else void onDownloadFile(item);
+                                  }}
+                                >
+                                  {folder ? t('pack.one') : t('download.one')}
+                                </Button>
+                                <Button
+                                  size="sm"
+                                  variant="secondary"
+                                  onPress={() => openRename(item)}
+                                >
+                                  {t('rename.title')}
+                                </Button>
+                                <Button
+                                  size="sm"
+                                  variant="secondary"
+                                  onPress={() => openXfer(item, 'move')}
+                                >
+                                  {t('xfer.move')}
+                                </Button>
+                                <Button
+                                  size="sm"
+                                  variant="secondary"
+                                  onPress={() => openXfer(item, 'copy')}
+                                >
+                                  {t('xfer.copy')}
+                                </Button>
+                                {!folder ? (
+                                  <FileSendToChatModal fileId={item.id} fileName={item.name} />
+                                ) : null}
+                                <Button
+                                  size="sm"
+                                  variant="danger"
+                                  isDisabled={removeFile.isPending}
+                                  onPress={() => onRemove(item)}
+                                >
+                                  {t('remove')}
+                                </Button>
+                              </div>
+                            </Table.Cell>
+                          </Table.Row>
+                        );
+                      }}
+                    </Table.Body>
+                  </Table.Content>
+                </Table.ScrollContainer>
+              </Table>
             </>
           ) : null}
         </Tabs.Panel>

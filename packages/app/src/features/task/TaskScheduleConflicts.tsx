@@ -55,7 +55,9 @@ export function TaskScheduleConflicts({
 
   return (
     <div className="border-warning/40 bg-warning/5 flex flex-col gap-1.5 rounded-lg border px-3 py-2">
-      <p className="text-warning text-xs font-medium">{t('conflict.title', { count: list.length })}</p>
+      <p className="text-warning text-xs font-medium">
+        {t('conflict.title', { count: list.length })}
+      </p>
       <ul className="flex flex-col gap-1">
         {list.map((row) => (
           <li key={row.id} className="flex flex-wrap items-baseline justify-between gap-2 text-xs">

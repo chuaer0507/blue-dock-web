@@ -93,9 +93,13 @@ export function ProPage() {
 
       <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center gap-8 px-6 py-10">
         <div className="flex flex-col gap-3">
-          <p className="text-accent text-xs font-medium tracking-wide uppercase">{t('pro.eyebrow')}</p>
+          <p className="text-accent text-xs font-medium uppercase tracking-wide">
+            {t('pro.eyebrow')}
+          </p>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t('pro.title')}</h1>
-          <p className="text-muted max-w-xl text-sm leading-relaxed sm:text-base">{t('pro.body')}</p>
+          <p className="text-muted max-w-xl text-sm leading-relaxed sm:text-base">
+            {t('pro.body')}
+          </p>
         </div>
 
         <ul className="border-border divide-border divide-y overflow-hidden rounded-xl border">

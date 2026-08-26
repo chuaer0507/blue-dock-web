@@ -58,7 +58,8 @@ export function parseSystemUpdateLog(raw: unknown): SystemUpdateLogView {
 export function useSystemVersion(enabled = true) {
   return useQuery({
     queryKey: systemClientKeys.version(),
-    queryFn: async () => parseSystemVersion(await get<unknown>('system/version', undefined, anonGet)),
+    queryFn: async () =>
+      parseSystemVersion(await get<unknown>('system/version', undefined, anonGet)),
     staleTime: 60_000,
     enabled,
   });

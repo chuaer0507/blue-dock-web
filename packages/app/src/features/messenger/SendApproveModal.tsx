@@ -144,11 +144,21 @@ export function SendApproveModal() {
                 <Label>{t('sendApprove.cardTitle')}</Label>
                 <Input placeholder={t('sendApprove.cardTitlePlaceholder')} />
               </TextField>
-              <TextField name="approveAction" value={action} onChange={setAction} className="w-full">
+              <TextField
+                name="approveAction"
+                value={action}
+                onChange={setAction}
+                className="w-full"
+              >
                 <Label>{t('sendApprove.action')}</Label>
                 <Input placeholder={t('sendApprove.actionPlaceholder')} />
               </TextField>
-              <TextField name="approveData" value={dataJson} onChange={setDataJson} className="w-full">
+              <TextField
+                name="approveData"
+                value={dataJson}
+                onChange={setDataJson}
+                className="w-full"
+              >
                 <Label>{t('sendApprove.data')}</Label>
                 <TextArea rows={3} placeholder={t('sendApprove.dataPlaceholder')} />
               </TextField>

@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Input, Label, TextField, toast } from '@heroui/react';
-import {
-  useCurrentUser,
-  useUserSearch,
-  type UserSearchHit,
-} from '@blue-dock/api';
+import { useCurrentUser, useUserSearch, type UserSearchHit } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 
 type Props = {

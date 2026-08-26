@@ -27,11 +27,7 @@ export function PdfPreview({ fileId }: { fileId: number }) {
 
   return (
     <div className="border-border mt-3 overflow-hidden rounded-lg border bg-black/5">
-      <iframe
-        title={t('pdf.title')}
-        src={objectUrl}
-        className="h-[28rem] w-full"
-      />
+      <iframe title={t('pdf.title')} src={objectUrl} className="h-[28rem] w-full" />
     </div>
   );
 }

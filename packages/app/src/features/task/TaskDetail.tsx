@@ -316,16 +316,10 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
   const projectTags = useProjectTagList(task?.projectId, Boolean(task?.projectId));
   const priorities = useTaskPriorities(Boolean(taskId));
   const membersQuery = useProjectMembers(task?.projectId, 1, Boolean(task?.projectId));
-  const projectList = useProjectList(
-    { archived: 'no', type: 'all' },
-    undefined,
-  );
+  const projectList = useProjectList({ archived: 'no', type: 'all' }, undefined);
   const [moveProjectId, setMoveProjectId] = useState('');
   const [moveColumnId, setMoveColumnId] = useState('');
-  const moveColumns = useProjectColumns(
-    Number(moveProjectId) || undefined,
-    undefined,
-  );
+  const moveColumns = useProjectColumns(Number(moveProjectId) || undefined, undefined);
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -418,7 +412,8 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
     relatedSearchDebounced.length > 0,
   );
   const relatedHits = (relatedSearch.data ?? []).filter(
-    (h: SearchHitView) => h.id !== taskId && !(relatedQuery.data?.items ?? []).some((i) => i.relatedTaskId === h.id),
+    (h: SearchHitView) =>
+      h.id !== taskId && !(relatedQuery.data?.items ?? []).some((i) => i.relatedTaskId === h.id),
   );
 
   const templateVisible = useTaskTemplateVisible(task?.projectId, Boolean(task?.projectId));
@@ -430,9 +425,7 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
   );
   const localTemplateIds = new Set((templates.data ?? []).map((t) => t.id));
   const sharedTemplates = (
-    templateSearchDebounced
-      ? (templateSearch.data?.items ?? [])
-      : (templateVisible.data ?? [])
+    templateSearchDebounced ? (templateSearch.data?.items ?? []) : (templateVisible.data ?? [])
   ).filter((tpl) => !localTemplateIds.has(tpl.id));
 
   useEffect(() => {
@@ -470,8 +463,7 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
   ];
 
   const timeDirty =
-    Boolean(task) &&
-    (!sameInstant(nextStart, task?.startAt) || !sameInstant(nextEnd, task?.endAt));
+    Boolean(task) && (!sameInstant(nextStart, task?.startAt) || !sameInstant(nextEnd, task?.endAt));
   const fieldsDirty =
     Boolean(task) &&
     (name.trim() !== (task?.name ?? '') ||
@@ -1104,7 +1096,12 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
             </Button>
           ) : null}
           {canArchive ? (
-            <Button size="sm" variant="danger" onPress={onArchive} isDisabled={archiveTask.isPending}>
+            <Button
+              size="sm"
+              variant="danger"
+              onPress={onArchive}
+              isDisabled={archiveTask.isPending}
+            >
               <ArchiveBoxIcon className="size-4" aria-hidden />
               {t('archive')}
             </Button>
@@ -1124,10 +1121,7 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
           value={done ? t('completed') : t('open')}
           accent={done ? undefined : 'open'}
         />
-        <Meta
-          label={t('fields.visibility')}
-          value={t(`visibility.${task.visibility || 1}`)}
-        />
+        <Meta label={t('fields.visibility')} value={t(`visibility.${task.visibility || 1}`)} />
       </div>
 
       <Form
@@ -1174,11 +1168,7 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
                   {t('fields.none')}
                 </ListBox.Item>
                 {(priorities.data ?? []).map((p: TaskPriorityItem) => (
-                  <ListBox.Item
-                    key={p.priority}
-                    id={String(p.priority)}
-                    textValue={p.name}
-                  >
+                  <ListBox.Item key={p.priority} id={String(p.priority)} textValue={p.name}>
                     <span className="inline-flex items-center gap-2">
                       <span
                         className="size-2.5 rounded-full"
@@ -1291,7 +1281,9 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
               })}
             </div>
           )}
-          <p className="text-muted text-xs">{t('assignees.ownerHint', { max: MAX_TASK_ASSIGNEES })}</p>
+          <p className="text-muted text-xs">
+            {t('assignees.ownerHint', { max: MAX_TASK_ASSIGNEES })}
+          </p>
         </div>
         {isMainTask ? (
           <div className="flex flex-col gap-2">
@@ -1331,7 +1323,9 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
                 })}
               </div>
             )}
-            <p className="text-muted text-xs">{t('assignees.assistHint', { max: MAX_TASK_ASSIGNEES })}</p>
+            <p className="text-muted text-xs">
+              {t('assignees.assistHint', { max: MAX_TASK_ASSIGNEES })}
+            </p>
           </div>
         ) : null}
         <div className="flex flex-col gap-2">
@@ -1839,7 +1833,11 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
             >
               <Input placeholder={t('subtasks.placeholder')} />
             </TextField>
-            <Button type="submit" size="sm" isDisabled={!subtaskName.trim() || addSubtask.isPending}>
+            <Button
+              type="submit"
+              size="sm"
+              isDisabled={!subtaskName.trim() || addSubtask.isPending}
+            >
               {t('subtasks.add')}
             </Button>
           </Form>
@@ -1858,39 +1856,39 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
             {(relatedQuery.data?.items ?? []).map((item: TaskRelatedItem) => {
               const related = item.task;
               return (
-              <li
-                key={item.relatedTaskId}
-                className="flex items-center justify-between gap-2 py-2"
-              >
-                <Button
-                  variant="ghost"
-                  className="hover:bg-default h-auto min-w-0 flex-1 justify-start px-1 py-1.5 text-left font-normal"
-                  onPress={() => openOtherTask(item.relatedTaskId)}
+                <li
+                  key={item.relatedTaskId}
+                  className="flex items-center justify-between gap-2 py-2"
                 >
-                  <span className="flex min-w-0 flex-col gap-0.5">
-                    <span
-                      className={cn(
-                        'truncate text-sm',
-                        related.completeAt && 'text-muted line-through',
-                      )}
-                    >
-                      {related.name || `#${item.relatedTaskId}`}
+                  <Button
+                    variant="ghost"
+                    className="hover:bg-default h-auto min-w-0 flex-1 justify-start px-1 py-1.5 text-left font-normal"
+                    onPress={() => openOtherTask(item.relatedTaskId)}
+                  >
+                    <span className="flex min-w-0 flex-col gap-0.5">
+                      <span
+                        className={cn(
+                          'truncate text-sm',
+                          related.completeAt && 'text-muted line-through',
+                        )}
+                      >
+                        {related.name || `#${item.relatedTaskId}`}
+                      </span>
+                      <span className="text-muted truncate text-xs">
+                        {related.projectName || `#${related.projectId}`}
+                        {related.columnName ? ` · ${related.columnName}` : ''}
+                      </span>
                     </span>
-                    <span className="text-muted truncate text-xs">
-                      {related.projectName || `#${related.projectId}`}
-                      {related.columnName ? ` · ${related.columnName}` : ''}
-                    </span>
-                  </span>
-                </Button>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  isDisabled={deleteRelated.isPending || !canUpdate}
-                  onPress={() => onRemoveRelated(item.relatedTaskId)}
-                >
-                  {t('related.remove')}
-                </Button>
-              </li>
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    isDisabled={deleteRelated.isPending || !canUpdate}
+                    onPress={() => onRemoveRelated(item.relatedTaskId)}
+                  >
+                    {t('related.remove')}
+                  </Button>
+                </li>
               );
             })}
           </ul>

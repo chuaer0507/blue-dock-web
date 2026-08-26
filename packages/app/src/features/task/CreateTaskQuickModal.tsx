@@ -42,15 +42,12 @@ export function CreateTaskQuickModal({ state }: { state: OverlayState }) {
   const list = projects.data ?? [];
   const selected = list.find((p: ProjectView) => p.id === pid);
   const myOwner = selected?.myOwner ?? 0;
-  const editOpen = Boolean(
-    selected && !selected.departmentReadonly && !selected.archivedAt,
-  );
+  const editOpen = Boolean(selected && !selected.departmentReadonly && !selected.archivedAt);
   const permissionQuery = useProjectPermission(
     pid > 0 ? pid : undefined,
     Boolean(selected) && !selected?.isPersonal && myOwner === 0,
   );
-  const canAdd =
-    editOpen && projectMemberHasPoint(myOwner, permissionQuery.data, 'TASK_ADD');
+  const canAdd = editOpen && projectMemberHasPoint(myOwner, permissionQuery.data, 'TASK_ADD');
 
   useEffect(() => {
     setTemplateId('');

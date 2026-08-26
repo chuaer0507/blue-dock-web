@@ -309,7 +309,10 @@ function ImageMessageBlock({
       {meta.size > 0 ? (
         <p className={cn('text-[11px]', muted)}>
           {meta.extension
-            ? t('msg.fileMeta', { ext: meta.extension.toUpperCase(), size: formatFileSize(meta.size) })
+            ? t('msg.fileMeta', {
+                ext: meta.extension.toUpperCase(),
+                size: formatFileSize(meta.size),
+              })
             : formatFileSize(meta.size)}
         </p>
       ) : null}
@@ -345,7 +348,10 @@ function FileMessageBlock({
       {meta.size > 0 ? (
         <p className={cn('text-xs', muted)}>
           {meta.extension
-            ? t('msg.fileMeta', { ext: meta.extension.toUpperCase(), size: formatFileSize(meta.size) })
+            ? t('msg.fileMeta', {
+                ext: meta.extension.toUpperCase(),
+                size: formatFileSize(meta.size),
+              })
             : formatFileSize(meta.size)}
         </p>
       ) : null}
@@ -430,13 +436,7 @@ function RecordBlock({
         </p>
       ) : null}
       {objectUrl ? (
-        <audio
-          controls
-          preload="none"
-          src={objectUrl}
-          className="max-w-full"
-          onPlay={onPlay}
-        >
+        <audio controls preload="none" src={objectUrl} className="max-w-full" onPlay={onPlay}>
           <track kind="captions" />
         </audio>
       ) : null}

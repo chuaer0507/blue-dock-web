@@ -40,7 +40,9 @@ describe('previewMessageBody', () => {
   });
 });
 
-function msg(partial: Partial<DialogMessageView> & { id: number; dialogId: number }): DialogMessageView {
+function msg(
+  partial: Partial<DialogMessageView> & { id: number; dialogId: number },
+): DialogMessageView {
   return {
     userId: 1,
     type: 'text',

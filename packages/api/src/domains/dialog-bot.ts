@@ -5,14 +5,7 @@ import { dialogKeys, type DialogView } from './dialog';
 import { useUserBotList } from './user-bot';
 import { userKeys } from './user-types';
 
-export type DialogBadgeKind =
-  | 'user'
-  | 'group'
-  | 'task'
-  | 'project'
-  | 'department'
-  | 'okr'
-  | 'bot';
+export type DialogBadgeKind = 'user' | 'group' | 'task' | 'project' | 'department' | 'okr' | 'bot';
 
 export const dialogBotKeys = {
   all: () => [...dialogKeys.all(), 'bot'] as const,

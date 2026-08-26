@@ -14,22 +14,22 @@
 
 ## 常用系统应用（产品）
 
-| value        | 名称       | 行为概要                            |
-| ------------ | ---------- | ----------------------------------- |
-| approve      | 审批中心   | 有微应用则打开；否则 danger 提示安装 |
-| attendance   | 签到打卡   | → `/manage/setting/attendance`      |
-| report       | 工作报告   | → `/manage/report`                  |
-| favorite     | 我的收藏   | → `/manage/favorite`                |
-| recent       | 最近打开   | → `/manage/recent`                  |
-| mybot        | 我的机器人 | → `/manage/bot`                     |
-| createGroup  | 创建群组   | 打开建群弹层（`blue-dock:new-group`） |
-| meeting      | 在线会议   | → `/meeting`                        |
-| addProject   | 创建项目   | 打开建项弹层（`blue-dock:new-project`） |
-| addTask      | 添加任务   | 快建任务 Modal → `/single/task/:id` |
-| exportManage | 导出管理   | → `/manage/export`                  |
-| calendar     | 日历       | → `/manage/calendar`（tabbar）      |
-| file         | 文件       | → `/manage/file`（tabbar）          |
-| setting      | 设置       | → `/manage/setting`（tabbar）       |
+| value        | 名称       | 行为概要                                 |
+| ------------ | ---------- | ---------------------------------------- |
+| approve      | 审批中心   | 有微应用则打开；否则 danger 提示安装     |
+| attendance   | 签到打卡   | → `/manage/setting/attendance`           |
+| report       | 工作报告   | → `/manage/report`                       |
+| favorite     | 我的收藏   | → `/manage/favorite`                     |
+| recent       | 最近打开   | → `/manage/recent`                       |
+| mybot        | 我的机器人 | → `/manage/bot`                          |
+| createGroup  | 创建群组   | 打开建群弹层（`blue-dock:new-group`）    |
+| meeting      | 在线会议   | → `/meeting`                             |
+| addProject   | 创建项目   | 打开建项弹层（`blue-dock:new-project`）  |
+| addTask      | 添加任务   | 快建任务 Modal → `/single/task/:id`      |
+| exportManage | 导出管理   | → `/manage/export`                       |
+| calendar     | 日历       | → `/manage/calendar`（tabbar）           |
+| file         | 文件       | → `/manage/file`（tabbar）               |
+| setting      | 设置       | → `/manage/setting`（tabbar）            |
 | scan         | 扫一扫     | 仅移动壳 · `/manage/scan` 确认登录二维码 |
 
 > 领域命名用 `attendance`；禁止路径/包名 `checkin` / `signin`。

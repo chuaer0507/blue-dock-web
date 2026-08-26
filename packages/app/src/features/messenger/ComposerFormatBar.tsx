@@ -48,11 +48,7 @@ export function ComposerFormatBar({
 }: Props) {
   const { t } = useTranslation('messenger');
 
-  const applyResult = (next: {
-    value: string;
-    selectionStart: number;
-    selectionEnd: number;
-  }) => {
+  const applyResult = (next: { value: string; selectionStart: number; selectionEnd: number }) => {
     onChange(next.value);
     onSelectionChange?.({ start: next.selectionStart, end: next.selectionEnd });
     queueMicrotask(() => {

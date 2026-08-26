@@ -18,9 +18,9 @@ describe('parseExportDownloadRef', () => {
   });
 
   it('parses absolute URLs', () => {
-    expect(
-      parseExportDownloadRef('https://example.com/api/project/task/download?key=xyz'),
-    ).toEqual({ kind: 'task', key: 'xyz' });
+    expect(parseExportDownloadRef('https://example.com/api/project/task/download?key=xyz')).toEqual(
+      { kind: 'task', key: 'xyz' },
+    );
   });
 
   it('rejects missing key or unknown path', () => {

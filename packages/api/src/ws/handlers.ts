@@ -25,8 +25,7 @@ export function createDefaultFrameHandler(queryClient: QueryClient): FrameHandle
 
     if (type === 'dialog.message.withdraw') {
       const data = frame.data as
-        | { dialogId?: number | string; messageId?: number | string }
-        | undefined;
+        { dialogId?: number | string; messageId?: number | string } | undefined;
       const dialogId = data?.dialogId != null ? Number(data.dialogId) : NaN;
       const messageId = data?.messageId != null ? Number(data.messageId) : NaN;
       if (Number.isFinite(dialogId) && Number.isFinite(messageId)) {
@@ -79,31 +78,25 @@ export function createDefaultFrameHandler(queryClient: QueryClient): FrameHandle
     }
 
     if (type.startsWith('presence.')) {
-      const data = frame.data as
-        | { userId?: number | string; online?: boolean }
-        | undefined;
+      const data = frame.data as { userId?: number | string; online?: boolean } | undefined;
       const userId = data?.userId != null ? Number(data.userId) : NaN;
       if (Number.isFinite(userId) && userId > 0) {
         const online =
-          type === 'presence.online' ||
-          (type !== 'presence.offline' && data?.online === true);
-        queryClient.setQueriesData<UserPresenceView[]>(
-          { queryKey: presenceKeys.all() },
-          (old) => {
-            if (!old) return old;
-            let hit = false;
-            const next = old.map((item) => {
-              if (item.userId !== userId) return item;
-              hit = true;
-              return {
-                ...item,
-                online,
-                pcActive: online ? item.pcActive : false,
-              };
-            });
-            return hit ? next : old;
-          },
-        );
+          type === 'presence.online' || (type !== 'presence.offline' && data?.online === true);
+        queryClient.setQueriesData<UserPresenceView[]>({ queryKey: presenceKeys.all() }, (old) => {
+          if (!old) return old;
+          let hit = false;
+          const next = old.map((item) => {
+            if (item.userId !== userId) return item;
+            hit = true;
+            return {
+              ...item,
+              online,
+              pcActive: online ? item.pcActive : false,
+            };
+          });
+          return hit ? next : old;
+        });
       }
       void queryClient.invalidateQueries({ queryKey: presenceKeys.all() });
       return;

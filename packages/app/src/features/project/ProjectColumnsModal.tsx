@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react';
 import { toastRequestError } from '../../utils/toast-request-error';
-import {
-  Button,
-  Input,
-  Label,
-  Modal,
-  TextField,
-  toast,
-  useOverlayState,
-} from '@heroui/react';
+import { Button, Input, Label, Modal, TextField, toast, useOverlayState } from '@heroui/react';
 import {
   useAddProjectColumn,
   useProjectColumns,
@@ -293,9 +285,7 @@ export function ProjectColumnsModal({
                     <Button
                       size="sm"
                       variant="primary"
-                      isDisabled={
-                        saving || !draftName.trim() || (editing ? !canUpdate : !canAdd)
-                      }
+                      isDisabled={saving || !draftName.trim() || (editing ? !canUpdate : !canAdd)}
                       onPress={onSave}
                     >
                       {saving

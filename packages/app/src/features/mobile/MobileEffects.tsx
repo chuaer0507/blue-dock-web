@@ -1,9 +1,5 @@
 import { useEffect, useRef } from 'react';
-import {
-  useCurrentUser,
-  useDialogList,
-  useRealtimeStatus,
-} from '@blue-dock/api';
+import { useCurrentUser, useDialogList, useRealtimeStatus } from '@blue-dock/api';
 import { getMobile, isMobileRuntime } from '@blue-dock/mobile-bridge';
 import { readPushPref, syncMobilePushAlias } from '../../utils/app-push-alias';
 import { isInQuietHours } from '../../utils/quiet-hours';

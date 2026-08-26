@@ -85,7 +85,11 @@ export function LoginQrPanel({ redirectTo }: { redirectTo: string }) {
     <div className="flex flex-col items-center gap-3">
       <p className="text-muted text-center text-sm">{t('auth.qrHint')}</p>
       {dataUrl ? (
-        <img src={dataUrl} alt={t('auth.qrAlt')} className="border-border rounded-xl border bg-white p-2" />
+        <img
+          src={dataUrl}
+          alt={t('auth.qrAlt')}
+          className="border-border rounded-xl border bg-white p-2"
+        />
       ) : (
         <div className="border-border bg-surface flex size-[220px] items-center justify-center rounded-xl border">
           <span className="text-muted text-sm">

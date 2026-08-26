@@ -173,7 +173,11 @@ export function LoginPage() {
       {mode === 'qr' ? (
         <LoginQrPanel redirectTo={redirectTo} />
       ) : (
-        <Form className="flex flex-col gap-4" validationErrors={validationErrors} onSubmit={onSubmit}>
+        <Form
+          className="flex flex-col gap-4"
+          validationErrors={validationErrors}
+          onSubmit={onSubmit}
+        >
           <TextField
             isRequired
             name="email"
@@ -231,7 +235,12 @@ export function LoginPage() {
 
           <div className="flex flex-wrap items-center justify-end gap-2">
             {demoReady ? (
-              <Button type="button" variant="secondary" isDisabled={login.isPending} onPress={fillDemo}>
+              <Button
+                type="button"
+                variant="secondary"
+                isDisabled={login.isPending}
+                onPress={fillDemo}
+              >
                 {t('auth.fillDemo')}
               </Button>
             ) : null}

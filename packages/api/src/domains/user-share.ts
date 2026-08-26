@@ -49,9 +49,9 @@ function normalizeItem(raw: Record<string, unknown>): UserShareItem {
           dialogIds:
             extendRaw.dialogIds == null
               ? undefined
-              : (typeof extendRaw.dialogIds === 'number'
-                  ? extendRaw.dialogIds
-                  : String(extendRaw.dialogIds)),
+              : typeof extendRaw.dialogIds === 'number'
+                ? extendRaw.dialogIds
+                : String(extendRaw.dialogIds),
           textType: extendRaw.textType != null ? String(extendRaw.textType) : undefined,
           replyId: asNum(extendRaw.replyId),
           silence: extendRaw.silence != null ? String(extendRaw.silence) : undefined,

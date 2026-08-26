@@ -7,8 +7,7 @@ import {
 
 describe('checklist', () => {
   it('parses checked and unchecked items with stable index', () => {
-    const text =
-      'intro<ul><li data-list="unchecked">a</li><li data-list="checked">b</li></ul>tail';
+    const text = 'intro<ul><li data-list="unchecked">a</li><li data-list="checked">b</li></ul>tail';
     const segs = parseChecklistSegments(text);
     expect(hasChecklistItems(text)).toBe(true);
     expect(segs).toEqual([

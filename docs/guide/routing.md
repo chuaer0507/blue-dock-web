@@ -6,18 +6,18 @@
 
 ## 公开 / 特殊页
 
-| name            | path                              | 职责                        | 实现  |
-| --------------- | --------------------------------- | --------------------------- | ----- |
-| index           | `/`                               | 有 token→manage，否则→login | auth  |
-| meeting         | `/meeting/:meetingId?/:sharekey?` | 会议室（含访客 sharekey）   | wip   |
-| login           | `/login`                          | 登录 / 注册入口             | auth  |
-| register        | `/register`                       | 自助注册                    | auth  |
-| forgot-password | `/forgot-password`                | 忘记密码重置                | auth  |
-| token           | `/token`                          | Token 登录桥                | auth  |
-| pro             | `/pro`                            | Pro / 商业化介绍            | wip   |
-| preload         | `/preload`                        | Electron / 客户端预加载壳   | wip   |
-| privacy         | `/privacy`                        | 隐私政策（`/api/privacy`）  | wip   |
-| 404             | `*`                               | 未匹配                      | wip   |
+| name            | path                              | 职责                        | 实现 |
+| --------------- | --------------------------------- | --------------------------- | ---- |
+| index           | `/`                               | 有 token→manage，否则→login | auth |
+| meeting         | `/meeting/:meetingId?/:sharekey?` | 会议室（含访客 sharekey）   | wip  |
+| login           | `/login`                          | 登录 / 注册入口             | auth |
+| register        | `/register`                       | 自助注册                    | auth |
+| forgot-password | `/forgot-password`                | 忘记密码重置                | auth |
+| token           | `/token`                          | Token 登录桥                | auth |
+| pro             | `/pro`                            | Pro / 商业化介绍            | wip  |
+| preload         | `/preload`                        | Electron / 客户端预加载壳   | wip  |
+| privacy         | `/privacy`                        | 隐私政策（`/api/privacy`）  | wip  |
+| 404             | `*`                               | 未匹配                      | wip  |
 
 ## Manage 主壳 `/manage`
 

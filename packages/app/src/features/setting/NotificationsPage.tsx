@@ -3,11 +3,7 @@ import { Description, Input, Label, Switch, TextField, toast } from '@heroui/rea
 import { useTranslation } from '@blue-dock/i18n';
 import { DESKTOP_NOTIFY_PREF } from '../desktop/DesktopEffects';
 import { usePlatform } from '../../utils/platform';
-import {
-  PUSH_PREF_KEY,
-  readPushPref,
-  syncMobilePushAlias,
-} from '../../utils/app-push-alias';
+import { PUSH_PREF_KEY, readPushPref, syncMobilePushAlias } from '../../utils/app-push-alias';
 import {
   isValidHHmm,
   readQuietHoursPref,

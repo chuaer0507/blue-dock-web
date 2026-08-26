@@ -14,11 +14,7 @@ import {
   toast,
   useOverlayState,
 } from '@heroui/react';
-import {
-  useRemoveProject,
-  useUpdateProject,
-  type ProjectView,
-} from '@blue-dock/api';
+import { useRemoveProject, useUpdateProject, type ProjectView } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 
 type Props = {
@@ -86,7 +82,9 @@ export function ProjectSettingsModal({ project, canEdit, isOwner, onRemoved }: P
         ...(archiveMethod === 'custom' ? { archiveDays: days } : {}),
         aiAutoAnalyze: aiAutoAnalyze ? 'open' : 'close',
         taskTemplateShare: taskTemplateShare ? 'open' : 'close',
-        ...(project.isPersonal ? {} : { departmentOwnerView: departmentOwnerView ? 'open' : 'close' }),
+        ...(project.isPersonal
+          ? {}
+          : { departmentOwnerView: departmentOwnerView ? 'open' : 'close' }),
       },
       {
         onSuccess: () => {

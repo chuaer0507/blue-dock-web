@@ -1,11 +1,4 @@
-import {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type ClipboardEvent,
-  type FormEvent,
-} from 'react';
+import { useEffect, useMemo, useRef, useState, type ClipboardEvent, type FormEvent } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router';
 import {
   Button,
@@ -124,7 +117,16 @@ import { findNextUnreadDialog } from './next-unread';
 type DialogFilter = 'all' | 'user' | 'group' | 'task' | 'project' | 'okr' | 'bot' | 'mention';
 type SearchMode = 'dialog' | 'tag';
 
-const FILTERS: DialogFilter[] = ['all', 'user', 'group', 'task', 'project', 'okr', 'bot', 'mention'];
+const FILTERS: DialogFilter[] = [
+  'all',
+  'user',
+  'group',
+  'task',
+  'project',
+  'okr',
+  'bot',
+  'mention',
+];
 const MESSAGE_PAGE_TAKE = 50;
 
 function parseDialogId(raw: string | undefined): number | undefined {
@@ -238,8 +240,7 @@ export function MessengerPage() {
   const sendImage64 = useSendDialogImage64();
   const withdraw = useWithdrawDialogMessage();
   const generalSetting = useSystemGeneralSetting(true);
-  const anonMessageOpen =
-    (generalSetting.data?.anonMessage || 'open').toLowerCase() === 'open';
+  const anonMessageOpen = (generalSetting.data?.anonMessage || 'open').toLowerCase() === 'open';
   const todoAllowed = (generalSetting.data?.todoPermission || 'allow').toLowerCase() !== 'deny';
   const recallLimitMin = Number(generalSetting.data?.messageRecallLimit) || 0;
   const readMessages = useReadDialogMessages();
@@ -1068,9 +1069,7 @@ export function MessengerPage() {
                           alt=""
                           src={resolveAvatarSrc(dialog.avatar, dialog.name || `#${dialog.id}`)}
                         />
-                        <Avatar.Fallback>
-                          {(dialog.name || '?').slice(0, 1)}
-                        </Avatar.Fallback>
+                        <Avatar.Fallback>{(dialog.name || '?').slice(0, 1)}</Avatar.Fallback>
                       </Avatar>
                       {(() => {
                         const peerId = peerByDialogId.get(dialog.id);
@@ -1165,9 +1164,7 @@ export function MessengerPage() {
         {!dialogId ? (
           <div className="flex flex-1 flex-col gap-4 p-6">
             <p className="text-muted text-sm">{t('select')}</p>
-            {allTodosQuery.isLoading ? (
-              <p className="text-muted text-xs">{t('loading')}</p>
-            ) : null}
+            {allTodosQuery.isLoading ? <p className="text-muted text-xs">{t('loading')}</p> : null}
             <div className="border-border max-w-md rounded-xl border p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h2 className="text-sm font-semibold">{t('todo.allTitle')}</h2>
@@ -1875,7 +1872,10 @@ export function MessengerPage() {
                         <PaperClipIcon className="size-4" aria-hidden />
                       </Button>
                       {dialogId ? (
-                        <SendLocationButton dialogId={dialogId} disabled={sending || speakBlocked} />
+                        <SendLocationButton
+                          dialogId={dialogId}
+                          disabled={sending || speakBlocked}
+                        />
                       ) : null}
                       {dialogId ? (
                         <RecordMessageButton

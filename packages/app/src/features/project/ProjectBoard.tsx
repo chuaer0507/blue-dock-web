@@ -36,8 +36,7 @@ type Props = {
 };
 
 type DragPayload =
-  | { kind: 'task'; taskId: number; fromColumnId: number }
-  | { kind: 'column'; columnId: number };
+  { kind: 'task'; taskId: number; fromColumnId: number } | { kind: 'column'; columnId: number };
 
 /** 看板：列卡片 + HTML5 拖拽换列/排序；列标题可重排列 */
 export function ProjectBoard({

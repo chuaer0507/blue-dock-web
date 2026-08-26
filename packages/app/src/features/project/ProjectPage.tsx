@@ -15,7 +15,10 @@ import {
   toast,
 } from '@heroui/react';
 import { StarIcon, BookmarkIcon } from '@heroicons/react/24/outline';
-import { StarIcon as StarIconSolid, BookmarkIcon as BookmarkIconSolid } from '@heroicons/react/24/solid';
+import {
+  StarIcon as StarIconSolid,
+  BookmarkIcon as BookmarkIconSolid,
+} from '@heroicons/react/24/solid';
 import {
   projectMemberHasPoint,
   useArchiveProject,
@@ -564,10 +567,7 @@ export function ProjectPage() {
                     isPersonal={Boolean(project.data.isPersonal)}
                     canEdit={project.data.myOwner >= 1}
                   />
-                  <ProjectTagsModal
-                    projectId={projectId}
-                    canEdit={project.data.myOwner >= 1}
-                  />
+                  <ProjectTagsModal projectId={projectId} canEdit={project.data.myOwner >= 1} />
                   <ProjectColumnsModal
                     projectId={projectId}
                     canAdd={canAddColumn}

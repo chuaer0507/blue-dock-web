@@ -42,8 +42,7 @@ export function SendLocationButton({ dialogId, disabled }: Props) {
         toast.danger(t('location.coordsInvalid'));
         return;
       }
-      const distance =
-        Number.isFinite(accuracy) && accuracy > 0 ? Math.round(accuracy) : undefined;
+      const distance = Number.isFinite(accuracy) && accuracy > 0 ? Math.round(accuracy) : undefined;
       await sendLocation.mutateAsync({
         dialogId,
         type: 'amap',

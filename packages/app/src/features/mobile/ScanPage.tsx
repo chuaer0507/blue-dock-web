@@ -13,8 +13,9 @@ type Detector = {
 };
 
 function getBarcodeDetector(): Detector | null {
-  const Ctor = (window as unknown as { BarcodeDetector?: new (opts: { formats: string[] }) => Detector })
-    .BarcodeDetector;
+  const Ctor = (
+    window as unknown as { BarcodeDetector?: new (opts: { formats: string[] }) => Detector }
+  ).BarcodeDetector;
   if (!Ctor) return null;
   try {
     return new Ctor({ formats: ['qr_code'] });

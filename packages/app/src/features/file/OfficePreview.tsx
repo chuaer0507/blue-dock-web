@@ -132,9 +132,7 @@ export function OfficePreview({ fileId }: { fileId: number }) {
             <Button
               size="sm"
               variant="secondary"
-              onPress={() =>
-                window.open(query.data!.documentUrl, '_blank', 'noopener,noreferrer')
-              }
+              onPress={() => window.open(query.data!.documentUrl, '_blank', 'noopener,noreferrer')}
             >
               {t('office.openExternal')}
             </Button>

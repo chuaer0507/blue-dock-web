@@ -1,15 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { toastRequestError } from '../../utils/toast-request-error';
-import {
-  Button,
-  Label,
-  ListBox,
-  Modal,
-  Select,
-  toast,
-  useOverlayState,
-} from '@heroui/react';
+import { Button, Label, ListBox, Modal, Select, toast, useOverlayState } from '@heroui/react';
 import { useAiSystemBots, useOpenDialogUser, type UserSearchHit } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 
@@ -35,11 +27,11 @@ export function StartAiChatModal() {
       return;
     }
     openUser.mutate(id, {
-        onSuccess: (dialog) => {
-          toast.success(t('aiChat.opened'));
-          onOpenChange(false);
-          navigate(`/manage/messenger/${dialog.id}`);
-        },
+      onSuccess: (dialog) => {
+        toast.success(t('aiChat.opened'));
+        onOpenChange(false);
+        navigate(`/manage/messenger/${dialog.id}`);
+      },
       onError: (err) => toastRequestError(err, t('error')),
     });
   };

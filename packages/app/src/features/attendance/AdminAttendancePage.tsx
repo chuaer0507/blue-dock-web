@@ -253,7 +253,9 @@ export function AdminAttendancePage() {
                   variant="secondary"
                   type="button"
                   className="self-start"
-                  onPress={() => window.open('/attendance/install', '_blank', 'noopener,noreferrer')}
+                  onPress={() =>
+                    window.open('/attendance/install', '_blank', 'noopener,noreferrer')
+                  }
                 >
                   {t('adminOpenInstall')}
                 </Button>

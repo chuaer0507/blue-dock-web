@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Avatar, Button, Checkbox, Label, SearchField, toast } from '@heroui/react';
-import {
-  dialogIdFromShareItem,
-  useUserShareList,
-  type UserShareItem,
-} from '@blue-dock/api';
+import { dialogIdFromShareItem, useUserShareList, type UserShareItem } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 
 type Mode = 'single' | 'multiple';
@@ -89,7 +85,9 @@ export function ShareTargetPicker({
         </SearchField.Group>
       </SearchField>
 
-      {listQuery.isLoading ? <p className="text-muted text-xs">{t('sharePicker.loading')}</p> : null}
+      {listQuery.isLoading ? (
+        <p className="text-muted text-xs">{t('sharePicker.loading')}</p>
+      ) : null}
       {listQuery.isError ? (
         <div className="flex items-center gap-2">
           <p className="text-danger text-xs">{t('sharePicker.error')}</p>

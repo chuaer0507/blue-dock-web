@@ -42,7 +42,7 @@ function asPresenceItem(raw: Record<string, unknown>): UserPresenceView {
 function asPresenceList(raw: unknown): UserPresenceView[] {
   const items =
     raw && typeof raw === 'object' && Array.isArray((raw as { items?: unknown }).items)
-      ? ((raw as { items: unknown[] }).items)
+      ? (raw as { items: unknown[] }).items
       : Array.isArray(raw)
         ? raw
         : [];
