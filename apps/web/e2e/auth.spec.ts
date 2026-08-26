@@ -236,6 +236,10 @@ test.describe('登录进壳层', () => {
 
     await page.getByRole('button', { name: /工作报告|Work reports/i }).click();
     await expect(page).toHaveURL(/\/manage\/report/);
+
+    await page.goto('/manage/application');
+    await page.getByRole('button', { name: /系统设置|System settings/i }).click();
+    await expect(page).toHaveURL(/\/manage\/admin\/system/);
   });
 
   test('文件可新建目录并使用字符串 ID 打开目录', async ({ page }) => {
