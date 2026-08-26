@@ -67,26 +67,24 @@ function MessageTipsBridge() {
   }, [openDialog]);
 
   return (
-    <Modal>
-      <Modal.Backdrop isOpen={dialog.isOpen} onOpenChange={dialog.setOpen}>
-        <Modal.Container>
-          <Modal.Dialog className="sm:max-w-sm">
-            <Modal.CloseTrigger />
-            <Modal.Header>
-              <Modal.Heading>{t('error.tipsTitle')}</Modal.Heading>
-            </Modal.Header>
-            <Modal.Body>
-              <p className="whitespace-pre-wrap text-sm">{dialogMessage}</p>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="primary" onPress={dialog.close}>
-                {t('error.tipsOk')}
-              </Button>
-            </Modal.Footer>
-          </Modal.Dialog>
-        </Modal.Container>
-      </Modal.Backdrop>
-    </Modal>
+    <Modal.Backdrop isOpen={dialog.isOpen} onOpenChange={dialog.setOpen}>
+      <Modal.Container>
+        <Modal.Dialog className="sm:max-w-sm">
+          <Modal.CloseTrigger />
+          <Modal.Header>
+            <Modal.Heading>{t('error.tipsTitle')}</Modal.Heading>
+          </Modal.Header>
+          <Modal.Body>
+            <p className="whitespace-pre-wrap text-sm">{dialogMessage}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onPress={dialog.close}>
+              {t('error.tipsOk')}
+            </Button>
+          </Modal.Footer>
+        </Modal.Dialog>
+      </Modal.Container>
+    </Modal.Backdrop>
   );
 }
 
