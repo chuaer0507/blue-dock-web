@@ -1,6 +1,6 @@
 # 工作报告（report）
 
-路由：`/manage/report` · 独立：`/single/report/edit|detail/:id` · 优先级：P0 · 前端状态：wip（列表 / 撰写含选人 / 详情含 **AI 解读** / 分享短码 / 统计分析）
+路由：`/manage/report` · 独立：`/single/report/edit|detail/:id` · 优先级：P0 · 前端状态：done（列表 / 撰写含选人 / 详情含 **AI 解读** / 分享短码 / 统计分析）
 
 ## 能力
 

@@ -1,14 +1,12 @@
 import { useNavigate, useParams } from 'react-router';
 import { Button } from '@heroui/react';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
-import { useReportDetail } from '@blue-dock/api';
+import { isId, useReportDetail } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 import { ReportComposeForm } from './ReportComposeForm';
 
 function parseEditId(raw: string | undefined): number | undefined {
-  if (!raw || raw === 'new') return undefined;
-  const n = Number(raw);
-  return Number.isFinite(n) && n > 0 ? n : undefined;
+  return isId(raw) ? (raw as unknown as number) : undefined;
 }
 
 /** 工作报告独立编辑窗 */

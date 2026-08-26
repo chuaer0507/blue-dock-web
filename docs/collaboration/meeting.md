@@ -1,6 +1,6 @@
 # 会议（meeting）
 
-路由：`/meeting/:meetingId?/:sharekey?` · 应用中心「在线会议」· 优先级：P0 · 前端状态：wip（大厅 + Agora RTC + 会话发起）
+路由：`/meeting/:meetingId?/:sharekey?` · 应用中心「在线会议」· 优先级：P0 · 前端状态：done（大厅 + Agora RTC + 会话发起）
 
 ## 能力
 

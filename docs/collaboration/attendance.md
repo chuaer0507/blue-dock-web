@@ -1,6 +1,6 @@
 # 签到打卡（attendance）
 
-入口：应用中心 `/manage/attendance` · 设置 `/manage/setting/attendance` · 管理规则 `/manage/admin/attendance` · 匿名安装指引 `/attendance/install` · 优先级：P1 · 前端状态：wip（打卡含**手动/定位/刷脸** / 月历明细 / 高级规则 / MAC·人脸登记 / WiFi 安装指引）
+入口：应用中心 `/manage/attendance` · 设置 `/manage/setting/attendance` · 管理规则 `/manage/admin/attendance` · 匿名安装指引 `/attendance/install` · 优先级：P1 · 前端状态：done（打卡含**手动/定位/刷脸** / 月历明细 / 高级规则 / MAC·人脸登记 / WiFi 安装指引）
 
 ## 命名
 

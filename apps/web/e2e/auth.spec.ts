@@ -383,9 +383,48 @@ test.describe('登录进壳层', () => {
     const meetingName = `E2E 会议 ${Date.now()}`;
     await page.goto('/meeting');
     await page.locator('input[name="name"]').fill(meetingName);
-    await page.getByRole('button', { name: /创建会议|Create meeting/i }).click();
+    await page.getByRole('button', { name: /创建会议|Create meeting|Start now/i }).click();
     await expect(page).toHaveURL(/\/meeting\/[^/]+/);
     await expect(page.getByRole('heading', { name: meetingName })).toBeVisible();
     await expect(page.getByText(/会议 ID|Meeting ID/i)).toBeVisible();
+  });
+
+  test('工作报告可创建并以字符串 ID 打开详情', async ({ page }) => {
+    await loginWithEnv(page);
+    const token = await page.evaluate(() => localStorage.getItem('accessToken'));
+    expect(token).toBeTruthy();
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    const usersResponse = await page.request.get('/api/users/search/ai?take=1', { headers });
+    const users = await usersResponse.json();
+    const receiver = users.data?.list?.[0];
+    expect(typeof receiver?.userId).toBe('string');
+
+    const title = `E2E 工作报告 ${Date.now()}`;
+    const content = `E2E 报告内容 ${Date.now()}`;
+    const storeResponse = await page.request.get(
+      `/api/report/store?title=${encodeURIComponent(title)}&type=daily&content=${encodeURIComponent(content)}&receive=${receiver.userId}&offset=-9999`,
+      { headers },
+    );
+    const report = await storeResponse.json();
+    expect(report.code).toBe(0);
+    const reportId = report.data?.id;
+    expect(typeof reportId).toBe('string');
+
+    await page.goto(`/single/report/detail/${reportId}`);
+    await expect(page.getByRole('heading', { name: title })).toBeVisible();
+    await expect(page.getByText(content)).toBeVisible();
+  });
+
+  test('签到月历、规则页与匿名安装指引可访问', async ({ page }) => {
+    await loginWithEnv(page);
+    await page.goto('/manage/attendance');
+    await expect(page.getByRole('heading', { name: /签到|Attendance/i })).toBeVisible();
+    await expect(page.getByText(/月历|Month/i)).toBeVisible();
+
+    await page.goto('/manage/admin/attendance');
+    await expect(page.getByRole('heading', { name: /签到规则|Attendance rules/i })).toBeVisible();
+
+    await page.goto('/attendance/install');
+    await expect(page.getByRole('heading', { name: /Wi-?Fi|安装|Install/i })).toBeVisible();
   });
 });

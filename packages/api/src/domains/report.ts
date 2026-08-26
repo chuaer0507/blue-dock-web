@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { get, post } from '../http-api';
+import { isId } from '../common/id';
 
 export type ReportType = 'daily' | 'weekly';
 
@@ -102,10 +103,8 @@ export function useReportReceive(params: ReportListParams = {}, enabled = true) 
 
 export function useReportDetail(idOrCode: number | string | undefined, enabled = true) {
   const raw = idOrCode == null ? '' : String(idOrCode).trim();
-  const asNumber = Number(raw);
-  const isNumericId = raw !== '' && Number.isFinite(asNumber) && asNumber > 0 && /^\d+$/.test(raw);
-  const id = isNumericId ? asNumber : undefined;
-  const code = !isNumericId && raw ? raw : undefined;
+  const id = isId(raw) ? (raw as unknown as number) : undefined;
+  const code = !id && raw ? raw : undefined;
 
   return useQuery({
     queryKey: reportKeys.detail(raw || 0),
