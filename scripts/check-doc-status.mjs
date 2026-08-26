@@ -1,3 +1,5 @@
+/* global URL, console, process */
+
 import { readFileSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
@@ -31,5 +33,5 @@ if (failures.length > 0) {
   console.error(['文档状态校验失败：', ...failures.map((item) => `- ${item}`)].join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('文档状态校验通过。');
+  console.info('文档状态校验通过。');
 }
