@@ -57,6 +57,8 @@ export {
   type ResultConverter,
   type TipsType,
   type ExtraModel,
+  type Id,
+  isId,
 } from './common';
 export {
   ApiError,

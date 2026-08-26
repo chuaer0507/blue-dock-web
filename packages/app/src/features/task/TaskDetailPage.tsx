@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useTranslation } from '@blue-dock/i18n';
+import { isId } from '@blue-dock/api';
 import { TaskDetail } from './TaskDetail';
 
 /** 独立窗 / 深链任务详情 */
@@ -8,10 +9,7 @@ export function TaskDetailPage() {
   const { t } = useTranslation('task');
   const navigate = useNavigate();
   const params = useParams();
-  const taskId = useMemo(() => {
-    const n = Number(params.taskId);
-    return Number.isFinite(n) && n > 0 ? n : undefined;
-  }, [params.taskId]);
+  const taskId = useMemo(() => (isId(params.taskId) ? params.taskId : undefined), [params.taskId]);
 
   if (!taskId) {
     return (

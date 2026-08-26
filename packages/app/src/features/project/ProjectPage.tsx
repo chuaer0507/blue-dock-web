@@ -20,6 +20,7 @@ import {
   BookmarkIcon as BookmarkIconSolid,
 } from '@heroicons/react/24/solid';
 import {
+  isId,
   projectMemberHasPoint,
   useArchiveProject,
   useCreateTask,
@@ -94,10 +95,7 @@ export function ProjectPage() {
   const navigate = useNavigate();
   const { navMode } = useScreen();
   const params = useParams();
-  const projectId = useMemo(() => {
-    const n = Number(params.projectId);
-    return Number.isFinite(n) && n > 0 ? n : undefined;
-  }, [params.projectId]);
+  const projectId = useMemo(() => (isId(params.projectId) ? params.projectId : undefined), [params.projectId]);
 
   const { connected } = useRealtimeStatus();
   const [sidebarMode, setSidebarMode] = useState<SidebarMode>('active');

@@ -25,3 +25,4 @@ export {
 export { DEFAULT_EXTRA, resolveExtra, type ExtraModel } from './extra-model';
 
 export { AppException } from './app-exception';
+export { isId, type Id } from './id';
