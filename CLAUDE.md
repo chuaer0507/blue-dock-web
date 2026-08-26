@@ -38,7 +38,9 @@ bun run lint
 bun run lint:circular
 bun run format:check
 bun run test
-bun run e2e
+bun run docs:check
+bun run e2e:smoke
+bun run e2e:auth          # 需 E2E_EMAIL / E2E_PASSWORD
 bun run build
 bun run build:desktop
 ```

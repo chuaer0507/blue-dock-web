@@ -1,6 +1,6 @@
 # 项目（project）
 
-路由：`/manage/project` · `/manage/project/:projectId` · 邀请：`/manage/project/invite/:inviteId?` · 优先级：P0 · 前端状态：wip
+路由：`/manage/project` · `/manage/project/:projectId` · 邀请：`/manage/project/invite/:inviteId?` · 优先级：P0 · 前端状态：done
 
 ## 能力
 

@@ -1,6 +1,6 @@
 # 日历（calendar）
 
-路由：`/manage/calendar` · 优先级：P0 · 前端状态：wip
+路由：`/manage/calendar` · 优先级：P0 · 前端状态：done
 
 ## 范围
 

@@ -22,6 +22,9 @@
     "typecheck": "bun run --filter '*' typecheck",
     "test": "bun run --filter '*' test",
     "e2e": "bun run --filter @blue-dock/web e2e",
+    "e2e:smoke": "bun run --filter @blue-dock/web e2e -- e2e/smoke.spec.ts",
+    "e2e:auth": "bun run --filter @blue-dock/web e2e -- e2e/auth.spec.ts",
+    "docs:check": "node scripts/check-doc-status.mjs",
     "e2e:ui": "bun run --filter @blue-dock/web e2e:ui"
   },
   "lint-staged": {

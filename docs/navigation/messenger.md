@@ -1,6 +1,6 @@
 # 即时通讯（messenger）
 
-路由：`/manage/messenger/:dialogAction?` · 独立窗：`/single/dialog/:dialogId` · 优先级：P0 · 前端状态：wip（契约主路径已齐；OKR 评论群 `okr/add`·`okr/push` + 微应用桥已接）
+路由：`/manage/messenger/:dialogAction?` · 独立窗：`/single/dialog/:dialogId` · 优先级：P0 · 前端状态：done（契约主路径、OKR 评论群 `okr/add`·`okr/push` 与微应用桥已验收）
 
 ## 会话类型
 

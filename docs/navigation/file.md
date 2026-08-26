@@ -1,6 +1,6 @@
 # 文件（file）
 
-路由：`/manage/file/:folderId?/:fileId?` · 独立：`/single/file/*` · 优先级：P0 · 前端状态：wip
+路由：`/manage/file/:folderId?/:fileId?` · 独立：`/single/file/*` · 优先级：P0 · 前端状态：done
 
 ## 能力
 

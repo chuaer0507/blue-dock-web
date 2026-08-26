@@ -70,7 +70,9 @@ bun run format
 bun run format:check
 bun run typecheck
 bun run test
-bun run e2e               # Playwright（apps/web/e2e；首次需 bunx playwright install chromium）
+bun run docs:check        # 清单、路由与模块规格的状态一致性
+bun run e2e:smoke         # 无账号的快速 Playwright 冒烟
+bun run e2e:auth          # 真实后端登录态 E2E（需 E2E_EMAIL / E2E_PASSWORD）
 
 # 构建
 bun run build

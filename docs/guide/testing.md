@@ -45,12 +45,13 @@ export default defineConfig({
 ```bash
 bun install
 bunx playwright install chromium   # 首次
-bun run e2e                        # 自动起 Vite 或复用已运行的 5173
+bun run e2e:smoke                  # 自动起 Vite 或复用已运行的 5173；无需账号
+bun run e2e:auth                   # 真实后端登录态用例；需 E2E_EMAIL / E2E_PASSWORD
 ```
 
 - 冒烟：`apps/web/e2e/smoke.spec.ts`（登录页可见、扫码切换、未登录 `/manage` → `/login?redirect=`、`/pro` 介绍页、`/preload` → `/login`）
 - 登录进壳：设 `E2E_EMAIL` / `E2E_PASSWORD`（可选 `E2E_CAPTCHA`）后跑 `auth.spec.ts`（主导航：仪表盘 / 消息 / 项目 / 日历 / 文件）；共用 `e2e/helpers/login.ts`
-- 已有 dev server：`PLAYWRIGHT_SKIP_WEBSERVER=1 bun run e2e`
+- 已有 dev server：`PLAYWRIGHT_SKIP_WEBSERVER=1 bun run e2e:smoke`（登录态同理替换为 `e2e:auth`）。
 
 ## 示例（`@blue-dock/api`）
 

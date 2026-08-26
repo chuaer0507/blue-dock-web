@@ -1,6 +1,6 @@
 # 任务（task）
 
-入口：项目内 · Modal · `/single/task/:taskId` · `/single/task/content/:taskId` · 优先级：P0 · 前端状态：wip
+入口：项目内 · Modal · `/single/task/:taskId` · `/single/task/content/:taskId` · 优先级：P0 · 前端状态：done
 
 ## 能力
 
