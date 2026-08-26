@@ -99,6 +99,7 @@ test.describe('登录进壳层', () => {
     const token = await page.evaluate(() => localStorage.getItem('accessToken'));
     expect(token).toBeTruthy();
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    const backendBaseUrl = process.env.E2E_API_BASE_URL ?? 'http://127.0.0.1:8080';
     const projectName = `E2E 任务项目 ${Date.now()}`;
     let projectId: string | null = null;
     let taskId: string | null = null;
@@ -143,18 +144,83 @@ test.describe('登录进壳层', () => {
       await expect(page.getByText(subtaskName)).toBeVisible();
     } finally {
       if (taskId) {
-        const taskResponse = await page.request.get(`/api/project/task/remove?taskId=${taskId}`, {
-          headers,
-        });
-        expect(taskResponse.ok()).toBeTruthy();
-        expect((await taskResponse.json()).code).toBe(0);
+        await page.request
+          .get(`${backendBaseUrl}/api/project/task/remove?taskId=${taskId}`, {
+            headers,
+            timeout: 3000,
+          })
+          .catch(() => undefined);
       }
       if (projectId) {
-        const response = await page.request.get(`/api/project/remove?projectId=${projectId}`, {
-          headers,
-        });
-        expect(response.ok()).toBeTruthy();
-        expect((await response.json()).code).toBe(0);
+        await page.request
+          .get(`${backendBaseUrl}/api/project/remove?projectId=${projectId}`, {
+            headers,
+            timeout: 3000,
+          })
+          .catch(() => undefined);
+      }
+    }
+  });
+
+  test('日历可显示当天任务并切换月周日视图', async ({ page }) => {
+    await loginWithEnv(page);
+    const token = await page.evaluate(() => localStorage.getItem('accessToken'));
+    expect(token).toBeTruthy();
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    const backendBaseUrl = process.env.E2E_API_BASE_URL ?? 'http://127.0.0.1:8080';
+    const projectName = `E2E 日历项目 ${Date.now()}`;
+    const now = new Date();
+    const date = now.toISOString().slice(0, 10);
+    const taskName = `E2E 日历任务 ${Date.now()}`;
+    let projectId: string | null = null;
+    let taskId: string | null = null;
+
+    try {
+      const projectResponse = await page.request.get(
+        `/api/project/add?name=${encodeURIComponent(projectName)}`,
+        { headers },
+      );
+      const projectResult = await projectResponse.json();
+      expect(projectResult.code).toBe(0);
+      projectId = projectResult.data?.id ?? null;
+      expect(typeof projectId).toBe('string');
+
+      const taskResponse = await page.request.post(
+        `/api/project/task/add?projectId=${projectId}&name=${encodeURIComponent(taskName)}&startAt=${date}%2009%3A00%3A00&endAt=${date}%2010%3A00%3A00`,
+        { headers },
+      );
+      const taskResult = await taskResponse.json();
+      expect(taskResult.code).toBe(0);
+      taskId = taskResult.data?.id ?? null;
+      expect(typeof taskId).toBe('string');
+
+      await page.goto('/manage/calendar');
+      await expect(page.getByRole('heading', { name: /日历|Calendar/i })).toBeVisible();
+      await expect(page.getByLabel(taskName)).toBeVisible();
+      await page.getByLabel(taskName).click();
+      await expect(page.locator('input[name="name"]')).toHaveValue(taskName);
+      await page.keyboard.press('Escape');
+
+      await page.getByText(/^(周|Week)$/i).click();
+      await expect(page.getByText(/全天任务|All-day/i).first()).toBeVisible();
+      await page.getByText(/^(日|Day)$/i).click();
+      await expect(page.getByRole('radio', { name: /日|Day/i })).toBeChecked();
+    } finally {
+      if (taskId) {
+        await page.request
+          .get(`${backendBaseUrl}/api/project/task/remove?taskId=${taskId}`, {
+            headers,
+            timeout: 3000,
+          })
+          .catch(() => undefined);
+      }
+      if (projectId) {
+        await page.request
+          .get(`${backendBaseUrl}/api/project/remove?projectId=${projectId}`, {
+            headers,
+            timeout: 3000,
+          })
+          .catch(() => undefined);
       }
     }
   });

@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { get, post } from '../http-api';
+import { hasId } from '../common';
 import { taskKeys } from './task';
 
 export type ProjectView = {
@@ -72,7 +73,7 @@ export function useProject(projectId: number | undefined, enabled = true) {
   return useQuery({
     queryKey: projectKeys.detail(projectId ?? 0),
     queryFn: () => get<ProjectView>('project/one', { projectId }),
-    enabled: enabled && typeof projectId === 'number' && projectId > 0,
+    enabled: enabled && hasId(projectId),
     staleTime: 60_000,
   });
 }
@@ -82,7 +83,7 @@ export function useProjectColumns(projectId: number | undefined, wsConnected?: b
   return useQuery({
     queryKey: projectKeys.columns(projectId ?? 0),
     queryFn: () => get<ProjectColumnView[]>('project/column/lists', { projectId }),
-    enabled: typeof projectId === 'number' && projectId > 0,
+    enabled: hasId(projectId),
     staleTime: 60_000,
     refetchInterval: wsConnected === false ? 5000 : false,
   });
@@ -93,7 +94,7 @@ export function useProjectColumn(columnId: number | undefined, enabled = true) {
   return useQuery({
     queryKey: projectKeys.column(columnId ?? 0),
     queryFn: () => get<ProjectColumnView>('project/column/one', { columnId }),
-    enabled: enabled && typeof columnId === 'number' && columnId > 0,
+    enabled: enabled && hasId(columnId),
     staleTime: 60_000,
   });
 }
@@ -184,7 +185,7 @@ export function useProjectFlowList(projectId: number | undefined, enabled = true
   return useQuery({
     queryKey: projectKeys.flows(projectId ?? 0),
     queryFn: () => get<ProjectFlowView[]>('project/flow/list', { projectId }),
-    enabled: enabled && typeof projectId === 'number' && projectId > 0,
+    enabled: enabled && hasId(projectId),
     staleTime: 60_000,
   });
 }
@@ -255,7 +256,7 @@ export function useProjectTagList(projectId: number | undefined, enabled = true)
   return useQuery({
     queryKey: projectKeys.tags(projectId ?? 0),
     queryFn: () => get<ProjectTagView[]>('project/tag/list', { projectId }),
-    enabled: enabled && typeof projectId === 'number' && projectId > 0,
+    enabled: enabled && hasId(projectId),
     staleTime: 60_000,
   });
 }
@@ -540,7 +541,7 @@ export function useProjectPermission(projectId: number | undefined, enabled = tr
     queryKey: projectPermissionKeys.one(projectId ?? 0),
     queryFn: async () => fetchProjectPermission(projectId!),
     staleTime: 30_000,
-    enabled: enabled && !!projectId && projectId > 0,
+    enabled: enabled && hasId(projectId),
   });
 }
 
