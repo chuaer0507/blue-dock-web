@@ -34,40 +34,40 @@
 | app-admin    | 管理应用 | [apps.md](../apps/apps.md)                 | wip（应用中心管理员卡片）                                                                                             |
 | micro-app    | 微应用   | [micro-app.md](../apps/micro-app.md)       | wip（iframe + 桥含 notifyMessageStream + location 分区/主导航 + keepAlive；菜单可配 type/keepAlive/badgeClearOnOpen） |
 | bot          | 机器人   | [bot.md](../apps/bot.md)                   | done（CRUD、头像上传/图片空间、复制 ID、删除审计与开始聊天；已完成前端 ID 映射单测与后端服务测试）                   |
-| appstore     | 应用市场 | [appstore.md](../apps/appstore.md)         | wip（安装/更新/卸载 + 契约 location 菜单；type/keepAlive/badgeClearOnOpen；禁卸 appstore）                            |
-| ai-assistant | AI 助手  | [ai-assistant.md](../apps/ai-assistant.md) | wip（FAB/流式/历史删清/反馈赞踩/会话配图 newImages/页面匹配 matchElements/log/search/WS operation/Admin 可见模型）    |
-| upload       | 分片上传 | [upload.md](./upload.md)                   | wip（api + 文件/任务入口 + 本机续传 + 取消 + imageView/fileUpload）                                                   |
+| appstore     | 应用市场 | [appstore.md](../apps/appstore.md)         | done（安装/更新/卸载、自定义菜单与应用中心联动；后端服务测试覆盖目录、联动和 appstore 禁卸约束）                     |
+| ai-assistant | AI 助手  | [ai-assistant.md](../apps/ai-assistant.md) | done（FAB、流式、会话、反馈、配图、元素匹配与 WS 操作派发；已完成前端与后端服务测试）                                  |
+| upload       | 分片上传 | [upload.md](./upload.md)                   | done（文件/任务入口、本机续传、取消与图片空间；已完成前端上传单测和后端上传服务测试）                                  |
 
 ## org
 
 | ID              | 名称       | 规格                                            | 状态                                                                                                               |
 | --------------- | ---------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| user-account    | 账号       | [user-account.md](../org/user-account.md)       | wip（登录含扫码 / 演示帐号 / 注册 / 重置 / 邮箱验证 / 无感 refresh / 年度报告 / 分享选择器 / `users/basic`）       |
-| user-settings   | 个人设置   | [user-settings.md](../org/user-settings.md)     | wip（设置页 + 头像菜单 + 年度报告 + 个性标签 + 隐私政策 + 改邮箱 + 个人资料 + 版本/更新日志 + 通知含移动时段静音） |
-| org-department  | 部门       | [org-department.md](../org/org-department.md)   | wip（树/用户/导入/副负责人；离职交接选人 Modal）                                                                   |
-| role-permission | 角色权限   | [role-permission.md](../org/role-permission.md) | wip（权限矩阵 / 成员管理）                                                                                         |
-| favorite        | 收藏与最近 | [favorite.md](../org/favorite.md)               | wip（列表名补洞/备注/星标；message/dialog → Manage IM；message_file 独立预览；browseSave + fileDetail）            |
+| user-account    | 账号       | [user-account.md](../org/user-account.md)       | done（登录/扫码/注册/重置/邮箱验证、无感 refresh、年度报告、分享选择器与公开资料；已完成认证和用户服务测试）        |
+| user-settings   | 个人设置   | [user-settings.md](../org/user-settings.md)     | done（设置页、头像菜单、年度报告、标签、隐私、邮箱、资料、版本与通知；已完成前端检查和用户服务测试）                  |
+| org-department  | 部门       | [org-department.md](../org/org-department.md)   | done（树、用户、导入、副负责人及离职交接选择器；已完成部门与用户管理服务测试）                                    |
+| role-permission | 角色权限   | [role-permission.md](../org/role-permission.md) | done（权限矩阵、成员管理及页面操作门控；已完成前端矩阵单测与后端权限服务测试）                                      |
+| favorite        | 收藏与最近 | [favorite.md](../org/favorite.md)               | done（列表、备注、星标、消息/文件路由与浏览记录；已完成收藏/浏览及附件最近记录服务测试）                           |
 
 ## admin
 
 | ID                 | 名称     | 规格                                            | 状态                                                                                  |
 | ------------------ | -------- | ----------------------------------------------- | ------------------------------------------------------------------------------------- |
-| system-setting     | 系统设置 | [system-setting.md](../admin/system-setting.md) | wip（含 AI Bot 已配模型 aiBotModels 同步；文件打包白名单选人）                        |
-| meeting-setting    | 会议设置 | 同上 / java `setting/meeting`                   | wip                                                                                   |
-| attendance-setting | 签到规则 | java `setting/attendance`                       | wip（规则页 + 导出深链）                                                              |
-| email-notice       | 邮件通知 | [notifications.md](../admin/notifications.md)   | wip（SMTP + 测试发信 + 未读汇总调度）                                                 |
-| app-push           | APP 推送 | [notifications.md](../admin/notifications.md)   | wip                                                                                   |
-| data-export        | 数据导出 | [data-export.md](../admin/data-export.md)       | wip（触发导出 + 消息内鉴权下载）                                                      |
-| ldap / license 等  | 扩展     | [admin-extras.md](../admin/admin-extras.md)     | wip（ldap / complaint 含举报附图提交与管理端展示 / user-groups searchUser / uploads） |
+| system-setting     | 系统设置 | [system-setting.md](../admin/system-setting.md) | done（通用/优先级/列模板、AI Bot 模型同步及文件打包白名单选人；已完成系统设置服务测试） |
+| meeting-setting    | 会议设置 | 同上 / java `setting/meeting`                   | done（会议参数管理页与密钥脱敏/掩码保留；已完成会议设置服务测试）                    |
+| attendance-setting | 签到规则 | java `setting/attendance`                       | done（规则管理页、敏感字段保护与导出深链；已完成规则/导出服务测试）                   |
+| email-notice       | 邮件通知 | [notifications.md](../admin/notifications.md)   | done（SMTP、测试发信与未读汇总调度；已完成邮件设置和未读通知服务测试）               |
+| app-push           | APP 推送 | [notifications.md](../admin/notifications.md)   | done（管理员配置、移动别名同步、消息投递与延迟队列；已完成推送相关服务测试）         |
+| data-export        | 数据导出 | [data-export.md](../admin/data-export.md)       | done（任务/签到/审批异步导出、24h 本人下载链接与消息内 Bearer 鉴权；已完成前端解析及后端服务测试） |
+| ldap / license 等  | 扩展     | [admin-extras.md](../admin/admin-extras.md)     | done（LDAP、授权、举报含附图、个人群检索与上传库；已完成前端检查和后端服务测试） |
 
 ## clients
 
 | ID              | 名称     | 规格                                  | 状态                                                                                                |
 | --------------- | -------- | ------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| web-client      | Web      | [clients.md](../clients/clients.md)   | wip（壳挂 `@blue-dock/app`）                                                                        |
-| electron-client | Electron | [electron.md](../clients/electron.md) | wip（托盘 / 通知含 `?msg=`+silence+免打扰跳过 / Dock 角标 / 多窗含独立窗附件已读翻页 / `/preload`） |
-| mobile-client   | Mobile   | [mobile.md](../clients/mobile.md)     | wip（角标 / 推送 alias / 时段静音本地 / 扫一扫确认登录）                                            |
-| shortcut        | 快捷键   | [shortcut.md](../clients/shortcut.md) | wip（K / ⇧P / ⇧M / 消息 ⇧U / 任务 E+Esc）                                                           |
+| web-client      | Web      | [clients.md](../clients/clients.md)   | done（壳挂 `@blue-dock/app`；已完成生产构建和 6 项无需账号的冒烟 E2E）                              |
+| electron-client | Electron | [electron.md](../clients/electron.md) | done（托盘/通知/Dock 角标/多窗/`/preload`；已完成构建、类型检查和 Lint，渲染进程未直引 Electron）   |
+| mobile-client   | Mobile   | [mobile.md](../clients/mobile.md)     | done（角标/推送 alias/本地时段静音/扫码确认登录；已完成构建、类型检查、Lint 和 8 项壳/桥接单测）    |
+| shortcut        | 快捷键   | [shortcut.md](../clients/shortcut.md) | done（K / ⇧P / ⇧M / 消息 ⇧U / 任务 E+Esc；随共享应用三端构建验证）                                  |
 
 ## 工程基建
 

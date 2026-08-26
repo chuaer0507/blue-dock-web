@@ -1,6 +1,6 @@
 # 快捷键与手势（shortcut）
 
-优先级：P0 · 前端状态：wip
+优先级：P0 · 前端状态：done
 
 设置页：`/manage/setting/keyboard`（一览）。
 

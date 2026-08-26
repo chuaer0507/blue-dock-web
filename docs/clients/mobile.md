@@ -1,6 +1,6 @@
 # Mobile 薄壳（mobile）
 
-壳：`apps/mobile` · 桥：`@blue-dock/mobile-bridge` · 前端状态：wip（角标 / 推送 alias / 扫一扫）
+壳：`apps/mobile` · 桥：`@blue-dock/mobile-bridge` · 前端状态：done（角标 / 推送 alias / 扫一扫）
 
 ## 策略
 

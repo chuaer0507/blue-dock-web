@@ -73,10 +73,10 @@
 | `ai-bot`     | AI Bot                 | wip  |
 | `attendance` | 签到规则               | wip  |
 | `app-push`   | APP 推送               | wip  |
-| `ldap`       | LDAP                   | wip  |
+| `ldap`       | LDAP                   | done |
 | `appstore`   | 应用市场（管理）       | wip  |
-| `complaint`  | 举报                   | wip  |
-| `uploads`    | 上传库                 | wip  |
+| `complaint`  | 举报                   | done |
+| `uploads`    | 上传库                 | done |
 
 ## Single 独立页
 

@@ -1,6 +1,6 @@
 # 系统设置（system-setting）
 
-路由：`/manage/admin/system`（及同级 admin 子页）· 优先级：P1 · 前端状态：wip
+路由：`/manage/admin/system`（及同级 admin 子页）· 优先级：P1 · 前端状态：done
 
 ## 通用 Tab（`/manage/admin/system`）
 

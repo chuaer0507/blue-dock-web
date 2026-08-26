@@ -1,6 +1,6 @@
 # 应用市场（appstore）
 
-路由建议：`/manage/admin/appstore` · 优先级：P0 · 前端状态：wip
+路由建议：`/manage/admin/appstore` · 优先级：P0 · 前端状态：done
 
 ## 能力
 
@@ -18,6 +18,6 @@
 | 安装       | POST     | `system/apps/install`      |
 | 更新       | POST     | `system/apps/update`       |
 | 卸载       | POST     | `system/apps/uninstall`    |
-| 微应用菜单 | GET/POST | `system/apps/microAppMenu` |
+| 微应用菜单 | POST      | `system/microAppMenu`      |
 
 契约：[modules/appstore](../../../blue-dock-java/docs/modules/appstore/)

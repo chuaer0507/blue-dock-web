@@ -1,6 +1,6 @@
 # 账号（user-account）
 
-路由：`/login` · `/register` · `/forgot-password` · `/token` · `/single/valid/email` · 优先级：P0 · 前端状态：wip
+路由：`/login` · `/register` · `/forgot-password` · `/token` · `/single/valid/email` · 优先级：P0 · 前端状态：done
 
 ## 登录
 

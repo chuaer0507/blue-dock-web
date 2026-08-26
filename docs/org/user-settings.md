@@ -1,6 +1,6 @@
 # 个人设置（user-settings）
 
-路由：`/manage/setting/*` · 优先级：P0 · 前端状态：wip（设置页 + Manage 头像菜单已接）
+路由：`/manage/setting/*` · 优先级：P0 · 前端状态：done（设置页 + Manage 头像菜单已接）
 
 ## Section
 

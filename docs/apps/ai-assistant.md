@@ -1,6 +1,6 @@
 # AI 助手（ai-assistant）
 
-Java feature：`assistant` · 优先级：P0 · 前端状态：wip
+Java feature：`assistant` · 优先级：P0 · 前端状态：done
 
 ## 能力
 

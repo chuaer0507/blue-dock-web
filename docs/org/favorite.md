@@ -1,6 +1,6 @@
 # 收藏与最近（favorite）
 
-路由：`/manage/favorite` · `/manage/recent` · 优先级：P0 · 前端状态：wip（列表 / 备注 / 取消收藏 / 星标 / 最近浏览）
+路由：`/manage/favorite` · `/manage/recent` · 优先级：P0 · 前端状态：done（列表 / 备注 / 取消收藏 / 星标 / 最近浏览）
 
 ## 能力
 

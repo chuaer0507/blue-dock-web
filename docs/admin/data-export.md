@@ -1,6 +1,6 @@
 # 数据导出（data-export）
 
-路由：`/manage/export` · 应用中心「数据导出」· 优先级：P1 · 前端状态：wip
+路由：`/manage/export` · 应用中心「数据导出」· 优先级：P1 · 前端状态：done
 
 ## 能力
 

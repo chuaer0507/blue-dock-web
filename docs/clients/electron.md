@@ -1,6 +1,6 @@
 # Electron 桌面（electron）
 
-壳：`apps/desktop` · 桥：`@blue-dock/desktop-bridge` · 前端状态：wip（托盘 / 系统通知 / Dock 角标 / 多窗）
+壳：`apps/desktop` · 桥：`@blue-dock/desktop-bridge` · 前端状态：done（托盘 / 系统通知 / Dock 角标 / 多窗）
 
 ## 能力
 
