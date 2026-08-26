@@ -1,4 +1,4 @@
-import { get, post, upload } from '../http-api';
+import { post, upload } from '../http-api';
 import type { FileView } from '../domains/file';
 import { md5Hex } from './md5';
 import {
@@ -121,8 +121,7 @@ function isAbortError(err: unknown): boolean {
 
 /** 仅上传分片、不 merge；供 `file/content/upload` 覆盖已有文件 */
 export type UploadSessionResult =
-  | { kind: 'instant'; file: FileView | null }
-  | { kind: 'session'; uploadId: string };
+  { kind: 'instant'; file: FileView | null } | { kind: 'session'; uploadId: string };
 
 async function uploadFile(input: {
   file: File;
@@ -284,12 +283,20 @@ export function uploadCabinetFile(input: UploadCabinetInput): Promise<UploadMerg
  * 随后应调用 `file/content/upload`（`useSaveFileContentFromUpload`）覆盖目标文件。
  */
 export function uploadCabinetSession(input: UploadCabinetInput): Promise<UploadSessionResult> {
-  return uploadFile({ ...input, scene: 'file_cabinet', finalize: 'session' }) as Promise<UploadSessionResult>;
+  return uploadFile({
+    ...input,
+    scene: 'file_cabinet',
+    finalize: 'session',
+  }) as Promise<UploadSessionResult>;
 }
 
 /** 任务附件分片上传（含本机续传） */
 export function uploadTaskFile(input: UploadTaskInput): Promise<UploadMergeView> {
-  return uploadFile({ ...input, scene: 'project_task', taskId: input.taskId }) as Promise<UploadMergeView>;
+  return uploadFile({
+    ...input,
+    scene: 'project_task',
+    taskId: input.taskId,
+  }) as Promise<UploadMergeView>;
 }
 
 export {

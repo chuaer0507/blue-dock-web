@@ -28,7 +28,7 @@ export function insertMentionToken(
 }
 
 export function formatUserMention(userId: number, nickname: string): string {
-  const name = nickname.replace(/[\[\]]/g, '').trim() || String(userId);
+  const name = nickname.replace(/[\][]/g, '').trim() || String(userId);
   return `[:@:${userId}:${name}:]`;
 }
 
@@ -37,7 +37,7 @@ export function formatAllMention(): string {
 }
 
 export function formatTaskMention(taskId: number, title: string): string {
-  const name = title.replace(/[\[\]]/g, '').trim() || String(taskId);
+  const name = title.replace(/[\][]/g, '').trim() || String(taskId);
   return `[:#:${taskId}:${name}:]`;
 }
 

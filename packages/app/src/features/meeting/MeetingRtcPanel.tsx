@@ -133,7 +133,6 @@ export function MeetingRtcPanel({
       })();
     };
     // 仅在入会凭证变化时重建客户端
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mic/camera toggled separately
   }, [session.appId, session.channel, session.token, session.agoraUserId]);
 
   useEffect(() => {

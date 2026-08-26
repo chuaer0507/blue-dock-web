@@ -21,9 +21,6 @@ const ForgotPasswordPage = lazy(() =>
     default: m.ForgotPasswordPage,
   })),
 );
-const PlaceholderPage = lazy(() =>
-  import('../features/common/PlaceholderPage').then((m) => ({ default: m.PlaceholderPage })),
-);
 const ProPage = lazy(() =>
   import('../features/common/ProPage').then((m) => ({ default: m.ProPage })),
 );
@@ -219,10 +216,6 @@ const UserGroupsAdminPage = lazy(() =>
 const UploadsAdminPage = lazy(() =>
   import('../features/admin/UploadsAdminPage').then((m) => ({ default: m.UploadsAdminPage })),
 );
-
-function placeholder(titleKey?: string) {
-  return <PlaceholderPage titleKey={titleKey} />;
-}
 
 export const router = createBrowserRouter([
   {

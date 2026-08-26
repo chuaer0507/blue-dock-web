@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent } from 'react';
+import { useMemo, useState, type FormEvent } from 'react';
 import {
   Button,
   Dropdown,
@@ -537,11 +537,7 @@ export function DepartmentPage() {
                   enabled={handoverState.isOpen}
                 />
                 <div className="flex justify-end gap-2 pt-1">
-                  <Button
-                    type="button"
-                    variant="secondary"
-                    onPress={handoverState.close}
-                  >
+                  <Button type="button" variant="secondary" onPress={handoverState.close}>
                     {t('row.handoverCancel')}
                   </Button>
                   <Button
