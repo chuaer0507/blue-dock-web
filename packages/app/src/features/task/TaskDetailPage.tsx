@@ -23,7 +23,7 @@ export function TaskDetailPage() {
     <div className="bg-background min-h-dvh">
       <div className="p-6">
         <TaskDetail
-          taskId={taskId}
+          taskId={taskId as unknown as number}
           variant="page"
           onClose={() => navigate(-1)}
           onOpenTask={(id) => navigate(`/single/task/${id}`)}

@@ -95,7 +95,10 @@ export function ProjectPage() {
   const navigate = useNavigate();
   const { navMode } = useScreen();
   const params = useParams();
-  const projectId = useMemo(() => (isId(params.projectId) ? params.projectId : undefined), [params.projectId]);
+  const projectId = useMemo<number | undefined>(
+    () => (isId(params.projectId) ? (params.projectId as unknown as number) : undefined),
+    [params.projectId],
+  );
 
   const { connected } = useRealtimeStatus();
   const [sidebarMode, setSidebarMode] = useState<SidebarMode>('active');
