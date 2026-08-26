@@ -462,7 +462,7 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
           profession: '',
           userImage: '',
         })),
-      ].map((member) => [member.userId, member]),
+      ].map((member) => [String(member.userId), member]),
     ).values(),
   );
 
