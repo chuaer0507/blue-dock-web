@@ -8,7 +8,7 @@
 
 | ID          | 名称     | 规格                                           | 状态                                                                                                                                                         |
 | ----------- | -------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| dashboard   | 仪表盘   | [dashboard.md](../navigation/dashboard.md)     | wip（个人待开始/本周完成/团队/优先级/成员筛选含 user/projects/高优下钻/TaskModal；团队视图受 `departmentOwnerProjectView` 门控）                             |
+| dashboard   | 仪表盘   | [dashboard.md](../navigation/dashboard.md)     | done（个人待开始/本周完成/团队/优先级/成员筛选含 user/projects/高优下钻/TaskModal；团队视图受 `departmentOwnerProjectView` 门控；已完成单元、真实后端 E2E 与三端构建验证） |
 | file        | 文件     | [file.md](../navigation/file.md)               | wip（目录/搜索/上传/移动复制/共享/发送到会话/预览含 PDF/文本编辑保存/上传替换/Office/内容历史/收藏/回收站/下载打包权限门控；消息附件 single 预览下载回会话） |
 | messenger   | 即时通讯 | [messenger.md](../navigation/messenger.md)     | wip（契约主路径已齐；OKR + 微应用桥；`?msg=`；dialogAction；免打扰本地；公告/模板 silence；独立窗附件/已读/翻页；session 隔离待 java）                       |
 | calendar    | 日历     | [calendar.md](../navigation/calendar.md)       | wip（月/周/日 + 全天/时段块 + 拖拽改期含 TASK_TIME 门控与 easyLists 冲突确认 + 快建含 TASK_ADD + 项目筛选 + TaskModal）                                      |

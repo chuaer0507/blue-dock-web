@@ -22,6 +22,8 @@ test.describe('登录进壳层', () => {
       .first()
       .click();
     await expect(page).toHaveURL(/\/manage\/dashboard/, { timeout: 15_000 });
+    await expect(page.getByRole('heading', { name: /仪表盘|Dashboard/i })).toBeVisible();
+    await page.getByRole('button', { name: /刷新|Refresh/i }).click();
 
     await page
       .getByRole('link', { name: /消息|Messenger|Messages/i })
