@@ -44,7 +44,7 @@ description: 按 Blue Dock 架构铁律和状态管理规则审查代码变更
 
 ### 5. 安全与 i18n
 
-- 密码是否 RSA + kid（涉及时）？
+- 密码是否 RSA + keyId（涉及时）？
 - Token / shareKey 是否打进日志？
 - 用户文案是否走 `t()`？
 

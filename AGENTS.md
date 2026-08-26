@@ -43,7 +43,7 @@ Commands：`.agents/commands/`（经 `.claude/commands` symlink；亦可直接�
 - **Query Key**：工厂模式，禁止内联 `['xxx']`
 - **Mutation**：适用时乐观更新 + 回滚 + onSettled 失效
 - **契约**：URL / 字段 / 信封以 **blue-dock-java** 为准；签到领域用 `attendance`（禁止 `checkin` / `signin`）
-- **鉴权**：密码 RSA-OAEP + `kid`（先 `users/key/client`）；`code === -2` 无感 refresh；`code === 1001` 清会话跳转登录
+- **鉴权**：密码 RSA-OAEP + `keyId`（先 `users/key/client`）；`code === -2` 无感 refresh；`code === 1001` 清会话跳转登录
 - **桌面**：渲染进程禁止 `require('electron')`，走 `desktop-bridge`
 - **移动**：`apps/mobile` 注入 `blueDockMobile`；能力经 `mobile-bridge`；原生工程本地 `cap:add`；禁止 RN/Flutter 重写业务 UI；详见 `docs/clients/mobile.md`
 - **改完**：手册变更同步 `CLAUDE.md` / `README.md` / `docs/`；铁律摘要变更改本文件

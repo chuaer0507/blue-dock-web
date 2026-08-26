@@ -73,7 +73,7 @@ bun run build:desktop
 
 - API SSOT：`../blue-dock-java/docs/contract/api-contract.md`
 - 签到：`attendance`（禁止 `checkin` / `signin`）
-- 密码：`GET users/key/client` → RSA-OAEP + `kid` 上送
+- 密码：`GET users/key/client` → RSA-OAEP + `keyId` 上送
 - 环境变量：各 app 独立 `.env.*`，`envDir` 指向自身；`.env.local` 不进 git
 - 开发代理：`/api`、`/ws` → blue-dock-java
 
