@@ -29,7 +29,7 @@ export const userBotKeys = {
   info: (id: Id) => [...userBotKeys.all(), 'info', id] as const,
 };
 
-function asBot(raw: Record<string, unknown> | undefined): UserBotView {
+export function toUserBotView(raw: Record<string, unknown> | undefined): UserBotView {
   const events = raw?.webhookEvents;
   let webhookEvents: string[] = ['message'];
   if (Array.isArray(events)) {
@@ -58,7 +58,7 @@ export function useUserBotList(enabled = true) {
     queryKey: userBotKeys.list(),
     queryFn: async () => {
       const data = await get<{ list?: Record<string, unknown>[] }>('users/userBot/list');
-      return (data.list ?? []).map((row) => asBot(row));
+      return (data.list ?? []).map((row) => toUserBotView(row));
     },
     staleTime: 30_000,
     enabled,
@@ -68,7 +68,7 @@ export function useUserBotList(enabled = true) {
 export function useUserBotInfo(id: Id | undefined, enabled = true) {
   return useQuery({
     queryKey: userBotKeys.info(id ?? 0),
-    queryFn: async () => asBot(await get<Record<string, unknown>>('users/userBot/info', { id })),
+    queryFn: async () => toUserBotView(await get<Record<string, unknown>>('users/userBot/info', { id })),
     staleTime: 30_000,
     enabled: enabled && hasId(id),
   });
@@ -78,7 +78,7 @@ export function useEditUserBot() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (input: UserBotEditInput) =>
-      post<Record<string, unknown>>('users/userBot/edit', input).then(asBot),
+      post<Record<string, unknown>>('users/userBot/edit', input).then(toUserBotView),
     onSettled: () => {
       void queryClient.invalidateQueries({ queryKey: userBotKeys.all() });
     },

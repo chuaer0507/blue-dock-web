@@ -33,7 +33,7 @@
 | app-system   | 系统应用 | [apps.md](../apps/apps.md)                 | done（内置卡片、个人排序、快建任务与系统路由；已完成真实后端 E2E）                                                    |
 | app-admin    | 管理应用 | [apps.md](../apps/apps.md)                 | wip（应用中心管理员卡片）                                                                                             |
 | micro-app    | 微应用   | [micro-app.md](../apps/micro-app.md)       | wip（iframe + 桥含 notifyMessageStream + location 分区/主导航 + keepAlive；菜单可配 type/keepAlive/badgeClearOnOpen） |
-| bot          | 机器人   | [bot.md](../apps/bot.md)                   | wip（CRUD + 头像上传/图片空间 + 复制 ID + 删除审计 + 开始聊天）                                                       |
+| bot          | 机器人   | [bot.md](../apps/bot.md)                   | done（CRUD、头像上传/图片空间、复制 ID、删除审计与开始聊天；已完成前端 ID 映射单测与后端服务测试）                   |
 | appstore     | 应用市场 | [appstore.md](../apps/appstore.md)         | wip（安装/更新/卸载 + 契约 location 菜单；type/keepAlive/badgeClearOnOpen；禁卸 appstore）                            |
 | ai-assistant | AI 助手  | [ai-assistant.md](../apps/ai-assistant.md) | wip（FAB/流式/历史删清/反馈赞踩/会话配图 newImages/页面匹配 matchElements/log/search/WS operation/Admin 可见模型）    |
 | upload       | 分片上传 | [upload.md](./upload.md)                   | wip（api + 文件/任务入口 + 本机续传 + 取消 + imageView/fileUpload）                                                   |
