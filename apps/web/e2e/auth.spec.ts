@@ -57,16 +57,20 @@ test.describe('登录进壳层', () => {
 
     try {
       await page.goto('/manage/project');
-      if (/\/manage\/project$/.test(new URL(page.url()).pathname)) {
-        await page.getByRole('button', { name: /新建项目|New project/i }).click();
+      const redirectedToProject = await page
+        .waitForURL(/\/manage\/project\/\d+/, { timeout: 3000 })
+        .then(() => true)
+        .catch(() => false);
+      if (!redirectedToProject) {
+        await page.getByRole('button', { name: /新建项目|创建项目|New project|Create project/i }).click();
       } else {
-        await expect(page).toHaveURL(/\/manage\/project\/\d+/, { timeout: 15_000 });
         await page.getByRole('button', { name: '+' }).last().click();
       }
-      await expect(page.getByRole('heading', { name: /新建项目|New project/i })).toBeVisible();
+      await expect(
+        page.getByRole('heading', { name: /新建项目|创建项目|New project|Create project/i }),
+      ).toBeVisible();
       await page.locator('input[name="name"]').last().fill(projectName);
-      await page.getByRole('checkbox', { name: /启用默认工作流|Enable default workflow/i }).click();
-      await page.getByRole('button', { name: /创建项目|Create project/i }).click();
+      await page.getByRole('button', { name: /创建项目|Create project|Create/i }).click();
       await expect(page).toHaveURL(/\/manage\/project\/\d+/, { timeout: 15_000 });
 
       const match = /\/manage\/project\/(\d+)/.exec(page.url());
