@@ -61,7 +61,7 @@ test.describe('登录进壳层', () => {
         await page.getByRole('button', { name: /新建项目|New project/i }).click();
       } else {
         await expect(page).toHaveURL(/\/manage\/project\/\d+/, { timeout: 15_000 });
-        await page.locator('aside').getByRole('button', { name: '+' }).click();
+        await page.getByRole('button', { name: '+' }).last().click();
       }
       await expect(page.getByRole('heading', { name: /新建项目|New project/i })).toBeVisible();
       await page.locator('input[name="name"]').last().fill(projectName);

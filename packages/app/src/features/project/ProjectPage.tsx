@@ -120,10 +120,17 @@ export function ProjectPage() {
   const toggleTop = useToggleProjectTop();
   const sortProjects = useSortUserProjects();
   const sidebarDragId = useRef<number | null>(null);
-  const pref = useProjectUiStore((s) =>
-    projectId
-      ? s.getPref(projectId)
-      : { view: 'board' as ViewMode, showCompleted: false, columnId: 0, priority: 'all' as const },
+  const storedPref = useProjectUiStore((s) =>
+    projectId ? s.byProject[String(projectId)] : undefined,
+  );
+  const pref = useMemo(
+    () => ({
+      view: storedPref?.view ?? ('board' as ViewMode),
+      showCompleted: storedPref?.showCompleted ?? false,
+      columnId: storedPref?.columnId ?? 0,
+      priority: storedPref?.priority ?? 'all',
+    }),
+    [storedPref],
   );
   const setView = useProjectUiStore((s) => s.setView);
   const setShowCompleted = useProjectUiStore((s) => s.setShowCompleted);
