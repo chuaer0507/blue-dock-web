@@ -63,7 +63,8 @@ export function useBotUserIdSet(enabled = true, take = 100) {
   return useMemo(() => {
     const set = new Set<number>(search.data ?? []);
     for (const bot of myBots.data ?? []) {
-      if (bot.id > 0) set.add(bot.id);
+      const id = Number(bot.id);
+      if (Number.isSafeInteger(id) && id > 0) set.add(id);
     }
     return { botUserIds: set, isLoading: search.isLoading || myBots.isLoading };
   }, [search.data, search.isLoading, myBots.data, myBots.isLoading]);

@@ -1,6 +1,6 @@
 # 系统应用 / 管理员应用（apps）
 
-规格入口：[application.md](../navigation/application.md) · 前端状态：wip（应用中心卡片入口）
+规格入口：[application.md](../navigation/application.md) · 前端状态：系统应用 done；管理员应用 wip
 
 ## 系统应用
 

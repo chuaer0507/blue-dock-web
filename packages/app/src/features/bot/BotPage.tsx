@@ -22,6 +22,7 @@ import {
   useOpenDialogUser,
   useSystemImageUpload,
   useUserBotList,
+  type Id,
   type UserBotView,
 } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
@@ -297,7 +298,7 @@ export function BotPage() {
   const bots = listQuery.data ?? [];
   const chatting = openUser.isPending || openEvent.isPending;
 
-  const onCopyId = async (id: number) => {
+  const onCopyId = async (id: Id) => {
     try {
       await navigator.clipboard.writeText(String(id));
       toast.success(t('copied'));
@@ -308,7 +309,7 @@ export function BotPage() {
 
   const onStartChat = (bot: UserBotView) => {
     if (!bot.id) return;
-    openUser.mutate(bot.id, {
+    openUser.mutate(bot.id as number, {
       onSuccess: (dialog) => {
         openEvent.mutate(dialog.id);
         navigate(`/manage/messenger/${dialog.id}`);

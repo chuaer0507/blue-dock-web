@@ -30,7 +30,7 @@
 
 | ID           | 名称     | 规格                                       | 状态                                                                                                                  |
 | ------------ | -------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| app-system   | 系统应用 | [apps.md](../apps/apps.md)                 | wip（应用中心内置卡片）                                                                                               |
+| app-system   | 系统应用 | [apps.md](../apps/apps.md)                 | done（内置卡片、个人排序、快建任务与系统路由；已完成真实后端 E2E）                                                    |
 | app-admin    | 管理应用 | [apps.md](../apps/apps.md)                 | wip（应用中心管理员卡片）                                                                                             |
 | micro-app    | 微应用   | [micro-app.md](../apps/micro-app.md)       | wip（iframe + 桥含 notifyMessageStream + location 分区/主导航 + keepAlive；菜单可配 type/keepAlive/badgeClearOnOpen） |
 | bot          | 机器人   | [bot.md](../apps/bot.md)                   | wip（CRUD + 头像上传/图片空间 + 复制 ID + 删除审计 + 开始聊天）                                                       |

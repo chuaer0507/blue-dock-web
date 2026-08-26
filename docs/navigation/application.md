@@ -1,6 +1,6 @@
 # 应用中心（application）
 
-路由：`/manage/application` · 优先级：P0 · 前端状态：wip（卡片网格 / HTML5 拖拽排序 / 微应用宿主 / 审批入口）
+路由：`/manage/application` · 优先级：P0 · 前端状态：done（卡片网格 / HTML5 拖拽排序 / 微应用宿主 / 审批入口）
 
 ## 结构
 
@@ -17,7 +17,7 @@
 | value        | 名称       | 行为概要                                 |
 | ------------ | ---------- | ---------------------------------------- |
 | approve      | 审批中心   | 有微应用则打开；否则 danger 提示安装     |
-| attendance   | 签到打卡   | → `/manage/setting/attendance`           |
+| attendance   | 签到打卡   | → `/manage/attendance`                   |
 | report       | 工作报告   | → `/manage/report`                       |
 | favorite     | 我的收藏   | → `/manage/favorite`                     |
 | recent       | 最近打开   | → `/manage/recent`                       |

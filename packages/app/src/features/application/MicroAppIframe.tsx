@@ -2,11 +2,14 @@ import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import {
   getAccessToken,
+  hasId,
+  isId,
   useAddDialogOkr,
   useCurrentUser,
   useNotifyDialogMessageStream,
   usePushDialogOkr,
   type DialogView,
+  type Id,
 } from '@blue-dock/api';
 import { useTranslation } from '@blue-dock/i18n';
 import { useTheme } from '../../providers/ThemeProvider';
@@ -18,16 +21,16 @@ type MicroRequest = {
   requestId?: string;
   url?: string;
   /** 打开会话：`/manage/messenger/:dialogId` */
-  dialogId?: number;
+  dialogId?: Id;
   /** OKR 评论群 */
-  okrId?: number;
+  okrId?: Id;
   name?: string;
-  userIds?: number[];
+  userIds?: Id[];
   text?: string;
   /** okrAdd 成功后是否跳转会话 */
   open?: boolean;
   /** notifyMessageStream */
-  userId?: number;
+  userId?: Id;
   streamUrl?: string;
   streamSource?: string;
 };
@@ -38,6 +41,12 @@ function isMicroRequest(data: unknown): data is MicroRequest {
 
 function replyHost(win: Window, payload: Record<string, unknown>) {
   win.postMessage({ source: 'blue-dock-host', ...payload }, '*');
+}
+
+/** 保留 JSON 字符串化的 Long ID，兼容旧微应用传入的安全数字。 */
+function microId(value: unknown): Id | null {
+  if (isId(value)) return value;
+  return hasId(value) && typeof value === 'number' ? value : null;
 }
 
 type MicroAppIframeProps = {
@@ -95,8 +104,8 @@ export function MicroAppIframe({
       }
 
       if (msg.type === 'openDialog') {
-        const dialogId = Number(msg.dialogId);
-        if (Number.isFinite(dialogId) && dialogId > 0) {
+        const dialogId = microId(msg.dialogId);
+        if (dialogId) {
           navigate(`/manage/messenger/${dialogId}`);
           replyHost(win, {
             type: 'openDialog',
@@ -114,8 +123,8 @@ export function MicroAppIframe({
       }
 
       if (msg.type === 'okrAdd') {
-        const okrId = Number(msg.okrId);
-        if (!Number.isFinite(okrId) || okrId <= 0) {
+        const okrId = microId(msg.okrId);
+        if (!okrId) {
           replyHost(win, {
             type: 'okrAdd',
             requestId: msg.requestId,
@@ -124,13 +133,13 @@ export function MicroAppIframe({
           return;
         }
         const userIds = Array.isArray(msg.userIds)
-          ? msg.userIds.map(Number).filter((id) => Number.isFinite(id) && id > 0)
+          ? msg.userIds.map(microId).filter((id): id is Id => id !== null)
           : undefined;
         addOkrMutate(
           {
-            okrId,
+            okrId: okrId as number,
             ...(typeof msg.name === 'string' ? { name: msg.name } : {}),
-            ...(userIds?.length ? { userIds } : {}),
+            ...(userIds?.length ? { userIds: userIds as number[] } : {}),
           },
           {
             onSuccess: (dialog: DialogView) => {
@@ -157,11 +166,9 @@ export function MicroAppIframe({
 
       if (msg.type === 'okrPush') {
         const text = typeof msg.text === 'string' ? msg.text.trim() : '';
-        const dialogId = msg.dialogId != null ? Number(msg.dialogId) : undefined;
-        const okrId = msg.okrId != null ? Number(msg.okrId) : undefined;
-        const hasDialog = dialogId != null && Number.isFinite(dialogId) && dialogId > 0;
-        const hasOkr = okrId != null && Number.isFinite(okrId) && okrId > 0;
-        if (!text || (!hasDialog && !hasOkr)) {
+        const dialogId = microId(msg.dialogId);
+        const okrId = microId(msg.okrId);
+        if (!text || (!dialogId && !okrId)) {
           replyHost(win, {
             type: 'okrPush',
             requestId: msg.requestId,
@@ -172,8 +179,8 @@ export function MicroAppIframe({
         pushOkrMutate(
           {
             text,
-            ...(hasDialog ? { dialogId } : {}),
-            ...(hasOkr ? { okrId } : {}),
+            ...(dialogId ? { dialogId: dialogId as number } : {}),
+            ...(okrId ? { okrId: okrId as number } : {}),
           },
           {
             onSuccess: (message) => {
@@ -196,9 +203,9 @@ export function MicroAppIframe({
       }
 
       if (msg.type === 'notifyMessageStream') {
-        const userId = Number(msg.userId);
+        const userId = microId(msg.userId);
         const streamUrl = typeof msg.streamUrl === 'string' ? msg.streamUrl.trim() : '';
-        if (!Number.isFinite(userId) || userId <= 0 || !streamUrl) {
+        if (!userId || !streamUrl) {
           replyHost(win, {
             type: 'notifyMessageStream',
             requestId: msg.requestId,
@@ -208,7 +215,7 @@ export function MicroAppIframe({
         }
         notifyStreamMutate(
           {
-            userId,
+            userId: userId as number,
             streamUrl,
             ...(typeof msg.streamSource === 'string' && msg.streamSource.trim()
               ? { source: msg.streamSource.trim() }
