@@ -5,10 +5,7 @@ description: 按项目规范在 apps/ 下创建或补齐壳应用（web / deskto
 
 # 创建 / 补齐 App 壳
 
-设计前可先扫 [frontend-spec](../frontend-spec/SKILL.md)：
-
-- 包拓扑 → `references/architecture.md`
-- 状态 / 环境 → `rules/state.md`、根 README
+设计前阅读 [architecture.md](../../rules/architecture.md)、[state.md](../../rules/state.md) 与根 README；涉及 Electron 或 Mobile 安全边界时使用 `security-delivery` 技能。
 
 Blue Dock 当前壳：`apps/web`、`apps/desktop`、`apps/mobile`（Capacitor；见 [docs/clients/mobile.md](../../../../docs/clients/mobile.md)）。业务页面在 `@blue-dock/app`，**不要**为每个业务开新 app。
 

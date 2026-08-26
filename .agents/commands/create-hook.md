@@ -7,4 +7,4 @@ argument-hint: <domain>
 
 按照 [state.md](../rules/state.md) 生成 Query Key 工厂 + 读 hook + 写 hook（含乐观更新 + 回滚）。
 
-先确认路径已在 blue-dock-java 契约落地。设计前可先扫 [frontend-spec](../skills/frontend-spec/SKILL.md)。
+先确认路径已在 blue-dock-java 契约落地。

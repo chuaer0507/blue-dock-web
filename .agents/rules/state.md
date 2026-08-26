@@ -88,4 +88,4 @@ function useDialogList(wsConnected: boolean) {
 - persist 白名单最小化；键名按 `userId` 隔离
 - 不存 Token 明文以外的多余敏感快照（Token 走 auth 模块）
 
-详情：`docs/guide/state-and-api.md` · frontend-spec `references/coding.md`
+详情：`docs/guide/state-and-api.md`。

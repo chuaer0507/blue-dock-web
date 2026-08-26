@@ -85,6 +85,6 @@ bun run build:desktop
 
 ## Skills / Commands
 
-斜杠命令经 `.claude/commands` → `.agents/commands`：`/check` `/create-app` `/create-component` `/create-hook` `/crud` `/frontend-spec` `/i18n` `/karpathy-guidelines`。
+斜杠命令经 `.claude/commands` → `.agents/commands`：`/check` `/create-app` `/create-component` `/create-hook` `/crud` `/i18n` `/karpathy-guidelines`。
 
-专用 skill：`frontend-spec`、`code-reviewer`、`test-generator` 等（见 `.agents/skills/`）。
+专用 skill：`code-reviewer`、`security-delivery`、`test-generator` 等（见 `.agents/skills/`）。

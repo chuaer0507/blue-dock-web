@@ -62,4 +62,4 @@ alwaysApply: true
 | A ↔ B 循环引用                  | 职责未分离 | 公共类型/逻辑抽独立文件              |
 | 路径用 `checkin` / `signin`     | 命名违规   | 统一 `attendance`                    |
 
-详情：`.agents/skills/frontend-spec/references/architecture.md`
+详情：`docs/guide/architecture.md`。

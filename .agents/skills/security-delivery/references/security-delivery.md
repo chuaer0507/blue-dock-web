@@ -22,7 +22,7 @@
 
 ### 1.2 登录与密码（必须）
 
-1. **请求**：先 `GET api/users/key/client`；HTTP JSON 字段 `password` 为 RSA-OAEP 密文 + `kid`；禁止生产路径明文上送（细则见 java `user-account/auth-wire.md`）
+1. **请求**：先 `GET api/users/key/client`；HTTP JSON 字段 `password` 为 RSA-OAEP 密文 + `keyId`；禁止生产路径明文上送（细则见 java `user-account/auth-wire.md`）
 2. **响应**：成功 `data` 不得含 `password` / `passwordHash`；模型用 `hasPassword` 等语义
 3. **验密**：改密 / 敏感确认走服务端 API，禁止本地比对
 4. **联调**：mock 可有降级；生产不得依赖明文兜底
@@ -131,7 +131,7 @@
 - 门禁：`bun run typecheck` / `lint` / `lint:circular` / `test`；涉及时 `build` / `e2e`
 - 禁止用 eslint-disable 让依赖方向检查假绿
 
-上线前检查统一使用 [checklists.md](checklists.md) 总清单。
+上线前检查统一使用 [代码评审清单](../../code-reviewer/references/checklists.md)。
 
 ## 5. 团队落地要求
 

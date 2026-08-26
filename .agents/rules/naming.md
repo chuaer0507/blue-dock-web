@@ -70,4 +70,4 @@ packages/<name>/
 - 或全仓统一「中文原文即 key」——二选一，见 `docs/guide/i18n-and-theme.md`
 - 命名空间按 feature / `common` 组织
 
-详情：frontend-spec `references/coding.md` · `docs/guide/api.md`
+详情：`docs/guide/api.md` · `docs/guide/testing.md`。

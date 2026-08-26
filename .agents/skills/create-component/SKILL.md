@@ -5,7 +5,7 @@ description: 说明何时直接用 HeroUI；仅在确有跨 feature 页面组装
 
 # 创建 UI 组件
 
-设计前可先扫 [frontend-spec](../frontend-spec/SKILL.md) 与 `rules/components.md`。
+设计前阅读 `rules/components.md`；数据与状态归属另按 `rules/state.md` 执行。
 
 ## 何时新建
 

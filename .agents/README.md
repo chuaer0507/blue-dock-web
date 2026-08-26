@@ -46,10 +46,10 @@
 | `create-component`    | 在 app 内新建 HeroUI 业务壳组件       |
 | `create-hook`         | 新建 `@blue-dock/api` Query hook      |
 | `crud`                | api + app feature 完整 CRUD           |
-| `frontend-spec`       | Web 前端统一规范（`/frontend-spec`）  |
 | `i18n`                | 添加中英文翻译 key                    |
 | `karpathy-guidelines` | 应用行为准则审查                      |
 | `code-reviewer`       | 按规则审查代码变更                    |
+| `security-delivery`   | 鉴权、敏感数据与跨端交付              |
 | `test-generator`      | 生成 Vitest / Playwright 测试         |
 
 ## 现有 commands
@@ -61,7 +61,6 @@
 | `/create-component`    | → skill `create-component`    |
 | `/create-hook`         | → skill `create-hook`         |
 | `/crud`                | → skill `crud`                |
-| `/frontend-spec`       | → skill `frontend-spec`       |
 | `/i18n`                | → skill `i18n`                |
 | `/karpathy-guidelines` | → skill `karpathy-guidelines` |
 

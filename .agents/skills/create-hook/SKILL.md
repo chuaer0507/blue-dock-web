@@ -5,10 +5,7 @@ description: 按 Query Key 工厂 + 乐观更新模式在 @blue-dock/api 中创�
 
 # 创建 Query Hook
 
-设计前可先扫 [frontend-spec](../frontend-spec/SKILL.md)：
-
-- 状态归属 → `references/coding.md` §5 / `rules/state.md`
-- API 示例 → `references/examples.md` §3.2–3.3
+设计前阅读 `rules/state.md` 与 `docs/guide/state-and-api.md`；涉及会话、上传或 WS 安全边界时使用 `security-delivery` 技能。
 
 ## 检查清单
 

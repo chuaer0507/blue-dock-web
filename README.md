@@ -49,7 +49,7 @@ blue-dock-web/
 4. UI 在 `@blue-dock/app` 内直连 HeroUI + Heroicons；禁止自造 UI 封装层；无独立 `@blue-dock/ui` / `@blue-dock/app/ui` / `@gravity-ui/icons`
 5. 平台差异只经 `desktop-bridge` / `mobile-bridge`；渲染侧禁止直调 Electron / 原生 SDK
 
-完整规范：[docs/guide/frontend-spec.md](docs/guide/frontend-spec.md) · [`.agents/skills/frontend-spec`](.agents/skills/frontend-spec/SKILL.md)
+完整规范：[docs/guide/frontend-spec.md](docs/guide/frontend-spec.md) · [`.agents/rules/`](.agents/rules/)；安全与跨端交付使用 [`.agents/skills/security-delivery`](.agents/skills/security-delivery/SKILL.md)。
 
 ## 快速开始
 

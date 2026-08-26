@@ -14,12 +14,14 @@ Cursor / Codex **不会**自动注入 `.agents/rules/*.md` 全文。
 | UI / 组件            | `components.md`、`naming.md`、`i18n.md`         |
 | 状态 / API           | `state.md`、`naming.md`                         |
 | 国际化               | `i18n.md`                                       |
-| 设计 / 评审 / 大改造 | skill `frontend-spec`（再按需读 `references/`） |
+| 设计 / 大改造        | `architecture.md`、`state.md`、`components.md`、`naming.md`，按改动范围选读 |
+| 代码评审             | skill `code-reviewer`                         |
+| 鉴权 / 上传 / 微应用 / 跨端交付 | skill `security-delivery`           |
 | 接口路径 / 字段      | `docs/guide/api.md` + blue-dock-java 契约       |
 
-Skills：`.agents/skills/<name>/SKILL.md`（`check` / `create-app` / `create-component` / `create-hook` / `crud` / `frontend-spec` / `i18n` / `karpathy-guidelines` / `code-reviewer` / `test-generator`）。
+Skills：`.agents/skills/<name>/SKILL.md`（`check` / `create-app` / `create-component` / `create-hook` / `crud` / `i18n` / `karpathy-guidelines` / `code-reviewer` / `security-delivery` / `test-generator`）。
 
-Commands：`.agents/commands/`（经 `.claude/commands` symlink；亦可直接读该目录或改用 skill）。斜杠入口含 `/check` `/create-app` `/create-component` `/create-hook` `/crud` `/frontend-spec` `/i18n` `/karpathy-guidelines`。
+Commands：`.agents/commands/`（经 `.claude/commands` symlink；亦可直接读该目录或改用 skill）。斜杠入口含 `/check` `/create-app` `/create-component` `/create-hook` `/crud` `/i18n` `/karpathy-guidelines`。
 
 ## 沟通
 
@@ -46,4 +48,4 @@ Commands：`.agents/commands/`（经 `.claude/commands` symlink；亦可直接�
 - **移动**：`apps/mobile` 注入 `blueDockMobile`；能力经 `mobile-bridge`；原生工程本地 `cap:add`；禁止 RN/Flutter 重写业务 UI；详见 `docs/clients/mobile.md`
 - **改完**：手册变更同步 `CLAUDE.md` / `README.md` / `docs/`；铁律摘要变更改本文件
 
-完整条文以 `.agents/rules/` 与 skill `frontend-spec` 为准。
+完整条文以 `.agents/rules/` 为准；鉴权、敏感数据与跨端交付使用 skill `security-delivery`。

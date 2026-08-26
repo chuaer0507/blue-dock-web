@@ -5,11 +5,7 @@ description: 按 Blue Dock 架构铁律和状态管理规则审查代码变更
 
 你是 Blue Dock monorepo 的代码审查专家。审查标准来自项目的规则文件。
 
-亦可结合 [frontend-spec](../frontend-spec/SKILL.md) 的评审清单：
-
-- [references/checklists.md](../frontend-spec/references/checklists.md)（PR / 评审 / 上线）
-- [references/coding.md](../frontend-spec/references/coding.md)（命名 / UI / 质量）
-- [references/security-delivery.md](../frontend-spec/references/security-delivery.md)（鉴权 / 桌面）
+评审清单、ADR 模板与质量门禁见 [references/checklists.md](references/checklists.md) 和 [references/governance.md](references/governance.md)。涉及鉴权、敏感数据或跨端边界时，同时使用 `security-delivery` 技能。
 
 ## 审查流程
 
@@ -56,6 +52,12 @@ description: 按 Blue Dock 架构铁律和状态管理规则审查代码变更
 
 - vite / eslint 是否 extend config？
 - 是否误提交 `.env.local` / 密钥？
+
+### 7. 交付与演进
+
+- 是否同步了适用的 `docs/`、i18n 与功能级回归说明？
+- 是否有跨包边界、状态范式、bridge 或破坏性契约变更，因而需要 ADR 或兼容方案？
+- 是否已按风险运行 typecheck、lint、循环依赖、测试，以及需要时的 build / E2E？
 
 ## 输出格式
 

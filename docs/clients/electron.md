@@ -14,4 +14,4 @@
 
 ## 详见
 
-工程约定见 [architecture.md](../guide/architecture.md) · frontend-spec security-delivery。
+工程约定见 [architecture.md](../guide/architecture.md) · [security-delivery](../../.agents/skills/security-delivery/SKILL.md)。

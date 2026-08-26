@@ -80,4 +80,4 @@ globs:
 - 键盘全可操作，`:focus-visible` 清晰指示
 - 色比达标；主题亮/暗均可读
 
-详情：frontend-spec `references/coding.md` · `docs/guide/i18n-and-theme.md`
+详情：`docs/guide/i18n-and-theme.md`。
