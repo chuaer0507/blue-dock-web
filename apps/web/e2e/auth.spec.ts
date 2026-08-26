@@ -70,6 +70,11 @@ test.describe('登录进壳层', () => {
         page.getByRole('heading', { name: /新建项目|创建项目|New project|Create project/i }),
       ).toBeVisible();
       await page.locator('input[name="name"]').last().fill(projectName);
+      await page
+        .locator('label')
+        .filter({ hasText: /启用默认工作流|Enable default workflow/i })
+        .first()
+        .click();
       await page.getByRole('button', { name: /创建项目|Create project|Create/i }).click();
       await expect(page).toHaveURL(/\/manage\/project\/\d+/, { timeout: 15_000 });
 
