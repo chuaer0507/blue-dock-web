@@ -112,7 +112,8 @@ test.describe('登录进壳层', () => {
       const projectPayload = await projectResponse.text();
       const projectResult = JSON.parse(projectPayload);
       expect(projectResult.code).toBe(0);
-      projectId = /"id":(\d+)/.exec(projectPayload)?.[1] ?? null;
+      projectId = projectResult.data?.id ?? null;
+      expect(typeof projectId).toBe('string');
       expect(projectId).toBeTruthy();
 
       const taskName = `E2E 任务 ${Date.now()}`;
@@ -124,7 +125,8 @@ test.describe('登录进壳层', () => {
       const taskPayload = await taskResponse.text();
       const taskResult = JSON.parse(taskPayload);
       expect(taskResult.code).toBe(0);
-      taskId = /"id":(\d+)/.exec(taskPayload)?.[1] ?? null;
+      taskId = taskResult.data?.id ?? null;
+      expect(typeof taskId).toBe('string');
       expect(taskId).toBeTruthy();
 
       await page.goto(`/single/task/${taskId}`);

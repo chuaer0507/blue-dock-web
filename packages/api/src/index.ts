@@ -58,6 +58,7 @@ export {
   type TipsType,
   type ExtraModel,
   type Id,
+  hasId,
   isId,
 } from './common';
 export {

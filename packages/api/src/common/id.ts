@@ -9,5 +9,10 @@
 export type Id = string | number;
 
 export function isId(value: unknown): value is Id {
-  return typeof value === 'string' && /^[1-9]\\d*$/.test(value);
+  return typeof value === 'string' && /^[1-9]\d*$/.test(value);
+}
+
+/** 迁移期同时兼容尚未收敛类型的安全整数调用方。 */
+export function hasId(value: unknown): boolean {
+  return isId(value) || (typeof value === 'number' && Number.isSafeInteger(value) && value > 0);
 }

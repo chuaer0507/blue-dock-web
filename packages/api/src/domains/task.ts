@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { get, post } from '../http-api';
+import { hasId } from '../common';
 import { dialogKeys, type DialogMessageView } from './dialog';
 
 export type TaskView = {
@@ -255,7 +256,7 @@ export function useTask(taskId: number | undefined) {
   return useQuery({
     queryKey: taskKeys.detail(taskId ?? 0),
     queryFn: () => get<TaskView>('project/task/one', { taskId }),
-    enabled: typeof taskId === 'number' && taskId > 0,
+    enabled: hasId(taskId),
     staleTime: 15_000,
   });
 }
@@ -282,7 +283,7 @@ export function useTaskFlow(taskId: number | undefined) {
   return useQuery({
     queryKey: taskKeys.flow(taskId ?? 0),
     queryFn: () => get<TaskFlowView>('project/task/flow', { taskId }),
-    enabled: typeof taskId === 'number' && taskId > 0,
+    enabled: hasId(taskId),
     staleTime: 15_000,
   });
 }
@@ -419,7 +420,7 @@ export function useTaskSubtasks(taskId: number | undefined) {
   return useQuery({
     queryKey: taskKeys.subtasks(taskId ?? 0),
     queryFn: () => get<TaskView[]>('project/task/subtaskData', { taskId }),
-    enabled: typeof taskId === 'number' && taskId > 0,
+    enabled: hasId(taskId),
     staleTime: 15_000,
   });
 }
@@ -466,7 +467,7 @@ export function useTaskFiles(taskId: number | undefined) {
   return useQuery({
     queryKey: taskKeys.files(taskId ?? 0),
     queryFn: () => get<TaskFileView[]>('project/task/files', { taskId }),
-    enabled: typeof taskId === 'number' && taskId > 0,
+    enabled: hasId(taskId),
     staleTime: 30_000,
   });
 }
@@ -740,7 +741,7 @@ export function useTaskRelated(taskId: number | undefined, enabled = true) {
     queryKey: taskRelatedKeys.all(taskId ?? 0),
     queryFn: async () =>
       asRelatedList(await get<Record<string, unknown>>('project/task/related', { taskId })),
-    enabled: enabled && typeof taskId === 'number' && taskId > 0,
+    enabled: enabled && hasId(taskId),
     staleTime: 15_000,
   });
 }
@@ -1030,7 +1031,7 @@ export function useTaskContent(
           ...(hid ? { historyId: hid } : {}),
         }),
       ),
-    enabled: enabled && typeof taskId === 'number' && taskId > 0,
+    enabled: enabled && hasId(taskId),
     staleTime: 15_000,
   });
 }
@@ -1050,7 +1051,7 @@ export function useTaskContentHistory(
         page,
         pageSize,
       }),
-    enabled: enabled && typeof taskId === 'number' && taskId > 0,
+    enabled: enabled && hasId(taskId),
     staleTime: 15_000,
   });
 }
