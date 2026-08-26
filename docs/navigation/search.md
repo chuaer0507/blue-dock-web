@@ -1,6 +1,6 @@
 # 全局搜索（search）
 
-路由：`/manage/search` · 快捷键：⌘/Ctrl+K · 优先级：P0 · 前端状态：wip（防抖聚合 / 深链 / 跳转）
+路由：`/manage/search` · 快捷键：⌘/Ctrl+K · 优先级：P0 · 前端状态：done（防抖聚合 / 深链 / 跳转）
 
 ## 能力
 

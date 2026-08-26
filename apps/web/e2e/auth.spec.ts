@@ -339,4 +339,42 @@ test.describe('登录进壳层', () => {
     expect(reopenedBodies).toContain(messageA);
     expect(reopenedBodies).not.toContain(messageB);
   });
+
+  test('全局搜索保留 q 深链并可打开项目结果', async ({ page }) => {
+    await loginWithEnv(page);
+    const token = await page.evaluate(() => localStorage.getItem('accessToken'));
+    expect(token).toBeTruthy();
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    const backendBaseUrl = process.env.E2E_API_BASE_URL ?? 'http://127.0.0.1:8080';
+    const projectName = `E2E 搜索项目 ${Date.now()}`;
+    let projectId: string | null = null;
+
+    try {
+      const projectResponse = await page.request.get(
+        `/api/project/add?name=${encodeURIComponent(projectName)}`,
+        { headers },
+      );
+      const project = await projectResponse.json();
+      expect(project.code).toBe(0);
+      projectId = project.data?.id ?? null;
+      expect(typeof projectId).toBe('string');
+
+      await page.goto(`/manage/search?q=${encodeURIComponent(projectName)}`);
+      await expect(page.locator('input[name="global-search"]')).toHaveValue(projectName);
+      await expect(page.getByRole('button', { name: new RegExp(projectName) })).toBeVisible({
+        timeout: 15_000,
+      });
+      await page.getByRole('button', { name: new RegExp(projectName) }).click();
+      await expect(page).toHaveURL(new RegExp(`/manage/project/${projectId}`));
+    } finally {
+      if (projectId) {
+        await page.request
+          .get(`${backendBaseUrl}/api/project/remove?projectId=${projectId}`, {
+            headers,
+            timeout: 3000,
+          })
+          .catch(() => undefined);
+      }
+    }
+  });
 });
