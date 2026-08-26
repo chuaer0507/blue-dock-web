@@ -451,16 +451,20 @@ export function TaskDetail({ taskId, variant, onClose, onOpenTask }: TaskDetailP
   const orphanMemberIds = [
     ...new Set([...ownerUserIds, ...assistUserIds, ...visibilityUserIds]),
   ].filter((id) => id > 0 && !knownMemberIds.has(id));
-  const memberCandidates: ProjectMemberHit[] = [
-    ...projectMembers,
-    ...orphanMemberIds.map((userId) => ({
-      userId,
-      email: '',
-      nickname: '',
-      profession: '',
-      userImage: '',
-    })),
-  ];
+  const memberCandidates: ProjectMemberHit[] = Array.from(
+    new Map(
+      [
+        ...projectMembers,
+        ...orphanMemberIds.map((userId) => ({
+          userId,
+          email: '',
+          nickname: '',
+          profession: '',
+          userImage: '',
+        })),
+      ].map((member) => [member.userId, member]),
+    ).values(),
+  );
 
   const timeDirty =
     Boolean(task) && (!sameInstant(nextStart, task?.startAt) || !sameInstant(nextEnd, task?.endAt));

@@ -79,4 +79,4 @@
 | packages/app 框架（主题 / 路由 / 登录） | done                                                                                                                      |
 | config-tailwind（HeroUI styles）        | done                                                                                                                      |
 | i18n `zh-CN` / `en-US`                  | done                                                                                                                      |
-| Playwright E2E                          | wip（冒烟含扫码、未登录 redirect、`/pro`、`/preload`、`/privacy`；`auth.spec` 登录后主导航需 `E2E_EMAIL`/`E2E_PASSWORD`） |
+| Playwright E2E                          | done（6 项无需账号冒烟，以及本地真实 Boot + 管理员账号下的 12 项登录态 E2E 均通过；登录态用例需 `E2E_EMAIL`/`E2E_PASSWORD`） |
