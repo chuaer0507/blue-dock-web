@@ -377,4 +377,15 @@ test.describe('登录进壳层', () => {
       }
     }
   });
+
+  test('会议大厅可创建并进入会议房间', async ({ page }) => {
+    await loginWithEnv(page);
+    const meetingName = `E2E 会议 ${Date.now()}`;
+    await page.goto('/meeting');
+    await page.locator('input[name="name"]').fill(meetingName);
+    await page.getByRole('button', { name: /创建会议|Create meeting/i }).click();
+    await expect(page).toHaveURL(/\/meeting\/[^/]+/);
+    await expect(page.getByRole('heading', { name: meetingName })).toBeVisible();
+    await expect(page.getByText(/会议 ID|Meeting ID/i)).toBeVisible();
+  });
 });
