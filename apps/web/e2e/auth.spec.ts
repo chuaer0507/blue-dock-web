@@ -224,4 +224,17 @@ test.describe('登录进壳层', () => {
       }
     }
   });
+
+  test('应用中心可打开快建任务与系统路由卡片', async ({ page }) => {
+    await loginWithEnv(page);
+    await page.goto('/manage/application');
+    await expect(page.getByRole('heading', { name: /应用|Apps/i })).toBeVisible();
+
+    await page.getByRole('button', { name: /添加任务|Add task/i }).click();
+    await expect(page.getByRole('heading', { name: /快速创建任务|Quick create task/i })).toBeVisible();
+    await page.keyboard.press('Escape');
+
+    await page.getByRole('button', { name: /工作报告|Work reports/i }).click();
+    await expect(page).toHaveURL(/\/manage\/report/);
+  });
 });

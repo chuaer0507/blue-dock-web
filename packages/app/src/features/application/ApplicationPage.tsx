@@ -230,8 +230,9 @@ export function ApplicationPage() {
   const clearBadge = useClearAppBadge();
   const createTaskState = useOverlayState();
 
-  const loading = sortQuery.isLoading || menuQuery.isLoading;
-  const errored = sortQuery.isError || menuQuery.isError;
+  // 系统卡片不依赖微应用菜单；菜单请求异常不能阻断常用入口。
+  const loading = sortQuery.isLoading;
+  const errored = sortQuery.isError;
 
   const openMicro = (app: MicroAppEntry, menu?: MicroAppMenuItem) => {
     const target = menu ?? app.menuItems?.[0];
