@@ -416,12 +416,14 @@ test.describe('登录进壳层', () => {
 
     const title = `E2E 工作报告 ${Date.now()}`;
     const content = `E2E 报告内容 ${Date.now()}`;
+    // 服务端以报告类型和日期生成唯一签名；使用动态历史日期，避免重跑 E2E 时命中旧数据。
+    const offset = -((Date.now() % 100_000) + 1_000);
     const storeResponse = await page.request.get(
-      `/api/report/store?title=${encodeURIComponent(title)}&type=daily&content=${encodeURIComponent(content)}&receive=${receiver.userId}&offset=-9999`,
+      `/api/report/store?title=${encodeURIComponent(title)}&type=daily&content=${encodeURIComponent(content)}&receive=${receiver.userId}&offset=${offset}`,
       { headers },
     );
     const report = await storeResponse.json();
-    expect(report.code).toBe(0);
+    expect(report, JSON.stringify(report)).toMatchObject({ code: 0 });
     const reportId = report.data?.id;
     expect(typeof reportId).toBe('string');
 
