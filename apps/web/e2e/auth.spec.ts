@@ -52,6 +52,8 @@ test.describe('登录进壳层', () => {
 
   test('可创建项目、切换视图并软删临时项目', async ({ page }) => {
     await loginWithEnv(page);
+    const token = await page.evaluate(() => localStorage.getItem('accessToken'));
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
     const projectName = `E2E 项目 ${Date.now()}`;
     let projectId: string | null = null;
 
@@ -83,19 +85,19 @@ test.describe('登录进壳层', () => {
       expect(projectId).toBeTruthy();
       await expect(page.getByRole('heading', { name: projectName })).toBeVisible();
 
-      await page.getByRole('radio', { name: /列表|List/i }).click();
-      await expect(page.getByRole('table', { name: /列表|List/i })).toBeVisible();
+      await page.getByText(/^(列表|List)$/i).click();
+      await expect(page.getByRole('radio', { name: /列表|List/i })).toBeChecked();
+      await expect(page.getByText(/暂无任务|No tasks/i)).toBeVisible();
 
-      await page.getByRole('radio', { name: /甘特|Gantt/i }).click();
+      await page.getByText(/^(甘特|Gantt)$/i).click();
       await expect(page.getByText(/暂无带日期的任务|No scheduled tasks/i)).toBeVisible();
 
-      await page.getByRole('radio', { name: /工作流|Workflow/i }).click();
+      await page.getByText(/^(工作流|Workflow)$/i).click();
       await expect(page.getByText(/待处理|To do/i).first()).toBeVisible();
     } finally {
       if (projectId) {
-        const token = await page.evaluate(() => localStorage.getItem('accessToken'));
         const response = await page.request.get(`/api/project/remove?projectId=${projectId}`, {
-          headers: token ? { Authorization: `Bearer ${token}` } : {},
+          headers,
         });
         expect(response.ok()).toBeTruthy();
         expect((await response.json()).code).toBe(0);
