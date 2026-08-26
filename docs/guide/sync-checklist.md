@@ -31,8 +31,8 @@
 | ID           | 名称     | 规格                                       | 状态                                                                                                                  |
 | ------------ | -------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | app-system   | 系统应用 | [apps.md](../apps/apps.md)                 | done（内置卡片、个人排序、快建任务与系统路由；已完成真实后端 E2E）                                                    |
-| app-admin    | 管理应用 | [apps.md](../apps/apps.md)                 | wip（应用中心管理员卡片）                                                                                             |
-| micro-app    | 微应用   | [micro-app.md](../apps/micro-app.md)       | wip（iframe + 桥含 notifyMessageStream + location 分区/主导航 + keepAlive；菜单可配 type/keepAlive/badgeClearOnOpen） |
+| app-admin    | 管理应用 | [apps.md](../apps/apps.md)                 | done（应用中心管理员卡片、路由和默认排序；已完成卡片配置单测、类型检查、Lint 与 Web 构建）                            |
+| micro-app    | 微应用   | [micro-app.md](../apps/micro-app.md)       | done（iframe + 桥含 notifyMessageStream + location 分区/主导航 + keepAlive；菜单可配 type/keepAlive/badgeClearOnOpen；已完成 API 与缓存单测及 Web 构建） |
 | bot          | 机器人   | [bot.md](../apps/bot.md)                   | done（CRUD、头像上传/图片空间、复制 ID、删除审计与开始聊天；已完成前端 ID 映射单测与后端服务测试）                   |
 | appstore     | 应用市场 | [appstore.md](../apps/appstore.md)         | done（安装/更新/卸载、自定义菜单与应用中心联动；后端服务测试覆盖目录、联动和 appstore 禁卸约束）                     |
 | ai-assistant | AI 助手  | [ai-assistant.md](../apps/ai-assistant.md) | done（FAB、流式、会话、反馈、配图、元素匹配与 WS 操作派发；已完成前端与后端服务测试）                                  |

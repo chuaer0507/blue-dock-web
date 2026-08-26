@@ -1,6 +1,6 @@
 # 微应用（micro-app）
 
-路由：`/manage/apps/:appId` · `/single/apps/:name` · 优先级：P0 · 前端状态：wip（iframe 宿主 + 简易桥 + keepAlive）
+路由：`/manage/apps/:appId` · `/single/apps/:name` · 优先级：P0 · 前端状态：done（iframe 宿主 + 简易桥 + keepAlive）
 
 ## 能力
 
