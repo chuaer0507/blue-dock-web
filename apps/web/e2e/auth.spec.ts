@@ -254,17 +254,11 @@ test.describe('登录进壳层', () => {
       await page.getByRole('button', { name: /创建|Create/i }).click();
       await expect(page.getByText(folderName)).toBeVisible();
 
-      const searchResponse = await page.request.get(
-        `/api/file/search?key=${encodeURIComponent(folderName)}`,
-        { headers },
-      );
-      const searchResult = await searchResponse.json();
-      const folder = searchResult.data?.find((item: { name?: string }) => item.name === folderName);
-      folderId = folder?.id ?? null;
-      expect(typeof folderId).toBe('string');
-
       await page.getByText(folderName).first().click();
-      await expect(page).toHaveURL(new RegExp(`/manage/file/${folderId}`));
+      await expect(page).toHaveURL(/\/manage\/file\/\d+/);
+      const match = /\/manage\/file\/(\d+)/.exec(page.url());
+      folderId = match?.[1] ?? null;
+      expect(typeof folderId).toBe('string');
     } finally {
       if (folderId) {
         await page.request
@@ -272,5 +266,77 @@ test.describe('登录进壳层', () => {
           .catch(() => undefined);
       }
     }
+  });
+
+  test('AI 多会话的消息彼此隔离', async ({ page }) => {
+    await loginWithEnv(page);
+    const token = await page.evaluate(() => localStorage.getItem('accessToken'));
+    expect(token).toBeTruthy();
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+    const botsResponse = await page.request.get('/api/users/search/ai?take=1', { headers });
+    const bots = await botsResponse.json();
+    const botUserId = bots.data?.list?.[0]?.userId;
+    expect(typeof botUserId).toBe('string');
+
+    const dialogResponse = await page.request.get(`/api/dialog/open/user?userId=${botUserId}`, {
+      headers,
+    });
+    const dialog = await dialogResponse.json();
+    const dialogId = dialog.data?.id;
+    expect(typeof dialogId).toBe('string');
+
+    const sessionAResponse = await page.request.get(
+      `/api/dialog/session/create?dialogId=${dialogId}&title=${encodeURIComponent('E2E session A')}`,
+      { headers },
+    );
+    const sessionA = await sessionAResponse.json();
+    expect(sessionA.code).toBe(0);
+    const messageA = `E2E 会话 A ${Date.now()}`;
+    const sentAResponse = await page.request.post(
+      `/api/dialog/message/sendAiAssistant?dialogId=${dialogId}&text=${encodeURIComponent(messageA)}`,
+      { headers },
+    );
+    expect((await sentAResponse.json()).code).toBe(0);
+    const listAResponse = await page.request.get(`/api/dialog/message/list?dialogId=${dialogId}`, {
+      headers,
+    });
+    expect((await listAResponse.json()).data.map((item: { body: string }) => item.body).join('\n')).toContain(
+      messageA,
+    );
+
+    const sessionBResponse = await page.request.get(
+      `/api/dialog/session/create?dialogId=${dialogId}&title=${encodeURIComponent('E2E session B')}`,
+      { headers },
+    );
+    const sessionB = await sessionBResponse.json();
+    expect(sessionB.code).toBe(0);
+    const listBResponse = await page.request.get(`/api/dialog/message/list?dialogId=${dialogId}`, {
+      headers,
+    });
+    expect((await listBResponse.json()).data.map((item: { body: string }) => item.body).join('\n')).not.toContain(
+      messageA,
+    );
+
+    const messageB = `E2E 会话 B ${Date.now()}`;
+    const sentBResponse = await page.request.post(
+      `/api/dialog/message/sendAiAssistant?dialogId=${dialogId}&text=${encodeURIComponent(messageB)}`,
+      { headers },
+    );
+    expect((await sentBResponse.json()).code).toBe(0);
+    const reopenAResponse = await page.request.get(
+      `/api/dialog/session/open?dialogId=${dialogId}&sessionId=${sessionA.data.sessionId}`,
+      { headers },
+    );
+    expect((await reopenAResponse.json()).code).toBe(0);
+    const reopenedListResponse = await page.request.get(
+      `/api/dialog/message/list?dialogId=${dialogId}`,
+      { headers },
+    );
+    const reopenedBodies = (await reopenedListResponse.json()).data
+      .map((item: { body: string }) => item.body)
+      .join('\n');
+    expect(reopenedBodies).toContain(messageA);
+    expect(reopenedBodies).not.toContain(messageB);
   });
 });

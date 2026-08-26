@@ -35,7 +35,7 @@
 - 语音气泡：对方未听时展示红点；首次播放调用 `dialog/message/dot` 清除（消息视图无 `dot` 字段时，会话内首次播放前本地展示）。
 - 文件 / 图片气泡：body 缺 size/name 时拉 `dialog/message/detail` 补全扩展名与大小。
 - `DialogTelephoneButton`：查看单聊对方电话（契约 `dialog/telephone`；会写入审计 notice）。
-- `DialogSessionPanel`：AI 机器人单聊（`ai-*@bot.system`）新建 / 历史 / 切换 / 重命名（契约 `dialog/session/*`）；头栏展示**当前会话标题**；切换会刷新消息列表。**消息列表仍按整对话返回**（java `message/list` 未按 `session_key` 过滤；待后端落库后可真隔离）。
+- `DialogSessionPanel`：AI 机器人单聊（`ai-*@bot.system`）新建 / 历史 / 切换 / 重命名（契约 `dialog/session/*`）；头栏展示**当前会话标题**；切换会刷新消息列表。消息以 `session_key` 落库，`message/list` 按当前会话过滤。
 - `SendAiAssistantModal`：当前会话以 AI 助手机器人发 Markdown（契约 `dialog/message/sendAiAssistant`）。
 - `SendNoticeModal` / `SendTemplateModal`：公告与模板卡片；均可勾选 **silence** 静默发送（不推未读）。
 - `SendApproveModal`：选人发审批模板卡片（契约 `dialog/message/sendApprove`；气泡按 approve_* 展示）。
