@@ -230,11 +230,47 @@ test.describe('登录进壳层', () => {
     await page.goto('/manage/application');
     await expect(page.getByRole('heading', { name: /应用|Apps/i })).toBeVisible();
 
-    await page.getByRole('button', { name: /添加任务|Add task/i }).click();
+    await page.getByRole('button', { name: /添加任务|新建任务|Add task|New task/i }).click();
     await expect(page.getByRole('heading', { name: /快速创建任务|Quick create task/i })).toBeVisible();
     await page.keyboard.press('Escape');
 
     await page.getByRole('button', { name: /工作报告|Work reports/i }).click();
     await expect(page).toHaveURL(/\/manage\/report/);
+  });
+
+  test('文件可新建目录并使用字符串 ID 打开目录', async ({ page }) => {
+    await loginWithEnv(page);
+    const token = await page.evaluate(() => localStorage.getItem('accessToken'));
+    expect(token).toBeTruthy();
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    const backendBaseUrl = process.env.E2E_API_BASE_URL ?? 'http://127.0.0.1:8080';
+    const folderName = `E2E 文件目录 ${Date.now()}`;
+    let folderId: string | null = null;
+
+    try {
+      await page.goto('/manage/file');
+      await page.getByRole('button', { name: /新建文件夹|New folder/i }).click();
+      await page.locator('input[name="folderName"]').fill(folderName);
+      await page.getByRole('button', { name: /创建|Create/i }).click();
+      await expect(page.getByText(folderName)).toBeVisible();
+
+      const searchResponse = await page.request.get(
+        `/api/file/search?key=${encodeURIComponent(folderName)}`,
+        { headers },
+      );
+      const searchResult = await searchResponse.json();
+      const folder = searchResult.data?.find((item: { name?: string }) => item.name === folderName);
+      folderId = folder?.id ?? null;
+      expect(typeof folderId).toBe('string');
+
+      await page.getByText(folderName).first().click();
+      await expect(page).toHaveURL(new RegExp(`/manage/file/${folderId}`));
+    } finally {
+      if (folderId) {
+        await page.request
+          .get(`${backendBaseUrl}/api/file/remove?id=${folderId}`, { headers, timeout: 3000 })
+          .catch(() => undefined);
+      }
+    }
   });
 });

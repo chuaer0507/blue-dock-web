@@ -9,6 +9,7 @@ import {
   isImageFile,
   isOfficeFile,
   isPdfFile,
+  isId,
   useDialogMessageDetail,
   useFile,
   useFileLinkByCode,
@@ -21,10 +22,7 @@ import { OfficePreview } from './OfficePreview';
 import { PdfPreview } from './PdfPreview';
 
 function parseNumericId(raw: string | undefined): number | undefined {
-  if (!raw) return undefined;
-  if (!/^\d+$/.test(raw)) return undefined;
-  const n = Number(raw);
-  return Number.isFinite(n) && n > 0 ? n : undefined;
+  return isId(raw) ? (raw as unknown as number) : undefined;
 }
 
 function isImageAttachment(type: string, extension: string): boolean {

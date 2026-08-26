@@ -394,25 +394,23 @@ export function ApplicationPage() {
         </div>
       ) : null}
 
-      {!loading && !errored ? (
-        <>
-          <AppGrid
-            title={t('section.base')}
-            cards={baseCards}
-            dragEnabled={dragEnabled}
-            hint={t('dragHint')}
-            onReorder={(ids) => persistSort('base', ids)}
-          />
-          {baseCards.length === 0 ? <p className="text-muted text-sm">{t('emptyMicro')}</p> : null}
-          <AppGrid
-            title={t('section.admin')}
-            cards={adminCards}
-            dragEnabled={dragEnabled}
-            hint={t('dragHint')}
-            onReorder={(ids) => persistSort('admin', ids)}
-          />
-        </>
-      ) : null}
+      <>
+        <AppGrid
+          title={t('section.base')}
+          cards={baseCards}
+          dragEnabled={dragEnabled}
+          hint={t('dragHint')}
+          onReorder={(ids) => persistSort('base', ids)}
+        />
+        {baseCards.length === 0 ? <p className="text-muted text-sm">{t('emptyMicro')}</p> : null}
+        <AppGrid
+          title={t('section.admin')}
+          cards={adminCards}
+          dragEnabled={dragEnabled}
+          hint={t('dragHint')}
+          onReorder={(ids) => persistSort('admin', ids)}
+        />
+      </>
     </div>
   );
 }

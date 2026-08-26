@@ -12,7 +12,7 @@
 | file        | 文件     | [file.md](../navigation/file.md)               | wip（目录/搜索/上传/移动复制/共享/发送到会话/预览含 PDF/文本编辑保存/上传替换/Office/内容历史/收藏/回收站/下载打包权限门控；消息附件 single 预览下载回会话）               |
 | messenger   | 即时通讯 | [messenger.md](../navigation/messenger.md)     | wip（契约主路径已齐；OKR + 微应用桥；`?msg=`；dialogAction；免打扰本地；公告/模板 silence；独立窗附件/已读/翻页；session 隔离待 java）                                     |
 | calendar    | 日历     | [calendar.md](../navigation/calendar.md)       | done（月/周/日 + 全天/时段块 + 拖拽改期含 TASK_TIME 门控与 easyLists 冲突确认 + 快建含 TASK_ADD + 项目筛选 + TaskModal；已完成真实后端 E2E：当天任务展示、详情入口、月周日切换）                                                    |
-| application | 应用中心 | [application.md](../navigation/application.md) | wip（卡片/拖拽排序/location 分区/微应用宿主；createGroup/addProject/addTask 弹层；审批无微应用明确提示）                                                                   |
+| application | 应用中心 | [application.md](../navigation/application.md) | done（卡片/拖拽排序/location 分区/微应用宿主；createGroup/addProject/addTask 弹层；审批无微应用明确提示；已完成真实后端 E2E：内置卡片、快速建任务与工作报告路由）           |
 | search      | 全局搜索 | [search.md](../navigation/search.md)           | wip（防抖聚合 / `?q=` 深链 / 消息经 message/one 跳转含 `?msg=` 定位 / 管理员按类型重建）                                                                                   |
 
 ## collaboration

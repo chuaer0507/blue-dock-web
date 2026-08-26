@@ -60,6 +60,7 @@ import {
   uploadCabinetSession,
   useUploadCabinetFile,
   identityHas,
+  isId,
   type FileContentHistoryItem,
   type FileView,
 } from '@blue-dock/api';
@@ -72,9 +73,7 @@ import { FileShareModal } from './FileShareModal';
 import { FileSendToChatModal } from './FileSendToChatModal';
 
 function parseId(raw: string | undefined): number | null {
-  if (!raw) return null;
-  const n = Number(raw);
-  return Number.isFinite(n) && n > 0 ? n : null;
+  return isId(raw) ? (raw as unknown as number) : null;
 }
 
 function sortEntries(items: FileView[]): FileView[] {

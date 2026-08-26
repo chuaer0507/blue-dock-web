@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { get } from '../http-api';
 import { http } from '../client';
 import { ApiError } from '../errors';
+import { hasId } from '../common/id';
 
 export type FileView = {
   id: number;
@@ -59,7 +60,7 @@ export function useFile(id: number | undefined) {
   return useQuery({
     queryKey: fileKeys.detail(id ?? 0),
     queryFn: () => get<FileView>('file/one', { id }),
-    enabled: typeof id === 'number' && id > 0,
+    enabled: hasId(id),
     staleTime: 60_000,
   });
 }
@@ -267,7 +268,7 @@ export function useFileShare(id: number | undefined, enabled = true) {
   return useQuery({
     queryKey: fileShareKeys.one(id ?? 0),
     queryFn: () => get<FileShareView>('file/share', { id }),
-    enabled: enabled && typeof id === 'number' && id > 0,
+    enabled: enabled && hasId(id),
     staleTime: 30_000,
   });
 }
@@ -314,7 +315,7 @@ export function useFileContent(id: number | undefined, enabled = true) {
   return useQuery({
     queryKey: fileShareKeys.content(id ?? 0),
     queryFn: () => get<FileContentView>('file/content', { id }),
-    enabled: enabled && typeof id === 'number' && id > 0,
+    enabled: enabled && hasId(id),
     staleTime: 15_000,
   });
 }
@@ -335,7 +336,7 @@ export function useFileContentHistory(id: number | undefined, take = 50, enabled
         id,
         take,
       }),
-    enabled: enabled && typeof id === 'number' && id > 0,
+    enabled: enabled && hasId(id),
     staleTime: 15_000,
   });
 }
@@ -445,7 +446,7 @@ export function useFileRawBlob(id: number | undefined, enabled = true) {
   return useQuery({
     queryKey: [...fileKeys.all(), 'raw', id ?? 0] as const,
     queryFn: () => fetchFileRawBlob(id!),
-    enabled: enabled && typeof id === 'number' && id > 0,
+    enabled: enabled && hasId(id),
     staleTime: 60_000,
   });
 }
@@ -498,7 +499,7 @@ export function useOfficeToken(
   return useQuery({
     queryKey: [...fileKeys.all(), 'office', id ?? 0, mode] as const,
     queryFn: () => get<OfficeTokenView>('file/office/token', { id, mode }),
-    enabled: enabled && typeof id === 'number' && id > 0,
+    enabled: enabled && hasId(id),
     staleTime: 60_000,
   });
 }
