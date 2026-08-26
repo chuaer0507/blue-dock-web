@@ -90,9 +90,9 @@ test.describe('登录进壳层', () => {
       await expect(page.getByText(/暂无任务|No tasks/i)).toBeVisible();
 
       await page.getByText(/^(甘特|Gantt)$/i).click();
-      await expect(page.getByText(/暂无带日期的任务|No scheduled tasks/i)).toBeVisible();
+      await expect(page.getByText(/暂无带日期的任务|No scheduled tasks|No dated tasks/i)).toBeVisible();
 
-      await page.getByText(/^(工作流|Workflow)$/i).click();
+      await page.getByRole('radiogroup').getByText(/^(工作流|Workflow)$/i).click();
       await expect(page.getByText(/待处理|To do/i).first()).toBeVisible();
     } finally {
       if (projectId) {
